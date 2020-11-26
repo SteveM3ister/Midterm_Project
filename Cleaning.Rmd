@@ -1,0 +1,44 @@
+---
+title: "Cleaning"
+author: "Yinfeng Zhou"
+date: "2020/11/18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(drat)
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+library(magrittr)
+library(viridis)
+library(lubridate)
+library(kableExtra)
+```
+
+```{r}
+care<-read.csv2("Home_Health_Care_Agencies.csv",header=TRUE,sep=",")
+```
+
+```{r}
+care%<>%filter(Quality.of.Patient.Care.Star.Rating!="")
+sum(care$Footnote.for.quality.of.patient.care.star.rating=="")==nrow(care)
+care%<>%select(!starts_with("Footnote"))
+
+```
+
+```{r}
+for(i in 17:34){
+care[,i]%<>%as.numeric()
+}
+for(i in 8:14){
+  care[,i]%<>%as.factor()
+}
+care$Date.Certified%<>%mdy()
+care$Quality.of.Patient.Care.Star.Rating%<>%as.factor()
+```
+
+
+

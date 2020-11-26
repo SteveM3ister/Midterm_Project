@@ -1,0 +1,40 @@
+---
+title: "United States Home Health Care Analysis"
+author: "Yinfeng Zhou"
+date: "2020/11/26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(drat)
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+library(magrittr)
+library(viridis)
+library(lubridate)
+library(kableExtra)
+```
+
+#Introduction
+
+This project is meant to implement certain data analysis on the United States Home Health Care Dataset. The motivation of this analysis is to help understanding what factors contributes to a better home health care in rating, and thus help getting knowledge on how we should improve home health care and what the future direction will be in this field. The dataset used in this report is downloaded from Data.Medicare.Gov.
+
+#Exploratory Data Analysis
+
+In this section, we will apply EDA(Exploratory Data Analysis) on the dataset and get a sense of certain characteristics of the data.     
+First, we want to get a sense of the distribution of the quality rating.
+
+```{r}
+#read cleaned dataset
+care<-read.csv("care_cleaned.csv",header=TRUE)
+#extract subset about quality rating
+rating<-care[,2:34]
+ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count")+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
+```
+
+From this plot, the rating seems to be a skewed normal distribution. The red line denotes the mean value of Quality of Patient Care Star Rating, which is `3.25`.
+We then 
+
