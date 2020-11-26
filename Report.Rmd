@@ -22,19 +22,74 @@ library(kableExtra)
 
 This project is meant to implement certain data analysis on the United States Home Health Care Dataset. The motivation of this analysis is to help understanding what factors contributes to a better home health care in rating, and thus help getting knowledge on how we should improve home health care and what the future direction will be in this field. The dataset used in this report is downloaded from Data.Medicare.Gov.
 
+The dataset includes a number of variables that provides measurements of the quality of the home care services. Among the variables that are directly related to the home care service, there are 6 binary variables and 17 continuous variables. The binary varibales answer those "Yes or No" questions: `Offers Nursing Care Services`, `Offers Physical Therapy Services`, `Offers Occupational Therapy Services`, `Offers Speech Pathology Services`, `Offers Medical Social Services`, `Offers Home Health Aide Services`. The continuous varibales mainly answer those "How often" questions, using the measure percentage as reported. For example, in the variable `How often the home health team began their patients' care in a timely manner`, the number indicates the percentage of the home health team having begun their patients' care in a timely manner.    
+
+The outcome we are interested in is the `Quality of patient care star rating`. Although this variable is collected as a numeric rating from 1 through 5, in increments of 0.5, we can treat it as categorical outcomes with 9 possible outcomes. 
+
 #Exploratory Data Analysis
 
 In this section, we will apply EDA(Exploratory Data Analysis) on the dataset and get a sense of certain characteristics of the data.     
-First, we want to get a sense of the distribution of the quality rating.
+First, we want to get a sense of the distribution of the quality rating by type of ownership.
 
 ```{r}
 #read cleaned dataset
 care<-read.csv("care_cleaned.csv",header=TRUE)
 #extract subset about quality rating
 rating<-care[,2:34]
-ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count")+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
+ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
 ```
 
-From this plot, the rating seems to be a skewed normal distribution. The red line denotes the mean value of Quality of Patient Care Star Rating, which is `3.25`.
-We then 
+From this plot, the rating seems to be a skewed normal distribution. The red line in the middle of the barplot denotes the mean value of Quality of Patient Care Star Rating, which is `3.25`. Besides the distribution of rating, the plot also tell us that the rating does not vary much through different types of ownership.
+
+Then we should look into the distribution through those binary outcomes.
+
+```{r}
+multiplot <- function(..., plotlist = NULL, file, cols = 1, 
+  layout = NULL) {
+  library(grid)
+  
+  # 从参数 `…`中建立一个列表然后 plotlist
+  plots <- c(list(...), plotlist)
+  
+  numPlots = length(plots)
+  # 假如 layout 是 NULL, 那么可以用 `cols` 来定义布局
+  if (is.null(layout)) {
+    # 创建面板 ncol: 图像的列数 nrow:
+    # 根据上述给定的列数，计算所需要的行数
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)), 
+      ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+  if (numPlots == 1) {
+    print(plots[[1]])
+  } else {
+    # 创建页面
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), 
+      ncol(layout))))
+    # 让每一幅图像排列在正确的位置
+    for (i in 1:numPlots) {
+      # 获取包含这一子图所在区域的坐标 matrix i,j
+      matchidx <- as.data.frame(which(layout == i, 
+        arr.ind = TRUE))
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row, 
+        layout.pos.col = matchidx$col))
+    }
+  }
+}
+
+```
+```{r}
+#unique(rating$Quality.of.Patient.Care.Star.Rating)
+p1<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Nursing.Care.Services))+scale_fill_manual(labels=c("Yes"),values=c("blue"))
+p2<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Physical.Therapy.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
+p3<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Occupational.Therapy.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
+p4<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Speech.Pathology.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
+p5<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Medical.Social.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
+p6<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Home.Health.Aide.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
+multiplot(p1,p2,p3)
+multiplot(p4,p5,p6)
+```
+There are not much difference we can tell from these plots. The distribution from 
+
+
 
