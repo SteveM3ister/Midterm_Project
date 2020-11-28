@@ -16,6 +16,9 @@ library(magrittr)
 library(viridis)
 library(lubridate)
 library(kableExtra)
+library(ggpubr)
+library(MASS)
+library(VGAM)
 ```
 
 #Introduction
@@ -26,6 +29,8 @@ The dataset includes a number of variables that provides measurements of the qua
 
 The outcome we are interested in is the `Quality of patient care star rating`. Although this variable is collected as a numeric rating from 1 through 5, in increments of 0.5, we can treat it as categorical outcomes with 9 possible outcomes. 
 
+In this report, we are mainly interested in how those continuous variables are correlated with the quality rating, building up a model for prediction and hopefully we can do a causal inference. For convenience, the variables name in this report will be changed as in the Appendix A. The variable name in the plot remains the same as in the dataset.
+
 #Exploratory Data Analysis
 
 In this section, we will apply EDA(Exploratory Data Analysis) on the dataset and get a sense of certain characteristics of the data.     
@@ -35,66 +40,110 @@ First, we want to get a sense of the distribution of the quality rating by type 
 #read cleaned dataset
 care<-read.csv("care_cleaned.csv",header=TRUE)
 #extract subset about quality rating
-rating<-care[,2:34]
+rating<-care[,c(2,9:34)]
+colnames(rating)<-c("State","Type.of.Ownership","Offers.Nursing.Care.Services","Offers.Physical.Therapy.Services",                                                                                     "Offers.Occupational.Therapy.Services" ,                                                                   "Offers.Speech.Pathology.Services" ,                                                                        "Offers.Medical.Social.Services" ,                                                                          "Offers.Home.Health.Aide.Services",                                                                        "Date.Certified"            ,                                                                              "Quality.of.Patient.Care.Star.Rating", "TimelyManner","DrugsTeaching","RiskofFalling","Depression","FluShot","Vaccine","FootCare","Walking","Bed","Bathing","Breathing","Operation","DrugsTaking","HospitalAdmitted","UnplannedCare","SkinIntegrity","TimelyMedication")
+rating$Type.of.Ownership%<>%factor()
+rating$Quality.of.Patient.Care.Star.Rating%<>%factor()
 ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
-```
-
-From this plot, the rating seems to be a skewed normal distribution. The red line in the middle of the barplot denotes the mean value of Quality of Patient Care Star Rating, which is `3.25`. Besides the distribution of rating, the plot also tell us that the rating does not vary much through different types of ownership.
-
-Then we should look into the distribution through those binary outcomes.
-
-```{r}
-multiplot <- function(..., plotlist = NULL, file, cols = 1, 
-  layout = NULL) {
-  library(grid)
-  
-  # 从参数 `…`中建立一个列表然后 plotlist
-  plots <- c(list(...), plotlist)
-  
-  numPlots = length(plots)
-  # 假如 layout 是 NULL, 那么可以用 `cols` 来定义布局
-  if (is.null(layout)) {
-    # 创建面板 ncol: 图像的列数 nrow:
-    # 根据上述给定的列数，计算所需要的行数
-    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)), 
-      ncol = cols, nrow = ceiling(numPlots/cols))
-  }
-  if (numPlots == 1) {
-    print(plots[[1]])
-  } else {
-    # 创建页面
-    grid.newpage()
-    pushViewport(viewport(layout = grid.layout(nrow(layout), 
-      ncol(layout))))
-    # 让每一幅图像排列在正确的位置
-    for (i in 1:numPlots) {
-      # 获取包含这一子图所在区域的坐标 matrix i,j
-      matchidx <- as.data.frame(which(layout == i, 
-        arr.ind = TRUE))
-      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row, 
-        layout.pos.col = matchidx$col))
-    }
-  }
-}
 
 ```
-```{r}
-#unique(rating$Quality.of.Patient.Care.Star.Rating)
-p1<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Nursing.Care.Services))+scale_fill_manual(labels=c("Yes"),values=c("blue"))
-p2<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Physical.Therapy.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
-p3<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Occupational.Therapy.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
-p4<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Speech.Pathology.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
-p5<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Medical.Social.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
-p6<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Offers.Home.Health.Aide.Services))+scale_fill_manual(labels=c("No","Yes"),values=c("red","blue"))
-multiplot(p1,p2,p3)
-multiplot(p4,p5,p6)
-```
+
+
 There are not much difference we can tell from these plots. We then do the EDA on continuous variables.
 
 ```{r}
+pp1<-ggplot(data=rating,aes(x=TimelyManner,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp2<-ggplot(data=rating,aes(x=DrugsTeaching,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp3<-ggplot(data=rating,aes(x=RiskofFalling,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
 
+pp4<-ggplot(data=rating,aes(x=Depression,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp5<-ggplot(data=rating,aes(x=FluShot,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp6<-ggplot(data=rating,aes(x=Vaccine,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp7<-ggplot(data=rating,aes(x=FootCare,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp8<-ggplot(data=rating,aes(x=Walking,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp9<-ggplot(data=rating,aes(x=Bed,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp10<-ggplot(data=rating,aes(x=Bathing,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp11<-ggplot(data=rating,aes(x=Breathing,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp12<-ggplot(data=rating,aes(x=Operation,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+
+pp13<-ggplot(data=rating,aes(x=DrugsTaking,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp14<-ggplot(data=rating,aes(x=HospitalAdmitted,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp15<-ggplot(data=rating,aes(x=UnplannedCare,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+
+pp16<-ggplot(data=rating,aes(x=SkinIntegrity,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp17<-ggplot(data=rating,aes(x=TimelyMedication,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+ggarrange(pp1,pp2,labels="plot1")
+ggarrange(pp3,pp4,labels="plot2")
+ggarrange(pp5,pp6,labels="plot3")
+ggarrange(pp7,pp8,labels="plot4")
+ggarrange(pp9,pp10,labels="plot5")
+ggarrange(pp11,pp12,labels="plot6")
+ggarrange(pp13,pp14,labels="plot7")
+ggarrange(pp15,pp16,labels="plot8")
+ggarrange(pp17,col=1)
 
 ```
+Some examples of  continuous variables versus `Quality of Patient Care Star Rating` are plotted above. The rest will be put in the Appendix B. In general, for the variables `RiskofFalling`, `DrugsTeaching`, `RiskofFalling`, `Depression`, `FootCare`, the points concentrate on the right side, indicating these services are usually provided with a large percentage. Variables `FluShot` and `Vaccine`, while also show a tendency on a large percentage of service, they also have a larger dispersion towards left. In addition, the dots also have a tendency of concentrating on the upper-right, indicating that there should be some positive correlation between the variables and the ratings.     
+Moreover, `Walking`, `Bed`, `Bathing`, `Breathing`, `Operation`, `DrugsTaking` are showing a more obvious positive correlation. The `HospitalAdmitted` and `SkinIntegrity` show negative correlations, which is consistent with what the variables represent.
+
+#Modelling
+In this section, we will fit an ordinal categorical logistic model on the dataset. 
+```{r}
+fitset<-rating[,10:27]
+colnames(fitset)[1]<-"Rating"
+m1<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing,data=fitset)
+m2<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation,data=fitset)
+summary(m1)
+```
+
+
+#Appendix A
+
+`Rating`: Quality of patient care star rating, a numeric rating from 1 through 5, in increments of 0.5. Factored in this report.
+
+`TimelyManner` : How often the home health team began their patients' care in a timely manner.
+
+`DrugsTeaching`: How often the home health team taught patients (or their family caregivers) about their drugs
+
+`RiskofFalling`: How often the home health team checked patients' risk of falling
+
+`Depression`: How often the home health team checked patients for depression
+
+`FluShot`: How often the home health team determined whether patients received a flu shot for the current flu season
+
+`Vaccine`: How often the home health team made sure that their patients have received a pneumococcal vaccine (pneumonia shot)
+
+`FootCare`: With diabetes, how often the home health team got doctor's orders, gave foot care, and taught patients about foot care
+
+`Walking`: How often patients got better at walking or moving around
+
+`Bed`: How often patients got better at getting in and out of bed
+
+`Bathing`: How often patients got better at bathing
+
+`Breathing`: How often patients' breathing improved
+
+`Operation`: How often patients' wounds improved or healed after an operation
+
+`DrugsTaking`: How often patients got better at taking their drugs correctly by mouth
+
+`HospitalAdmitted`: How often home health patients had to be admitted to the hospital
+
+`UnplannedCare`: How often patients receiving home health care needed urgent, unplanned care in the ER without being admitted
+
+`SkinIntegrity`: Changes in skin integrity post-acute care: pressure ulcer/injury
+
+`TimelyMedication`: How often physician-recommended actions to address medication issues were completely timely
+
+
+
 
 
 
