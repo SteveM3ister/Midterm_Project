@@ -89,7 +89,12 @@ p6<-ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat
 multiplot(p1,p2,p3)
 multiplot(p4,p5,p6)
 ```
-There are not much difference we can tell from these plots. The distribution from 
+There are not much difference we can tell from these plots. We then do the EDA on continuous variables.
+
+```{r}
+
+
+```
 
 
 
