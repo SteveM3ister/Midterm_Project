@@ -19,6 +19,8 @@ library(kableExtra)
 library(ggpubr)
 library(MASS)
 library(VGAM)
+library(rstanarm)
+library(arm)
 ```
 
 #Introduction
@@ -30,10 +32,10 @@ The dataset includes a number of variables that provides measurements of the qua
 The outcome we are interested in is the `Quality of patient care star rating`. Although this variable is collected as a numeric rating from 1 through 5, in increments of 0.5, we can treat it as categorical outcomes with 9 possible outcomes. 
 
 In this report, we are mainly interested in how those continuous variables are correlated with the quality rating, building up a model for prediction and hopefully we can do a causal inference. For convenience, the variables name in this report will be changed as in the Appendix A. The variable name in the plot remains the same as in the dataset.
+#Method
+##Exploratory Data Analysis
 
-#Exploratory Data Analysis
-
-In this section, we will apply EDA(Exploratory Data Analysis) on the dataset and get a sense of certain characteristics of the data.     
+In this section, we will apply EDA(Exploratory Data Analysis) on the dataset and get a sense of certain characteristics of the data. To simplify the the analysis, we will take ceiling of the `Quality of patient care star rating`. For example, 3.5 will be rounded up to 4. Without rounded up, the model fitting will also take too much time (longer than 48 hours using stan_polr).    
 First, we want to get a sense of the distribution of the quality rating by type of ownership.
 
 ```{r}
@@ -43,7 +45,7 @@ care<-read.csv("care_cleaned.csv",header=TRUE)
 rating<-care[,c(2,9:34)]
 colnames(rating)<-c("State","Type.of.Ownership","Offers.Nursing.Care.Services","Offers.Physical.Therapy.Services",                                                                                     "Offers.Occupational.Therapy.Services" ,                                                                   "Offers.Speech.Pathology.Services" ,                                                                        "Offers.Medical.Social.Services" ,                                                                          "Offers.Home.Health.Aide.Services",                                                                        "Date.Certified"            ,                                                                              "Quality.of.Patient.Care.Star.Rating", "TimelyManner","DrugsTeaching","RiskofFalling","Depression","FluShot","Vaccine","FootCare","Walking","Bed","Bathing","Breathing","Operation","DrugsTaking","HospitalAdmitted","UnplannedCare","SkinIntegrity","TimelyMedication")
 rating$Type.of.Ownership%<>%factor()
-rating$Quality.of.Patient.Care.Star.Rating%<>%factor()
+rating$Quality.of.Patient.Care.Star.Rating%<>%ceiling()%<>%factor()
 ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
 
 ```
@@ -52,55 +54,83 @@ ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="coun
 There are not much difference we can tell from these plots. We then do the EDA on continuous variables.
 
 ```{r}
-pp1<-ggplot(data=rating,aes(x=TimelyManner,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp2<-ggplot(data=rating,aes(x=DrugsTeaching,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp3<-ggplot(data=rating,aes(x=RiskofFalling,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp1<-ggplot(data=rating,aes(x=TimelyManner,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp2<-ggplot(data=rating,aes(x=DrugsTeaching,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp3<-ggplot(data=rating,aes(x=RiskofFalling,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp4<-ggplot(data=rating,aes(x=Depression,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp4<-ggplot(data=rating,aes(x=Depression,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp5<-ggplot(data=rating,aes(x=FluShot,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp5<-ggplot(data=rating,aes(x=FluShot,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp6<-ggplot(data=rating,aes(x=Vaccine,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp6<-ggplot(data=rating,aes(x=Vaccine,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp7<-ggplot(data=rating,aes(x=FootCare,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp7<-ggplot(data=rating,aes(x=FootCare,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp8<-ggplot(data=rating,aes(x=Walking,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp9<-ggplot(data=rating,aes(x=Bed,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp10<-ggplot(data=rating,aes(x=Bathing,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp11<-ggplot(data=rating,aes(x=Breathing,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp8<-ggplot(data=rating,aes(x=Walking,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp9<-ggplot(data=rating,aes(x=Bed,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp10<-ggplot(data=rating,aes(x=Bathing,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp11<-ggplot(data=rating,aes(x=Breathing,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp12<-ggplot(data=rating,aes(x=Operation,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp12<-ggplot(data=rating,aes(x=Operation,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
 
-pp13<-ggplot(data=rating,aes(x=DrugsTaking,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp14<-ggplot(data=rating,aes(x=HospitalAdmitted,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp13<-ggplot(data=rating,aes(x=DrugsTaking,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp14<-ggplot(data=rating,aes(x=HospitalAdmitted,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp15<-ggplot(data=rating,aes(x=UnplannedCare,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
+pp15<-ggplot(data=rating,aes(x=UnplannedCare,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
 
-pp16<-ggplot(data=rating,aes(x=SkinIntegrity,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-pp17<-ggplot(data=rating,aes(x=TimelyMedication,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)
-ggarrange(pp1,pp2,labels="plot1")
-ggarrange(pp3,pp4,labels="plot2")
-ggarrange(pp5,pp6,labels="plot3")
-ggarrange(pp7,pp8,labels="plot4")
-ggarrange(pp9,pp10,labels="plot5")
-ggarrange(pp11,pp12,labels="plot6")
-ggarrange(pp13,pp14,labels="plot7")
-ggarrange(pp15,pp16,labels="plot8")
-ggarrange(pp17,col=1)
+pp16<-ggplot(data=rating,aes(x=SkinIntegrity,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+pp17<-ggplot(data=rating,aes(x=TimelyMedication,y=Quality.of.Patient.Care.Star.Rating))+geom_point(size=0.01)+geom_jitter(size=0.01)+ylab("Rating")
+
+ggarrange(pp1,pp2,pp3,pp4,ncol=2,nrow=2,labels="plot1")
+ggarrange(pp5,pp6,pp7,pp8,labels="plot2")
+ggarrange(pp9,pp10,pp11,pp12,labels="plot3")
+ggarrange(pp13,pp14,pp15,pp16,labels="plot4")
+
+ggarrange(pp17,col=1,"plot5")
 
 ```
 Some examples of  continuous variables versus `Quality of Patient Care Star Rating` are plotted above. The rest will be put in the Appendix B. In general, for the variables `RiskofFalling`, `DrugsTeaching`, `RiskofFalling`, `Depression`, `FootCare`, the points concentrate on the right side, indicating these services are usually provided with a large percentage. Variables `FluShot` and `Vaccine`, while also show a tendency on a large percentage of service, they also have a larger dispersion towards left. In addition, the dots also have a tendency of concentrating on the upper-right, indicating that there should be some positive correlation between the variables and the ratings.     
 Moreover, `Walking`, `Bed`, `Bathing`, `Breathing`, `Operation`, `DrugsTaking` are showing a more obvious positive correlation. The `HospitalAdmitted` and `SkinIntegrity` show negative correlations, which is consistent with what the variables represent.
 
-#Modelling
+##Modelling
 In this section, we will fit an ordinal categorical logistic model on the dataset. 
+
+
+The polr() function from MASS package will be used in modelling. The stan_polr() is discarded because it took way more than 48 hours to fit the model under an INTEL i5-9400f cpu. 
 ```{r}
 fitset<-rating[,10:27]
 colnames(fitset)[1]<-"Rating"
-m1<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing,data=fitset)
-m2<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation,data=fitset)
+m1<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,Hess=TRUE)
+#m2<-stan_polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,prior=R2(0.3,"mean"))
+m3<-vglm(ordered(Rating)~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,family=cumulative(parallel = TRUE))
 summary(m1)
+summary(m3)
+```
+
+
+```{r}
+summary(m1)[1]%>%data.frame()->a
+interval<-data.frame("predictors"=rownames(a),"estimate"=a[,1],"left"=a[,1]-2*a[,2],"right"=a[,1]+2*a[,2])
+ggplot(aes(x = predictors, y = estimate,
+           ymin =left, ymax = right),
+       data = interval[1:17,]) + geom_pointrange(size=0.2) +
+    labs(x= "Predictors",
+         y = "95% Confidece Interval of Coefficient Estiamtes")+
+  theme(axis.text.x = element_text( family = "myFont" ,angle = 60))
+
+
+```
+From the coefficent plot, we can extract some useful information. First, the `SkinIntegrity` have a large standard error, indicating that there is a large uncertainty in the estimate. Several coefficients, such as `Depression`, `Flushot`,`Vaccine`,`Operation`,`UnplannedCare`,`SkinIntegrity`,`TimelyMedication` have 95% confidence interval crossing 0, indicating that we can not safely reject that these coefficients should be 0. The result is also consistent with what we found in the EDA, where under these predictors, the `Rating` doesn't show a noticable positive or negative correlation.
+
+##Validation
+```{r}
+pr1<-model.matrix(~ordered(Rating), data=fitset[rownames(fitted(m1)),])-fitted(m1)
+pred1=fitted(m1)
+par(mfrow=c(2,3))
+for(i in 1:5) binnedplot(pred1[,i],pr1[,i])
+
+
 ```
 
 
