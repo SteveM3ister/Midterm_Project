@@ -46,7 +46,14 @@ rating<-care[,c(2,9:34)]
 colnames(rating)<-c("State","Type.of.Ownership","Offers.Nursing.Care.Services","Offers.Physical.Therapy.Services",                                                                                     "Offers.Occupational.Therapy.Services" ,                                                                   "Offers.Speech.Pathology.Services" ,                                                                        "Offers.Medical.Social.Services" ,                                                                          "Offers.Home.Health.Aide.Services",                                                                        "Date.Certified"            ,                                                                              "Quality.of.Patient.Care.Star.Rating", "TimelyManner","DrugsTeaching","RiskofFalling","Depression","FluShot","Vaccine","FootCare","Walking","Bed","Bathing","Breathing","Operation","DrugsTaking","HospitalAdmitted","UnplannedCare","SkinIntegrity","TimelyMedication")
 rating$Type.of.Ownership%<>%factor()
 rating$Quality.of.Patient.Care.Star.Rating%<>%ceiling()%<>%factor()
-ggplot(data=care,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
+```
+
+```{r}
+##Combine rating 1 and 2 as one, as rating 1 does not have enough number
+rating$Quality.of.Patient.Care.Star.Rating[which(rating$Quality.of.Patient.Care.Star.Rating==1)]<-2
+rating$Quality.of.Patient.Care.Star.Rating%<>%factor()
+
+ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
 
 ```
 
@@ -101,19 +108,30 @@ The polr() function from MASS package will be used in modelling. The stan_polr()
 ```{r}
 fitset<-rating[,10:27]
 colnames(fitset)[1]<-"Rating"
-m1<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,Hess=TRUE)
-#m2<-stan_polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,prior=R2(0.3,"mean"))
-m3<-vglm(ordered(Rating)~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,family=cumulative(parallel = TRUE))
-summary(m1)
-summary(m3)
+#m1<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,Hess=TRUE)
+m2<-stan_polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,prior=R2(0.3,"mean"))
+#m3<-vglm(ordered(Rating)~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,family=cumulative(parallel = TRUE))
+# summary(m1)
+# summary(m3)
+summary(m2)
 ```
 
 
 ```{r}
-summary(m1)[1]%>%data.frame()->a
-interval<-data.frame("predictors"=rownames(a),"estimate"=a[,1],"left"=a[,1]-2*a[,2],"right"=a[,1]+2*a[,2])
-ggplot(aes(x = predictors, y = estimate,
-           ymin =left, ymax = right),
+# summary(m3)[1]%>%data.frame()->a
+# interval<-data.frame("predictors"=rownames(a),"estimate"=a[,1],"left"=a[,1]-2*a[,2],"right"=a[,1]+2*a[,2])
+# ggplot(aes(x = predictors, y = estimate,
+#            ymin =left, ymax = right),
+#        data = interval[1:17,]) + geom_pointrange(size=0.2) +
+#     labs(x= "Predictors",
+#          y = "95% Confidece Interval of Coefficient Estiamtes")+
+#   theme(axis.text.x = element_text( family = "myFont" ,angle = 60))
+
+
+interval<-posterior_interval(m2)
+interval<-data.frame(name=rownames(interval),interval)
+ggplot(aes(x = name, y=(X5.+X95.)/2,
+           ymin =X5., ymax = X95.),
        data = interval[1:17,]) + geom_pointrange(size=0.2) +
     labs(x= "Predictors",
          y = "95% Confidece Interval of Coefficient Estiamtes")+
@@ -125,11 +143,12 @@ From the coefficent plot, we can extract some useful information. First, the `Sk
 
 ##Validation
 ```{r}
-pr1<-model.matrix(~ordered(Rating), data=fitset[rownames(fitted(m1)),])-fitted(m1)
-pred1=fitted(m1)
-par(mfrow=c(2,3))
-for(i in 1:5) binnedplot(pred1[,i],pr1[,i])
-
+# pr1<-model.matrix(~ordered(Rating), data=fitset[rownames(fitted(m3)),])-fitted(m3)
+# pred1=fitted(m3)
+# par(mfrow=c(2,3))
+# for(i in 1:4) binnedplot(pred1[,i],pr1[,i])
+predy<-posterior_predict(m2)
+residr<-dcast(fitset,TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication~Rating,value.var="freq"[,3:5]-predy)
 
 ```
 
