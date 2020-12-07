@@ -21,6 +21,8 @@ library(MASS)
 library(VGAM)
 library(rstanarm)
 library(arm)
+library(bayesplot)
+library(reshape2)
 ```
 
 #Introduction
@@ -50,11 +52,16 @@ rating$Quality.of.Patient.Care.Star.Rating%<>%ceiling()%<>%factor()
 
 ```{r}
 ##Combine rating 1 and 2 as one, as rating 1 does not have enough number
-rating$Quality.of.Patient.Care.Star.Rating[which(rating$Quality.of.Patient.Care.Star.Rating==1)]<-2
-rating$Quality.of.Patient.Care.Star.Rating%<>%factor()
+
 
 ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
 
+```
+Since the observations from the first category is much less than the other categories, the rating 1 and 2 are combined as one category, in order for a better model fitting. 
+```{r}
+rating$Quality.of.Patient.Care.Star.Rating[which(rating$Quality.of.Patient.Care.Star.Rating==1)]<-2
+rating$Quality.of.Patient.Care.Star.Rating%<>%factor()
+ggplot(data=rating,aes(x=Quality.of.Patient.Care.Star.Rating))+geom_bar(stat="count",aes(fill=Type.of.Ownership))+geom_vline(aes(xintercept=mean(Quality.of.Patient.Care.Star.Rating)),color="red")
 ```
 
 
@@ -109,11 +116,11 @@ The polr() function from MASS package will be used in modelling. The stan_polr()
 fitset<-rating[,10:27]
 colnames(fitset)[1]<-"Rating"
 #m1<-polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,Hess=TRUE)
-m2<-stan_polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,prior=R2(0.3,"mean"))
+m2<-stan_polr(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,prior=NULL,refresh=0)
 #m3<-vglm(ordered(Rating)~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,data=fitset,family=cumulative(parallel = TRUE))
 # summary(m1)
 # summary(m3)
-summary(m2)
+summary(m2,digits=2)
 ```
 
 
@@ -143,14 +150,20 @@ From the coefficent plot, we can extract some useful information. First, the `Sk
 
 ##Validation
 ```{r}
-# pr1<-model.matrix(~ordered(Rating), data=fitset[rownames(fitted(m3)),])-fitted(m3)
-# pred1=fitted(m3)
-# par(mfrow=c(2,3))
-# for(i in 1:4) binnedplot(pred1[,i],pr1[,i])
 predy<-posterior_predict(m2)
-residr<-dcast(fitset,TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication~Rating,value.var="freq"[,3:5]-predy)
-
+n_sims<-nrow(predy)
+subset<-sample(n_sims,100)
+yrep<-as.data.frame(lapply(data.frame(predy[subset,]),as.numeric))
 ```
+
+```{r}
+ppc_dens_overlay(as.numeric(temp$Rating)+1,as.matrix(yrep))
+ppc_bars(as.numeric(temp$Rating)+1,as.matrix(yrep))
+```
+
+The outcome `Rating` is categorical, but I still transform it as numeric and made a `ppc_dens_overlay` to see how well the model fits. In the ppc bar plot, the darker blue dots indicate the medians of `yrep`, and the intervals indicates the uncertainty intervals. Both plots clearly tell us that the model fits quite well.
+
+
 
 
 #Appendix A
