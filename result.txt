@@ -1,0 +1,2667 @@
+ [1] "State"                                "Type.of.Ownership"                   
+ [3] "Offers.Nursing.Care.Services"         "Offers.Physical.Therapy.Services"    
+ [5] "Offers.Occupational.Therapy.Services" "Offers.Speech.Pathology.Services"    
+ [7] "Offers.Medical.Social.Services"       "Offers.Home.Health.Aide.Services"    
+ [9] "Date.Certified"                       "Rating"                              
+[11] "TimelyManner"                         "DrugsTeaching"                       
+[13] "RiskofFalling"                        "Depression"                          
+[15] "FluShot"                              "Vaccine"                             
+[17] "FootCare"                             "Walking"                             
+[19] "Bed"                                  "Bathing"                             
+[21] "Breathing"                            "Operation"                           
+[23] "DrugsTaking"                          "HospitalAdmitted"                    
+[25] "UnplannedCare"                        "SkinIntegrity"                       
+[27] "TimelyMedication"                    
+ [1] "TimelyManner"     "DrugsTeaching"    "RiskofFalling"    "Depression"      
+ [5] "FluShot"          "Vaccine"          "FootCare"         "Walking"         
+ [9] "Bed"              "Bathing"          "Breathing"        "Operation"       
+[13] "DrugsTaking"      "HospitalAdmitted" "UnplannedCare"    "SkinIntegrity"   
+[17] "TimelyMedication" "2|3"              "3|4"              "4|5"             
+                             name        X2.5.       X97.5.
+TimelyManner         TimelyManner  0.373721789  0.450376611
+DrugsTeaching       DrugsTeaching -0.015140418  0.093551489
+RiskofFalling       RiskofFalling -0.091815176  0.294704424
+Depression             Depression -0.048747206  0.021472710
+FluShot                   FluShot -0.006063805  0.037648105
+Vaccine                   Vaccine -0.029869391  0.008882075
+FootCare                 FootCare  0.010220953  0.062201122
+Walking                   Walking  0.258331841  0.342024478
+Bed                           Bed  0.252635623  0.317610538
+Bathing                   Bathing  0.303374994  0.390249341
+Breathing               Breathing  0.265695848  0.320095912
+Operation               Operation -0.035742373  0.010447237
+DrugsTaking           DrugsTaking  0.215012717  0.269031989
+HospitalAdmitted HospitalAdmitted -0.698999017 -0.580238513
+UnplannedCare       UnplannedCare -0.022534191  0.058019831
+SkinIntegrity       SkinIntegrity -0.904128686  0.658708506
+TimelyMedication TimelyMedication -0.014789785  0.014986630
+  [1] 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4
+ [44] 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+ [87] 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+[130] 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+[173] 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+[216] 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+[259] 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[302] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[345] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[388] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[431] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[474] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[517] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[560] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[603] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[646] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[689] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[732] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[775] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[818] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[861] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[904] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+[947] 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+  [1] Government - Combination Government & Voluntary
+  [2] Government - Combination Government & Voluntary
+  [3] Government - Combination Government & Voluntary
+  [4] Government - Local                             
+  [5] Government - Local                             
+  [6] Government - Local                             
+  [7] Government - Local                             
+  [8] Government - Local                             
+  [9] Government - Local                             
+ [10] Government - Local                             
+ [11] Government - Local                             
+ [12] Government - Local                             
+ [13] Government - Local                             
+ [14] Government - Local                             
+ [15] Government - Local                             
+ [16] Government - State/ County                     
+ [17] Government - State/ County                     
+ [18] Government - State/ County                     
+ [19] Government - State/ County                     
+ [20] Government - State/ County                     
+ [21] Government - State/ County                     
+ [22] Government - State/ County                     
+ [23] Government - State/ County                     
+ [24] Government - State/ County                     
+ [25] Government - State/ County                     
+ [26] Government - State/ County                     
+ [27] Government - State/ County                     
+ [28] Government - State/ County                     
+ [29] Government - State/ County                     
+ [30] Government - State/ County                     
+ [31] Government - State/ County                     
+ [32] Government - State/ County                     
+ [33] Government - State/ County                     
+ [34] Government - State/ County                     
+ [35] Government - State/ County                     
+ [36] Non - Profit Other                             
+ [37] Non - Profit Other                             
+ [38] Non - Profit Other                             
+ [39] Non - Profit Other                             
+ [40] Non - Profit Other                             
+ [41] Non - Profit Other                             
+ [42] Non - Profit Other                             
+ [43] Non - Profit Other                             
+ [44] Non - Profit Other                             
+ [45] Non - Profit Other                             
+ [46] Non - Profit Other                             
+ [47] Non - Profit Other                             
+ [48] Non - Profit Other                             
+ [49] Non - Profit Other                             
+ [50] Non - Profit Other                             
+ [51] Non - Profit Other                             
+ [52] Non - Profit Other                             
+ [53] Non - Profit Other                             
+ [54] Non - Profit Other                             
+ [55] Non - Profit Other                             
+ [56] Non - Profit Other                             
+ [57] Non - Profit Other                             
+ [58] Non - Profit Other                             
+ [59] Non - Profit Other                             
+ [60] Non - Profit Other                             
+ [61] Non - Profit Other                             
+ [62] Non - Profit Other                             
+ [63] Non - Profit Other                             
+ [64] Non - Profit Other                             
+ [65] Non - Profit Other                             
+ [66] Non - Profit Other                             
+ [67] Non - Profit Other                             
+ [68] Non - Profit Other                             
+ [69] Non - Profit Other                             
+ [70] Non - Profit Other                             
+ [71] Non - Profit Other                             
+ [72] Non - Profit Other                             
+ [73] Non - Profit Other                             
+ [74] Non - Profit Other                             
+ [75] Non - Profit Other                             
+ [76] Non - Profit Other                             
+ [77] Non - Profit Other                             
+ [78] Non - Profit Other                             
+ [79] Non - Profit Other                             
+ [80] Non - Profit Other                             
+ [81] Non - Profit Other                             
+ [82] Non - Profit Other                             
+ [83] Non - Profit Other                             
+ [84] Non - Profit Other                             
+ [85] Non - Profit Other                             
+ [86] Non - Profit Other                             
+ [87] Non - Profit Other                             
+ [88] Non - Profit Other                             
+ [89] Non - Profit Other                             
+ [90] Non - Profit Other                             
+ [91] Non - Profit Other                             
+ [92] Non - Profit Other                             
+ [93] Non - Profit Other                             
+ [94] Non - Profit Other                             
+ [95] Non - Profit Other                             
+ [96] Non - Profit Other                             
+ [97] Non - Profit Other                             
+ [98] Non - Profit Other                             
+ [99] Non - Profit Other                             
+[100] Non - Profit Other                             
+[101] Non - Profit Other                             
+[102] Non - Profit Other                             
+[103] Non - Profit Other                             
+[104] Non - Profit Other                             
+[105] Non - Profit Other                             
+[106] Non - Profit Other                             
+[107] Non - Profit Other                             
+[108] Non - Profit Other                             
+[109] Non - Profit Other                             
+[110] Non - Profit Other                             
+[111] Non - Profit Other                             
+[112] Non - Profit Other                             
+[113] Non - Profit Other                             
+[114] Non - Profit Other                             
+[115] Non - Profit Other                             
+[116] Non - Profit Other                             
+[117] Non - Profit Other                             
+[118] Non - Profit Other                             
+[119] Non - Profit Other                             
+[120] Non - Profit Other                             
+[121] Non - Profit Other                             
+[122] Non - Profit Other                             
+[123] Non - Profit Other                             
+[124] Non - Profit Other                             
+[125] Non - Profit Other                             
+[126] Non - Profit Other                             
+[127] Non - Profit Other                             
+[128] Non - Profit Other                             
+[129] Non - Profit Other                             
+[130] Non - Profit Other                             
+[131] Non - Profit Other                             
+[132] Non - Profit Other                             
+[133] Non - Profit Other                             
+[134] Non - Profit Other                             
+[135] Non - Profit Private                           
+[136] Non - Profit Private                           
+[137] Non - Profit Private                           
+[138] Non - Profit Private                           
+[139] Non - Profit Private                           
+[140] Non - Profit Private                           
+[141] Non - Profit Private                           
+[142] Non - Profit Private                           
+[143] Non - Profit Private                           
+[144] Non - Profit Private                           
+[145] Non - Profit Private                           
+[146] Non - Profit Private                           
+[147] Non - Profit Private                           
+[148] Non - Profit Private                           
+[149] Non - Profit Private                           
+[150] Non - Profit Private                           
+[151] Non - Profit Private                           
+[152] Non - Profit Private                           
+[153] Non - Profit Private                           
+[154] Non - Profit Private                           
+[155] Non - Profit Private                           
+[156] Non - Profit Private                           
+[157] Non - Profit Private                           
+[158] Non - Profit Private                           
+[159] Non - Profit Private                           
+[160] Non - Profit Private                           
+[161] Non - Profit Private                           
+[162] Non - Profit Private                           
+[163] Non - Profit Private                           
+[164] Non - Profit Private                           
+[165] Non - Profit Private                           
+[166] Non - Profit Private                           
+[167] Non - Profit Private                           
+[168] Non - Profit Private                           
+[169] Non - Profit Private                           
+[170] Non - Profit Private                           
+[171] Non - Profit Private                           
+[172] Non - Profit Private                           
+[173] Non - Profit Private                           
+[174] Non - Profit Private                           
+[175] Non - Profit Private                           
+[176] Non - Profit Private                           
+[177] Non - Profit Private                           
+[178] Non - Profit Private                           
+[179] Non - Profit Private                           
+[180] Non - Profit Private                           
+[181] Non - Profit Private                           
+[182] Non - Profit Private                           
+[183] Non - Profit Private                           
+[184] Non - Profit Private                           
+[185] Non - Profit Private                           
+[186] Non - Profit Private                           
+[187] Non - Profit Private                           
+[188] Non - Profit Private                           
+[189] Non - Profit Private                           
+[190] Non - Profit Private                           
+[191] Non - Profit Private                           
+[192] Non - Profit Private                           
+[193] Non - Profit Private                           
+[194] Non - Profit Private                           
+[195] Non - Profit Private                           
+[196] Non - Profit Private                           
+[197] Non - Profit Private                           
+[198] Non - Profit Private                           
+[199] Non - Profit Private                           
+[200] Non - Profit Private                           
+[201] Non - Profit Private                           
+[202] Non - Profit Private                           
+[203] Non - Profit Private                           
+[204] Non - Profit Private                           
+[205] Non - Profit Private                           
+[206] Non - Profit Private                           
+[207] Non - Profit Private                           
+[208] Non - Profit Private                           
+[209] Non - Profit Private                           
+[210] Non - Profit Private                           
+[211] Non - Profit Private                           
+[212] Non - Profit Private                           
+[213] Non - Profit Private                           
+[214] Non - Profit Private                           
+[215] Non - Profit Private                           
+[216] Non - Profit Private                           
+[217] Non - Profit Private                           
+[218] Non - Profit Private                           
+[219] Non - Profit Private                           
+[220] Non - Profit Private                           
+[221] Non - Profit Private                           
+[222] Non - Profit Private                           
+[223] Non - Profit Private                           
+[224] Non - Profit Private                           
+[225] Non - Profit Private                           
+[226] Non - Profit Private                           
+[227] Non - Profit Private                           
+[228] Non - Profit Private                           
+[229] Non - Profit Private                           
+[230] Non - Profit Private                           
+[231] Non - Profit Private                           
+[232] Non - Profit Private                           
+[233] Non - Profit Private                           
+[234] Non - Profit Private                           
+[235] Non - Profit Private                           
+[236] Non - Profit Private                           
+[237] Non - Profit Private                           
+[238] Non - Profit Private                           
+[239] Non - Profit Religious                         
+[240] Non - Profit Religious                         
+[241] Non - Profit Religious                         
+[242] Non - Profit Religious                         
+[243] Non - Profit Religious                         
+[244] Non - Profit Religious                         
+[245] Non - Profit Religious                         
+[246] Non - Profit Religious                         
+[247] Non - Profit Religious                         
+[248] Non - Profit Religious                         
+[249] Non - Profit Religious                         
+[250] Non - Profit Religious                         
+[251] Non - Profit Religious                         
+[252] Non - Profit Religious                         
+[253] Non - Profit Religious                         
+[254] Non - Profit Religious                         
+[255] Non - Profit Religious                         
+[256] Non - Profit Religious                         
+[257] Non - Profit Religious                         
+[258] Non - Profit Religious                         
+[259] Non - Profit Religious                         
+[260] Non - Profit Religious                         
+[261] Non - Profit Religious                         
+[262] Non - Profit Religious                         
+[263] Non - Profit Religious                         
+[264] Non - Profit Religious                         
+[265] Non - Profit Religious                         
+[266] Non - Profit Religious                         
+[267] Non - Profit Religious                         
+[268] Non - Profit Religious                         
+[269] Non - Profit Religious                         
+[270] Non - Profit Religious                         
+[271] Non - Profit Religious                         
+[272] Non - Profit Religious                         
+[273] Non - Profit Religious                         
+[274] Non - Profit Religious                         
+[275] Non - Profit Religious                         
+[276] Non - Profit Religious                         
+[277] Non - Profit Religious                         
+[278] Non - Profit Religious                         
+[279] Non - Profit Religious                         
+[280] Non - Profit Religious                         
+[281] Non - Profit Religious                         
+[282] Non - Profit Religious                         
+[283] Non - Profit Religious                         
+[284] Non - Profit Religious                         
+[285] Non - Profit Religious                         
+[286] Non - Profit Religious                         
+[287] Proprietary                                    
+[288] Proprietary                                    
+[289] Proprietary                                    
+[290] Proprietary                                    
+[291] Proprietary                                    
+[292] Proprietary                                    
+[293] Proprietary                                    
+[294] Proprietary                                    
+[295] Proprietary                                    
+[296] Proprietary                                    
+[297] Proprietary                                    
+[298] Proprietary                                    
+[299] Proprietary                                    
+[300] Proprietary                                    
+[301] Proprietary                                    
+[302] Proprietary                                    
+[303] Proprietary                                    
+[304] Proprietary                                    
+[305] Proprietary                                    
+[306] Proprietary                                    
+[307] Proprietary                                    
+[308] Proprietary                                    
+[309] Proprietary                                    
+[310] Proprietary                                    
+[311] Proprietary                                    
+[312] Proprietary                                    
+[313] Proprietary                                    
+[314] Proprietary                                    
+[315] Proprietary                                    
+[316] Proprietary                                    
+[317] Proprietary                                    
+[318] Proprietary                                    
+[319] Proprietary                                    
+[320] Proprietary                                    
+[321] Proprietary                                    
+[322] Proprietary                                    
+[323] Proprietary                                    
+[324] Proprietary                                    
+[325] Proprietary                                    
+[326] Proprietary                                    
+[327] Proprietary                                    
+[328] Proprietary                                    
+[329] Proprietary                                    
+[330] Proprietary                                    
+[331] Proprietary                                    
+[332] Proprietary                                    
+[333] Proprietary                                    
+[334] Proprietary                                    
+[335] Proprietary                                    
+[336] Proprietary                                    
+[337] Proprietary                                    
+[338] Proprietary                                    
+[339] Proprietary                                    
+[340] Proprietary                                    
+[341] Proprietary                                    
+[342] Proprietary                                    
+[343] Proprietary                                    
+[344] Proprietary                                    
+[345] Proprietary                                    
+[346] Proprietary                                    
+[347] Proprietary                                    
+[348] Proprietary                                    
+[349] Proprietary                                    
+[350] Proprietary                                    
+[351] Proprietary                                    
+[352] Proprietary                                    
+[353] Proprietary                                    
+[354] Proprietary                                    
+[355] Proprietary                                    
+[356] Proprietary                                    
+[357] Proprietary                                    
+[358] Proprietary                                    
+[359] Proprietary                                    
+[360] Proprietary                                    
+[361] Proprietary                                    
+[362] Proprietary                                    
+[363] Proprietary                                    
+[364] Proprietary                                    
+[365] Proprietary                                    
+[366] Proprietary                                    
+[367] Proprietary                                    
+[368] Proprietary                                    
+[369] Proprietary                                    
+[370] Proprietary                                    
+[371] Proprietary                                    
+[372] Proprietary                                    
+[373] Proprietary                                    
+[374] Proprietary                                    
+[375] Proprietary                                    
+[376] Proprietary                                    
+[377] Proprietary                                    
+[378] Proprietary                                    
+[379] Proprietary                                    
+[380] Proprietary                                    
+[381] Proprietary                                    
+[382] Proprietary                                    
+[383] Proprietary                                    
+[384] Proprietary                                    
+[385] Proprietary                                    
+[386] Proprietary                                    
+[387] Proprietary                                    
+[388] Proprietary                                    
+[389] Proprietary                                    
+[390] Proprietary                                    
+[391] Proprietary                                    
+[392] Proprietary                                    
+[393] Proprietary                                    
+[394] Proprietary                                    
+[395] Proprietary                                    
+[396] Proprietary                                    
+[397] Proprietary                                    
+[398] Proprietary                                    
+[399] Proprietary                                    
+[400] Proprietary                                    
+[401] Proprietary                                    
+[402] Proprietary                                    
+[403] Proprietary                                    
+[404] Proprietary                                    
+[405] Proprietary                                    
+[406] Proprietary                                    
+[407] Proprietary                                    
+[408] Proprietary                                    
+[409] Proprietary                                    
+[410] Proprietary                                    
+[411] Proprietary                                    
+[412] Proprietary                                    
+[413] Proprietary                                    
+[414] Proprietary                                    
+[415] Proprietary                                    
+[416] Proprietary                                    
+[417] Proprietary                                    
+[418] Proprietary                                    
+[419] Proprietary                                    
+[420] Proprietary                                    
+[421] Proprietary                                    
+[422] Proprietary                                    
+[423] Proprietary                                    
+[424] Proprietary                                    
+[425] Proprietary                                    
+[426] Proprietary                                    
+[427] Proprietary                                    
+[428] Proprietary                                    
+[429] Proprietary                                    
+[430] Proprietary                                    
+[431] Proprietary                                    
+[432] Proprietary                                    
+[433] Proprietary                                    
+[434] Proprietary                                    
+[435] Proprietary                                    
+[436] Proprietary                                    
+[437] Proprietary                                    
+[438] Proprietary                                    
+[439] Proprietary                                    
+[440] Proprietary                                    
+[441] Proprietary                                    
+[442] Proprietary                                    
+[443] Proprietary                                    
+[444] Proprietary                                    
+[445] Proprietary                                    
+[446] Proprietary                                    
+[447] Proprietary                                    
+[448] Proprietary                                    
+[449] Proprietary                                    
+[450] Proprietary                                    
+[451] Proprietary                                    
+[452] Proprietary                                    
+[453] Proprietary                                    
+[454] Proprietary                                    
+[455] Proprietary                                    
+[456] Proprietary                                    
+[457] Proprietary                                    
+[458] Proprietary                                    
+[459] Proprietary                                    
+[460] Proprietary                                    
+[461] Proprietary                                    
+[462] Proprietary                                    
+[463] Proprietary                                    
+[464] Proprietary                                    
+[465] Proprietary                                    
+[466] Proprietary                                    
+[467] Proprietary                                    
+[468] Proprietary                                    
+[469] Proprietary                                    
+[470] Proprietary                                    
+[471] Proprietary                                    
+[472] Proprietary                                    
+[473] Proprietary                                    
+[474] Proprietary                                    
+[475] Proprietary                                    
+[476] Proprietary                                    
+[477] Proprietary                                    
+[478] Proprietary                                    
+[479] Proprietary                                    
+[480] Proprietary                                    
+[481] Proprietary                                    
+[482] Proprietary                                    
+[483] Proprietary                                    
+[484] Proprietary                                    
+[485] Proprietary                                    
+[486] Proprietary                                    
+[487] Proprietary                                    
+[488] Proprietary                                    
+[489] Proprietary                                    
+[490] Proprietary                                    
+[491] Proprietary                                    
+[492] Proprietary                                    
+[493] Proprietary                                    
+[494] Proprietary                                    
+[495] Proprietary                                    
+[496] Proprietary                                    
+[497] Proprietary                                    
+[498] Proprietary                                    
+[499] Proprietary                                    
+[500] Proprietary                                    
+[501] Proprietary                                    
+[502] Proprietary                                    
+[503] Proprietary                                    
+[504] Proprietary                                    
+[505] Proprietary                                    
+[506] Proprietary                                    
+[507] Proprietary                                    
+[508] Proprietary                                    
+[509] Proprietary                                    
+[510] Proprietary                                    
+[511] Proprietary                                    
+[512] Proprietary                                    
+[513] Proprietary                                    
+[514] Proprietary                                    
+[515] Proprietary                                    
+[516] Proprietary                                    
+[517] Proprietary                                    
+[518] Proprietary                                    
+[519] Proprietary                                    
+[520] Proprietary                                    
+[521] Proprietary                                    
+[522] Proprietary                                    
+[523] Proprietary                                    
+[524] Proprietary                                    
+[525] Proprietary                                    
+[526] Proprietary                                    
+[527] Proprietary                                    
+[528] Proprietary                                    
+[529] Proprietary                                    
+[530] Proprietary                                    
+[531] Proprietary                                    
+[532] Proprietary                                    
+[533] Proprietary                                    
+[534] Proprietary                                    
+[535] Proprietary                                    
+[536] Proprietary                                    
+[537] Proprietary                                    
+[538] Proprietary                                    
+[539] Proprietary                                    
+[540] Proprietary                                    
+[541] Proprietary                                    
+[542] Proprietary                                    
+[543] Proprietary                                    
+[544] Proprietary                                    
+[545] Proprietary                                    
+[546] Proprietary                                    
+[547] Proprietary                                    
+[548] Proprietary                                    
+[549] Proprietary                                    
+[550] Proprietary                                    
+[551] Proprietary                                    
+[552] Proprietary                                    
+[553] Proprietary                                    
+[554] Proprietary                                    
+[555] Proprietary                                    
+[556] Proprietary                                    
+[557] Proprietary                                    
+[558] Proprietary                                    
+[559] Proprietary                                    
+[560] Proprietary                                    
+[561] Proprietary                                    
+[562] Proprietary                                    
+[563] Proprietary                                    
+[564] Proprietary                                    
+[565] Proprietary                                    
+[566] Proprietary                                    
+[567] Proprietary                                    
+[568] Proprietary                                    
+[569] Proprietary                                    
+[570] Proprietary                                    
+[571] Proprietary                                    
+[572] Proprietary                                    
+[573] Proprietary                                    
+[574] Proprietary                                    
+[575] Proprietary                                    
+[576] Proprietary                                    
+[577] Proprietary                                    
+[578] Proprietary                                    
+[579] Proprietary                                    
+[580] Proprietary                                    
+[581] Proprietary                                    
+[582] Proprietary                                    
+[583] Proprietary                                    
+[584] Proprietary                                    
+[585] Proprietary                                    
+[586] Proprietary                                    
+[587] Proprietary                                    
+[588] Proprietary                                    
+[589] Proprietary                                    
+[590] Proprietary                                    
+[591] Proprietary                                    
+[592] Proprietary                                    
+[593] Proprietary                                    
+[594] Proprietary                                    
+[595] Proprietary                                    
+[596] Proprietary                                    
+[597] Proprietary                                    
+[598] Proprietary                                    
+[599] Proprietary                                    
+[600] Proprietary                                    
+[601] Proprietary                                    
+[602] Proprietary                                    
+[603] Proprietary                                    
+[604] Proprietary                                    
+[605] Proprietary                                    
+[606] Proprietary                                    
+[607] Proprietary                                    
+[608] Proprietary                                    
+[609] Proprietary                                    
+[610] Proprietary                                    
+[611] Proprietary                                    
+[612] Proprietary                                    
+[613] Proprietary                                    
+[614] Proprietary                                    
+[615] Proprietary                                    
+[616] Proprietary                                    
+[617] Proprietary                                    
+[618] Proprietary                                    
+[619] Proprietary                                    
+[620] Proprietary                                    
+[621] Proprietary                                    
+[622] Proprietary                                    
+[623] Proprietary                                    
+[624] Proprietary                                    
+[625] Proprietary                                    
+[626] Proprietary                                    
+[627] Proprietary                                    
+[628] Proprietary                                    
+[629] Proprietary                                    
+[630] Proprietary                                    
+[631] Proprietary                                    
+[632] Proprietary                                    
+[633] Proprietary                                    
+[634] Proprietary                                    
+[635] Proprietary                                    
+[636] Proprietary                                    
+[637] Proprietary                                    
+[638] Proprietary                                    
+[639] Proprietary                                    
+[640] Proprietary                                    
+[641] Proprietary                                    
+[642] Proprietary                                    
+[643] Proprietary                                    
+[644] Proprietary                                    
+[645] Proprietary                                    
+[646] Proprietary                                    
+[647] Proprietary                                    
+[648] Proprietary                                    
+[649] Proprietary                                    
+[650] Proprietary                                    
+[651] Proprietary                                    
+[652] Proprietary                                    
+[653] Proprietary                                    
+[654] Proprietary                                    
+[655] Proprietary                                    
+[656] Proprietary                                    
+[657] Proprietary                                    
+[658] Proprietary                                    
+[659] Proprietary                                    
+[660] Proprietary                                    
+[661] Proprietary                                    
+[662] Proprietary                                    
+[663] Proprietary                                    
+[664] Proprietary                                    
+[665] Proprietary                                    
+[666] Proprietary                                    
+[667] Proprietary                                    
+[668] Proprietary                                    
+[669] Proprietary                                    
+[670] Proprietary                                    
+[671] Proprietary                                    
+[672] Proprietary                                    
+[673] Proprietary                                    
+[674] Proprietary                                    
+[675] Proprietary                                    
+[676] Proprietary                                    
+[677] Proprietary                                    
+[678] Proprietary                                    
+[679] Proprietary                                    
+[680] Proprietary                                    
+[681] Proprietary                                    
+[682] Proprietary                                    
+[683] Proprietary                                    
+[684] Proprietary                                    
+[685] Proprietary                                    
+[686] Proprietary                                    
+[687] Proprietary                                    
+[688] Proprietary                                    
+[689] Proprietary                                    
+[690] Proprietary                                    
+[691] Proprietary                                    
+[692] Proprietary                                    
+[693] Proprietary                                    
+[694] Proprietary                                    
+[695] Proprietary                                    
+[696] Proprietary                                    
+[697] Proprietary                                    
+[698] Proprietary                                    
+[699] Proprietary                                    
+[700] Proprietary                                    
+[701] Proprietary                                    
+[702] Proprietary                                    
+[703] Proprietary                                    
+[704] Proprietary                                    
+[705] Proprietary                                    
+[706] Proprietary                                    
+[707] Proprietary                                    
+[708] Proprietary                                    
+[709] Proprietary                                    
+[710] Proprietary                                    
+[711] Proprietary                                    
+[712] Proprietary                                    
+[713] Proprietary                                    
+[714] Proprietary                                    
+[715] Proprietary                                    
+[716] Proprietary                                    
+[717] Proprietary                                    
+[718] Proprietary                                    
+[719] Proprietary                                    
+[720] Proprietary                                    
+[721] Proprietary                                    
+[722] Proprietary                                    
+[723] Proprietary                                    
+[724] Proprietary                                    
+[725] Proprietary                                    
+[726] Proprietary                                    
+[727] Proprietary                                    
+[728] Proprietary                                    
+[729] Proprietary                                    
+[730] Proprietary                                    
+[731] Proprietary                                    
+[732] Proprietary                                    
+[733] Proprietary                                    
+[734] Proprietary                                    
+[735] Proprietary                                    
+[736] Proprietary                                    
+[737] Proprietary                                    
+[738] Proprietary                                    
+[739] Proprietary                                    
+[740] Proprietary                                    
+[741] Proprietary                                    
+[742] Proprietary                                    
+[743] Proprietary                                    
+[744] Proprietary                                    
+[745] Proprietary                                    
+[746] Proprietary                                    
+[747] Proprietary                                    
+[748] Proprietary                                    
+[749] Proprietary                                    
+[750] Proprietary                                    
+[751] Proprietary                                    
+[752] Proprietary                                    
+[753] Proprietary                                    
+[754] Proprietary                                    
+[755] Proprietary                                    
+[756] Proprietary                                    
+[757] Proprietary                                    
+[758] Proprietary                                    
+[759] Proprietary                                    
+[760] Proprietary                                    
+[761] Proprietary                                    
+[762] Proprietary                                    
+[763] Proprietary                                    
+[764] Proprietary                                    
+[765] Proprietary                                    
+[766] Proprietary                                    
+[767] Proprietary                                    
+[768] Proprietary                                    
+[769] Proprietary                                    
+[770] Proprietary                                    
+[771] Proprietary                                    
+[772] Proprietary                                    
+[773] Proprietary                                    
+[774] Proprietary                                    
+[775] Proprietary                                    
+[776] Proprietary                                    
+[777] Proprietary                                    
+[778] Proprietary                                    
+[779] Proprietary                                    
+[780] Proprietary                                    
+[781] Proprietary                                    
+[782] Proprietary                                    
+[783] Proprietary                                    
+[784] Proprietary                                    
+[785] Proprietary                                    
+[786] Proprietary                                    
+[787] Proprietary                                    
+[788] Proprietary                                    
+[789] Proprietary                                    
+[790] Proprietary                                    
+[791] Proprietary                                    
+[792] Proprietary                                    
+[793] Proprietary                                    
+[794] Proprietary                                    
+[795] Proprietary                                    
+[796] Proprietary                                    
+[797] Proprietary                                    
+[798] Proprietary                                    
+[799] Proprietary                                    
+[800] Proprietary                                    
+[801] Proprietary                                    
+[802] Proprietary                                    
+[803] Proprietary                                    
+[804] Proprietary                                    
+[805] Proprietary                                    
+[806] Proprietary                                    
+[807] Proprietary                                    
+[808] Proprietary                                    
+[809] Proprietary                                    
+[810] Proprietary                                    
+[811] Proprietary                                    
+[812] Proprietary                                    
+[813] Proprietary                                    
+[814] Proprietary                                    
+[815] Proprietary                                    
+[816] Proprietary                                    
+[817] Proprietary                                    
+[818] Proprietary                                    
+[819] Proprietary                                    
+[820] Proprietary                                    
+[821] Proprietary                                    
+[822] Proprietary                                    
+[823] Proprietary                                    
+[824] Proprietary                                    
+[825] Proprietary                                    
+[826] Proprietary                                    
+[827] Proprietary                                    
+[828] Proprietary                                    
+[829] Proprietary                                    
+[830] Proprietary                                    
+[831] Proprietary                                    
+[832] Proprietary                                    
+[833] Proprietary                                    
+[834] Proprietary                                    
+[835] Proprietary                                    
+[836] Proprietary                                    
+[837] Proprietary                                    
+[838] Proprietary                                    
+[839] Proprietary                                    
+[840] Proprietary                                    
+[841] Proprietary                                    
+[842] Proprietary                                    
+[843] Proprietary                                    
+[844] Proprietary                                    
+[845] Proprietary                                    
+[846] Proprietary                                    
+[847] Proprietary                                    
+[848] Proprietary                                    
+[849] Proprietary                                    
+[850] Proprietary                                    
+[851] Proprietary                                    
+[852] Proprietary                                    
+[853] Proprietary                                    
+[854] Proprietary                                    
+[855] Proprietary                                    
+[856] Proprietary                                    
+[857] Proprietary                                    
+[858] Proprietary                                    
+[859] Proprietary                                    
+[860] Proprietary                                    
+[861] Proprietary                                    
+[862] Proprietary                                    
+[863] Proprietary                                    
+[864] Proprietary                                    
+[865] Proprietary                                    
+[866] Proprietary                                    
+[867] Proprietary                                    
+[868] Proprietary                                    
+[869] Proprietary                                    
+[870] Proprietary                                    
+[871] Proprietary                                    
+[872] Proprietary                                    
+[873] Proprietary                                    
+[874] Proprietary                                    
+[875] Proprietary                                    
+[876] Proprietary                                    
+[877] Proprietary                                    
+[878] Proprietary                                    
+[879] Proprietary                                    
+[880] Proprietary                                    
+[881] Proprietary                                    
+[882] Proprietary                                    
+[883] Proprietary                                    
+[884] Proprietary                                    
+[885] Proprietary                                    
+[886] Proprietary                                    
+[887] Proprietary                                    
+[888] Proprietary                                    
+[889] Proprietary                                    
+[890] Proprietary                                    
+[891] Proprietary                                    
+[892] Proprietary                                    
+[893] Proprietary                                    
+[894] Proprietary                                    
+[895] Proprietary                                    
+[896] Proprietary                                    
+[897] Proprietary                                    
+[898] Proprietary                                    
+[899] Proprietary                                    
+[900] Proprietary                                    
+[901] Proprietary                                    
+[902] Proprietary                                    
+[903] Proprietary                                    
+[904] Proprietary                                    
+[905] Proprietary                                    
+[906] Proprietary                                    
+[907] Proprietary                                    
+[908] Proprietary                                    
+[909] Proprietary                                    
+[910] Proprietary                                    
+[911] Proprietary                                    
+[912] Proprietary                                    
+[913] Proprietary                                    
+[914] Proprietary                                    
+[915] Proprietary                                    
+[916] Proprietary                                    
+[917] Proprietary                                    
+[918] Proprietary                                    
+[919] Proprietary                                    
+[920] Proprietary                                    
+[921] Proprietary                                    
+[922] Proprietary                                    
+[923] Proprietary                                    
+[924] Proprietary                                    
+[925] Proprietary                                    
+[926] Proprietary                                    
+[927] Proprietary                                    
+[928] Proprietary                                    
+[929] Proprietary                                    
+[930] Proprietary                                    
+[931] Proprietary                                    
+[932] Proprietary                                    
+[933] Proprietary                                    
+[934] Proprietary                                    
+[935] Proprietary                                    
+[936] Proprietary                                    
+[937] Proprietary                                    
+[938] Proprietary                                    
+[939] Proprietary                                    
+[940] Proprietary                                    
+[941] Proprietary                                    
+[942] Proprietary                                    
+[943] Proprietary                                    
+[944] Proprietary                                    
+[945] Proprietary                                    
+[946] Proprietary                                    
+[947] Proprietary                                    
+[948] Proprietary                                    
+[949] Proprietary                                    
+[950] Proprietary                                    
+[951] Proprietary                                    
+[952] Proprietary                                    
+[953] Proprietary                                    
+[954] Proprietary                                    
+[955] Proprietary                                    
+[956] Proprietary                                    
+[957] Proprietary                                    
+[958] Proprietary                                    
+[959] Proprietary                                    
+[960] Proprietary                                    
+[961] Proprietary                                    
+[962] Proprietary                                    
+[963] Proprietary                                    
+[964] Proprietary                                    
+[965] Proprietary                                    
+[966] Proprietary                                    
+[967] Proprietary                                    
+[968] Proprietary                                    
+[969] Proprietary                                    
+7 Levels: Government - Combination Government & Voluntary ... Proprietary
+[1] "Government - Combination Government & Voluntary"
+[2] "Government - Local"                             
+[3] "Government - State/ County"                     
+[4] "Non - Profit Other"                             
+[5] "Non - Profit Private"                           
+[6] "Non - Profit Religious"                         
+[7] "Proprietary"                                    
+   theta[1] theta[2] theta[3]   beta[1]    beta[2]      beta[3]       beta[4]       beta[5]       beta[6]     beta[7]   beta[8]   beta[9]  beta[10]  beta[11]
+1  151.6789 168.9343 180.1271 0.4287170 0.24531919  0.073964534 -0.0279627653  0.0145960612 -1.290813e-02 0.010818450 0.2280817 0.3174557 0.2997261 0.2645166
+2  145.2151 164.2517 175.4820 0.4001970 0.14442387  0.081644203 -0.0350289101 -0.0168792893  2.005577e-02 0.044156942 0.2575382 0.2960731 0.3090346 0.3251393
+3  145.0642 163.7761 174.7363 0.3962599 0.11036013  0.107211247 -0.0577294365  0.0112321287 -8.794967e-03 0.089155401 0.2480022 0.2966848 0.3325839 0.2576699
+4  135.4321 154.8681 166.1482 0.4236815 0.17556482 -0.083383631 -0.0177854640  0.0100665583 -5.723515e-03 0.064158002 0.2889720 0.2909897 0.2820310 0.3198822
+5  140.1687 158.7263 169.9594 0.4297417 0.23414876 -0.017339950 -0.0549569471 -0.0013909073  9.490887e-04 0.057012662 0.2575381 0.3066706 0.2439593 0.3004644
+6  149.8370 168.5389 180.1404 0.3837239 0.17705562  0.044513178  0.0259691091  0.0143398947 -2.908319e-02 0.027808996 0.3448659 0.2923810 0.3517452 0.2877823
+7  133.1401 152.7770 165.0570 0.4668364 0.19513035 -0.203864138 -0.0062590656  0.0184727870 -2.930249e-02 0.101683272 0.2139765 0.3124573 0.3261105 0.3101410
+8  188.2966 209.3505 222.7332 0.4694860 0.22309473  0.156666547  0.0123537348 -0.0286295740  1.764440e-02 0.062991497 0.3600900 0.3395415 0.3810869 0.3230125
+9  168.9268 187.4922 199.5395 0.4491340 0.17046572  0.303119995 -0.0893857745 -0.0018280873 -1.400462e-04 0.050989332 0.2495265 0.3118915 0.2883835 0.3058946
+10 181.8746 201.9840 214.9645 0.4161119 0.12592231  0.296185929 -0.0121259008  0.0136877106 -2.632237e-03 0.064162586 0.3345166 0.3118105 0.3669123 0.3119258
+11 200.5820 221.2888 234.2525 0.4364585 0.14377000  0.465737063  0.0001699928 -0.0002737972 -1.850451e-02 0.054508137 0.3446727 0.3226167 0.4020669 0.3493202
+12 176.8011 196.4012 208.7581 0.4729827 0.13198740  0.357590772 -0.0459131166  0.0150443557 -2.984809e-02 0.055453332 0.2928910 0.3217900 0.2604149 0.3078103
+13 175.2754 196.4216 210.0613 0.4428501 0.14045438  0.258762874 -0.0654489882  0.0403109116 -1.417692e-02 0.017286047 0.3226661 0.3604916 0.3253585 0.3465836
+14 186.2440 206.8609 220.0163 0.4578280 0.24766486  0.262869618 -0.0342274565  0.0193267011 -1.877391e-02 0.021005146 0.3296421 0.3641194 0.2914002 0.3547814
+15 151.8486 171.9260 184.5788 0.4495859 0.13522833  0.004674013 -0.0473735867  0.0136910320 -2.153325e-02 0.087570644 0.3209979 0.3081085 0.3383487 0.3131121
+16 172.3577 193.2216 205.6446 0.4413515 0.21696342  0.100602474 -0.0132145193  0.0453765396 -1.568053e-02 0.073388552 0.1604114 0.3963819 0.4001313 0.3137941
+17 158.0478 176.9732 189.4936 0.4323733 0.18903314  0.076819491 -0.0581955398  0.0152798760 -3.582582e-02 0.072220464 0.2340600 0.3261099 0.3885968 0.3248743
+18 182.4897 203.1553 215.4528 0.4273373 0.25288720  0.290233741 -0.0853040655  0.0168917654 -6.202932e-03 0.078847239 0.2602222 0.3056075 0.3805894 0.3406512
+19 191.4067 212.2418 224.7339 0.4782572 0.18921266  0.426318143 -0.0718891160 -0.0194098218  2.212965e-02 0.001577568 0.2711797 0.3418835 0.3546166 0.3029092
+20 191.5153 210.7238 223.0203 0.4119836 0.24906900  0.341949318 -0.0308034938 -0.0134452822  3.118022e-03 0.097245319 0.2511689 0.3223929 0.3454511 0.3133339
+21 158.5688 176.2574 187.6111 0.3782293 0.16548897  0.263908814 -0.0279252428 -0.0019258067  1.002597e-02 0.025688597 0.1721914 0.2695716 0.4325723 0.3165832
+22 138.8556 156.7407 167.8741 0.4084650 0.27150375  0.045076139 -0.0990644292  0.0064795302 -1.054129e-02 0.004119552 0.1729166 0.2783272 0.3733858 0.2997142
+23 158.6970 178.5355 190.7116 0.4161533 0.13804400  0.093770956 -0.0258683559  0.0306063815 -1.668952e-02 0.088588730 0.2284441 0.3555760 0.3767080 0.2833350
+24 145.1690 165.3690 177.6768 0.3998673 0.13346808 -0.026360202 -0.0285792502  0.0172093575 -9.262788e-03 0.074647133 0.2676661 0.3337436 0.3508654 0.3063709
+25 191.2307 210.3493 223.0957 0.4425120 0.09761853  0.353322033  0.0403793963 -0.0075431001  4.012494e-05 0.102874730 0.2501334 0.3540018 0.3483788 0.2914952
+26 183.8098 203.8708 215.5959 0.4351963 0.14089989  0.400111172 -0.0235258433 -0.0246748525  1.369954e-02 0.046732750 0.3065022 0.3047342 0.3428144 0.2943478
+27 140.8539 158.9622 171.3485 0.4114984 0.17193648 -0.069404444 -0.0628845566 -0.0105898288  2.910022e-02 0.093914981 0.2471457 0.3265596 0.3172674 0.2656865
+28 171.1968 191.0274 203.0790 0.4503943 0.20059753  0.219130124 -0.0767048892 -0.0057418903  4.026086e-03 0.058055452 0.2682002 0.3527219 0.2924638 0.2878896
+29 179.0925 197.3261 209.0184 0.4118028 0.17417636  0.398074403 -0.0326592046  0.0295027240 -2.861536e-02 0.011018975 0.3084764 0.2702912 0.3319122 0.3245128
+30 176.0361 194.4569 206.0436 0.4167767 0.15548148  0.395284254 -0.0381804711  0.0325734908 -2.486723e-02 0.024803010 0.2813685 0.2799757 0.3190920 0.3165047
+31 154.7260 173.1088 184.8360 0.4356835 0.15112961  0.125077251 -0.0600208103 -0.0303548395  3.520117e-02 0.089324576 0.2829759 0.3245927 0.2718908 0.2944287
+32 174.3599 193.9221 205.9433 0.4245009 0.13411643  0.303892059 -0.0334230568 -0.0103989711  1.219144e-02 0.030681315 0.3585660 0.3102840 0.3330875 0.2930989
+33 185.7608 205.5772 218.1458 0.4860960 0.13651485  0.361401117 -0.0378454123 -0.0119163424  1.177448e-02 0.036885364 0.3372149 0.3156646 0.3132449 0.2987935
+34 170.0739 190.4625 203.6095 0.4564196 0.26168032  0.075432395 -0.1028222366 -0.0223960895  1.211956e-02 0.095386644 0.2763783 0.3231927 0.3651501 0.3533694
+       beta[12]  beta[13]   beta[14]      beta[15]    beta[16]     beta[17]        a[1]        a[2]         a[3]        a[4]         a[5]         a[6]
+1  -0.034109449 0.2825429 -0.6156809  0.0160272772  0.24026320  0.018294892 -0.58334696 -0.91396487  0.540147934  1.01277722 -0.315578263  0.090842960
+2  -0.026246404 0.2626210 -0.5745585  0.0230452421 -2.56583020  0.003118041  0.17946349 -0.69818962  0.561462466  0.94421579  0.163684541 -0.701044319
+3  -0.050178320 0.2984207 -0.5964102  0.0648303541  0.29964341  0.026416443 -0.08058082  0.71438378  0.150656821  0.04114329 -0.759643649  0.728533249
+4  -0.037112232 0.2856492 -0.6588662  0.0031046031 -1.75219232 -0.005301344 -0.47849305 -0.94560161  0.252714950  0.62843486  0.441569428 -1.076939998
+5  -0.031689130 0.2943640 -0.5922810 -0.0241329184 -2.02088743 -0.005480196 -0.32426306 -0.48635428  0.605410084  0.97833633  0.030869806 -0.937965326
+6  -0.054711877 0.2559755 -0.6829087  0.0164649222  0.75364605  0.017808218 -0.36246683 -0.18094445  0.315130257  0.49413461 -0.416580136 -0.495953101
+7  -0.022564488 0.3257554 -0.6649629 -0.0327196581 -2.68789973 -0.015981540  0.33002822 -0.17771362 -0.105444084  0.23614933 -0.096324160 -0.128691129
+8  -0.061516203 0.2987965 -0.7134356  0.0300082934 -0.32344515  0.039636800  0.54559158  0.14692944  0.495789812  1.26890612 -0.363242205  0.171985510
+9  -0.000707502 0.3116447 -0.6558074 -0.0434651426 -2.44164860 -0.015937132 -0.35187604  0.09208792  0.026489035 -0.03835359  0.039006651 -0.435955615
+10 -0.058571001 0.2895731 -0.7151780  0.0278044138  0.19065758  0.047297262 -0.21307834 -0.07564264  0.118562443  0.55020435 -0.207845586  0.516865445
+11 -0.048249414 0.2343669 -0.6632949  0.0105298557 -0.85300726  0.002657660 -0.52092326 -0.14576174  0.014628151 -0.33634415 -0.732393293  0.361840942
+12 -0.056274936 0.3278087 -0.6991340 -0.0227224948 -1.22501594  0.022358261  0.99899882 -0.02299544  0.261652641  0.93980770  0.018669609 -0.598294875
+13 -0.061211753 0.3411141 -0.7079820  0.0256441978 -1.22650916  0.011787309  0.87944729  0.60272376  0.268770117  0.84617595  0.159145852 -0.372410128
+14 -0.057589994 0.3383926 -0.7122507  0.0067451615 -1.58577851 -0.004603847  0.34725715  0.97038418  0.189675707  0.80614580  0.016282386 -0.585853697
+15 -0.016489856 0.3099015 -0.6966250 -0.0009503316 -0.08525117  0.013046801 -0.14697498 -0.68699007  0.137320094  0.29343533 -0.324987571  0.456203981
+16 -0.042077448 0.3145083 -0.7180152 -0.0088295131 -0.20904340  0.024319045  0.30597679  0.02352210  0.131896703  0.31587169 -0.218338123 -0.804975394
+17 -0.050892108 0.3029312 -0.6583039  0.0043343475 -0.11636011  0.019289703 -0.46171617 -0.28822111 -0.001971981  0.62881137 -0.081028497 -0.255438226
+18 -0.064143193 0.2830182 -0.6711876 -0.0386983677 -0.61053483  0.028470771  0.64429533  0.11667850 -0.403109890  0.47989622 -0.691644893  0.421127631
+19 -0.018688787 0.3246401 -0.6735730  0.0715089648 -0.76726972 -0.013456132 -1.00896493 -0.11312941 -0.374027393  0.57760304  0.227365359  0.482306308
+20 -0.017239057 0.2876758 -0.6839588  0.0083989914 -2.19084395  0.011169410  2.11914634  0.39818816  0.234151242  0.41211766 -0.725479665  0.236723094
+21 -0.089509664 0.2637657 -0.6154129  0.0833342992 -1.97576907  0.005718802  0.58364520  0.79119849 -0.667030363  0.65702421 -0.241604569 -0.917695864
+22 -0.065695128 0.2813794 -0.5422404  0.0420829835 -2.97084416  0.007945799 -0.33067363  1.26118069  0.364176016  0.88133975 -1.045243657 -0.851038790
+23 -0.015880403 0.2979722 -0.7475067 -0.0195798122 -0.90107621  0.019001514 -0.36458086 -0.07489467 -1.162517055  0.91476797  0.338118764  0.822690947
+24 -0.012752409 0.3128939 -0.7010157 -0.0123669221 -1.86031728  0.009290496  0.20523878  0.30660875 -0.967827861  0.87981329  0.264825946  0.707603181
+25 -0.005605979 0.3035758 -0.7447774 -0.0243320807  0.23108700  0.015407023  1.48568985  0.82057653  0.466542774  0.82014441 -0.009688867 -0.054331954
+26 -0.031467366 0.3017952 -0.7346859 -0.0404577517 -0.86203883  0.004132642  0.52638385  0.28915750  0.907634062  0.94036966  0.530607918  0.507920328
+27 -0.014936599 0.3138107 -0.6188968 -0.0367640443 -0.53282576  0.020742134 -0.06134819 -0.47228201  0.906283931  1.10732493  0.058154109  0.809726297
+28  0.004504566 0.3024376 -0.6540339 -0.0505068682  0.51070230  0.013643329 -0.72062447 -0.31851070  1.400605193  1.14718329 -0.216760329 -0.059755366
+29 -0.040324170 0.2520636 -0.6474489 -0.0410388383 -0.87940564  0.017904773  0.05080792  0.09774797  0.299486558  0.68129699 -0.131658822  0.489491280
+30 -0.041450954 0.2600247 -0.6707156 -0.0604004550 -0.99169101  0.022940004  0.24929701  0.08004966  0.332087920  0.72667888 -0.150578598  0.529044962
+31 -0.033424360 0.2934561 -0.6607598  0.0623372198 -1.36610199 -0.010825707 -0.59405094  0.78304728  0.438917408  1.10673704  0.433938170 -0.205334058
+32 -0.046102389 0.2666436 -0.6434197 -0.0118200659 -0.51236734  0.022294371 -0.56116707 -0.49379723  0.420744169  0.75650674 -0.085800370  0.303132206
+33 -0.020355266 0.2947703 -0.6894896  0.0304569324 -1.19786503  0.007239238  0.65351792  0.04810127  0.154521976  0.52379705 -0.473419889  0.267340430
+34 -0.048726514 0.3395217 -0.7528747 -0.0031943939  0.01327439  0.020804351  0.46717656 -0.56198527  0.548623018  0.31093446 -0.184096626 -0.007524541
+           a[7]     sigma      lp__
+1   0.374482111 0.5880388 -223.9299
+2  -0.068879570 0.7751958 -222.0023
+3  -0.289531128 0.7254799 -225.2297
+4  -0.073145233 0.6909810 -223.1187
+5   0.093664320 0.5257067 -221.2722
+6  -0.438469019 0.6063501 -219.9520
+7  -0.493294594 0.3995692 -218.1899
+8  -0.086423222 0.6899360 -223.0649
+9  -0.216694604 0.2032483 -218.0209
+10  0.004309686 0.5445166 -219.7307
+11 -0.029829754 0.5543944 -226.5771
+12 -0.536292099 0.9834794 -224.0668
+13  0.119680011 0.5032196 -223.8334
+14  0.399467117 0.5008868 -229.5102
+15 -0.852763670 0.4409174 -219.5809
+16 -0.074640315 0.3137680 -228.7317
+17 -0.535305618 0.4530546 -216.8267
+18 -0.498826071 0.6805531 -222.3582
+19 -0.203891908 0.7644886 -225.5901
+20 -0.428483449 0.5728032 -226.1949
+21 -0.638985863 1.5436035 -234.9807
+22 -0.459900524 0.5587596 -232.8847
+23 -0.060360168 0.7634439 -226.0198
+24  0.076684217 0.7470678 -222.7929
+25  0.039109498 0.6072060 -226.2285
+26  0.203999857 1.0982781 -222.9038
+27  0.336940870 0.9855094 -223.1646
+28  0.156692235 0.6373574 -224.1381
+29 -0.298632175 0.3516184 -218.4899
+30 -0.224266818 0.3683512 -217.7833
+31  0.137426754 0.7567248 -220.7277
+32  0.122629230 0.6454730 -217.5350
+33 -0.030276586 0.3070899 -218.8110
+34 -0.225883538 0.2688888 -220.1710
+ [ reached 'max' / getOption("max.print") -- omitted 3966 rows ]
+$theta
+          
+iterations      [,1]      [,2]     [,3]
+      [1,] 194.06484 212.84732 225.0181
+      [2,] 153.86283 170.94216 181.5925
+      [3,] 195.31264 215.41650 227.8213
+      [4,] 131.30570 148.57469 158.8222
+      [5,] 147.80044 165.58407 177.6856
+      [6,] 146.78085 165.39073 177.8278
+      [7,] 163.32730 183.16853 195.2996
+      [8,] 165.69350 185.37420 197.3145
+      [9,] 111.21124 127.14335 137.9498
+     [10,] 166.96300 186.90291 199.9905
+     [11,] 162.60192 181.55934 193.4279
+     [12,] 165.65402 185.54898 198.3869
+     [13,] 141.23563 158.94964 169.9618
+     [14,] 133.17288 152.73122 164.8577
+     [15,] 153.98090 173.51611 186.0230
+     [16,] 179.10074 198.02871 210.9760
+     [17,] 126.68159 146.68723 158.4665
+     [18,] 158.32789 177.78360 190.1556
+     [19,] 183.60359 207.09625 220.8686
+     [20,] 198.87050 222.17248 235.9762
+     [21,] 147.51416 165.49398 177.4242
+     [22,] 174.04354 199.24378 214.6788
+     [23,] 158.40269 177.41495 189.3297
+     [24,] 171.99478 192.96149 205.1875
+     [25,] 193.27446 215.48076 229.8190
+     [26,] 154.98689 172.54917 183.5739
+     [27,] 179.18983 198.92105 211.8052
+     [28,] 141.37662 158.73255 169.7204
+     [29,] 206.33754 227.32106 240.3469
+     [30,] 155.17501 174.56368 186.8404
+     [31,] 153.80793 172.85876 184.8354
+     [32,] 162.07082 181.74216 194.0136
+     [33,] 167.71805 186.09526 197.8769
+     [34,] 170.21626 191.88372 205.6681
+     [35,] 155.57842 177.67404 191.3903
+     [36,] 168.97501 188.93223 201.5304
+     [37,] 178.20338 198.30960 211.5932
+     [38,] 179.63856 202.39980 215.9428
+     [39,] 153.11800 173.29879 185.6271
+     [40,] 189.34134 209.43474 222.5626
+     [41,] 183.29998 201.99819 213.6574
+     [42,] 166.72864 187.77625 200.6458
+     [43,] 172.91805 191.23486 202.2991
+     [44,] 167.07017 188.37171 201.6755
+     [45,] 125.20858 143.30003 154.9645
+     [46,] 189.32090 211.14323 225.4900
+     [47,] 180.20835 202.13264 215.5354
+     [48,] 149.99990 169.36059 182.2117
+     [49,] 185.44786 206.52618 220.3262
+     [50,] 149.37966 168.82940 181.0419
+     [51,] 187.89039 209.57520 223.4118
+     [52,] 177.51857 197.50677 210.2403
+     [53,] 128.54497 147.36068 159.9813
+     [54,] 149.12351 167.88902 179.3629
+     [55,] 162.50792 183.54275 196.6717
+     [56,] 185.86926 206.81635 220.7654
+     [57,] 167.76597 186.11838 198.4405
+     [58,] 183.38049 204.32674 217.0188
+     [59,] 214.00211 233.42632 246.3642
+     [60,] 167.21769 187.42676 200.1619
+     [61,] 149.71261 169.30765 181.2502
+     [62,] 150.64694 170.56107 183.4455
+     [63,] 173.22284 194.99640 208.9648
+     [64,] 147.25958 168.77827 181.9357
+     [65,] 166.77589 186.60559 199.7014
+     [66,] 180.37781 201.09294 214.2736
+     [67,] 160.38699 180.61433 193.2992
+     [68,] 142.67519 159.31605 171.1733
+     [69,] 155.61213 175.01022 186.8922
+     [70,] 155.05739 176.02631 188.6436
+     [71,] 170.89681 190.44898 203.2593
+     [72,] 169.95134 188.36559 199.6361
+     [73,] 134.15445 151.42262 162.2738
+     [74,] 150.92452 170.09908 182.9548
+     [75,] 151.72285 168.17898 178.3594
+     [76,] 162.20687 182.26708 194.8557
+     [77,] 158.35103 177.66719 189.9321
+     [78,] 158.73492 178.71145 190.7072
+     [79,] 147.36511 164.57717 176.3443
+     [80,] 119.43621 136.91777 148.3219
+     [81,] 145.16702 165.16086 177.8754
+     [82,] 141.24102 158.55869 169.7984
+     [83,] 187.76417 208.93293 222.5645
+     [84,] 154.56563 175.45438 188.8699
+     [85,] 134.23311 151.97690 163.3153
+     [86,] 140.13288 158.89833 171.0911
+     [87,] 164.86280 184.63530 197.1091
+     [88,] 156.92517 176.90383 188.8858
+     [89,] 157.08481 175.75779 187.1560
+     [90,] 203.51804 224.27229 237.6870
+     [91,] 165.43994 184.58406 196.4430
+     [92,] 180.25587 201.92249 216.0687
+     [93,] 153.64048 173.48541 185.6363
+     [94,] 142.86759 163.95076 176.8981
+     [95,] 181.11449 204.78883 219.3850
+     [96,] 154.26433 174.78305 187.7084
+     [97,] 175.10101 194.44330 206.3660
+     [98,] 128.50964 148.00623 160.3701
+     [99,] 185.37922 207.57024 221.4122
+    [100,] 188.29661 209.35046 222.7332
+    [101,] 145.10475 165.67828 178.5948
+    [102,] 155.86950 176.21311 188.5861
+    [103,] 164.11385 184.67872 197.4676
+    [104,] 137.90875 158.15340 171.3846
+    [105,] 141.64934 161.05079 173.3591
+    [106,] 168.60891 188.53274 201.2461
+    [107,] 169.99679 190.00893 202.4244
+    [108,] 153.44772 172.69306 185.4280
+    [109,] 128.87883 145.98649 157.2993
+    [110,] 143.67603 161.55340 173.0373
+    [111,] 180.71216 202.33055 215.7271
+    [112,] 145.96792 166.44812 179.6275
+    [113,] 171.48313 192.50307 205.5177
+    [114,] 147.53566 166.73595 179.0181
+    [115,] 127.32682 146.31996 158.4758
+    [116,] 176.95434 197.71610 211.1068
+    [117,] 198.55307 218.65346 231.1607
+    [118,] 162.02235 181.64961 193.3048
+    [119,] 124.22028 143.92348 157.0202
+    [120,] 156.77010 174.55800 185.8532
+    [121,] 151.79857 173.47601 187.0699
+    [122,] 155.99331 178.63542 193.0539
+    [123,] 145.91782 165.84956 178.4299
+    [124,] 148.78462 169.31825 182.6329
+    [125,] 154.80877 174.89137 187.4197
+    [126,] 166.06436 184.66167 196.7384
+    [127,] 174.07050 195.64811 209.0557
+    [128,] 162.79002 184.39392 197.7025
+    [129,] 152.74919 171.79560 183.4713
+    [130,] 134.30850 153.09233 164.3790
+    [131,] 167.20567 186.92756 199.6578
+    [132,] 191.23071 210.34928 223.0957
+    [133,] 196.67990 218.99954 232.6841
+    [134,] 148.40910 167.06933 179.4624
+    [135,] 133.36405 152.12087 164.6981
+    [136,] 154.66971 173.82518 185.9622
+    [137,] 168.39905 188.09247 201.1637
+    [138,] 189.89168 210.08264 221.7694
+    [139,] 158.11490 177.17423 189.0126
+    [140,] 149.03825 167.56985 178.5637
+    [141,] 159.46482 181.38976 194.0882
+    [142,] 179.99051 200.76692 214.1333
+    [143,] 133.95120 152.25504 163.5654
+    [144,] 186.12333 207.13850 219.9739
+    [145,] 174.20450 194.33417 207.0837
+    [146,] 169.59359 189.29670 201.5481
+    [147,] 147.35360 167.93305 180.6540
+    [148,] 180.13197 200.79354 213.4485
+    [149,] 151.66689 172.53350 186.2344
+    [150,] 154.66372 173.63570 185.3318
+    [151,] 147.08310 164.78926 176.9435
+    [152,] 151.35244 171.84351 184.8145
+    [153,] 148.88509 168.93126 181.9596
+    [154,] 148.38666 167.02157 179.5888
+    [155,] 186.45752 205.87634 218.9508
+    [156,] 124.10724 143.72580 156.4787
+    [157,] 145.16301 165.12550 177.2850
+    [158,] 168.84795 188.48945 201.2732
+    [159,] 192.13307 210.91592 222.5588
+    [160,] 128.44944 148.16041 160.6366
+    [161,] 133.91700 151.73255 162.9753
+    [162,] 182.04483 201.01172 212.9367
+    [163,] 153.88177 173.86488 186.0540
+    [164,] 141.41038 160.37483 172.5280
+    [165,] 184.73003 206.20456 220.1192
+    [166,] 141.49330 160.89915 173.6575
+    [167,] 155.00574 173.04902 184.3584
+    [168,] 201.73300 223.24910 236.3998
+    [169,] 165.83443 185.67677 198.3525
+    [170,] 151.14406 170.51151 182.6268
+    [171,] 151.64014 172.30460 185.9645
+    [172,] 175.99871 197.66406 211.0722
+    [173,] 186.29671 206.78217 219.8636
+    [174,] 177.99450 198.00176 210.7382
+    [175,] 140.57403 161.42153 174.3113
+    [176,] 162.66119 183.27494 196.6417
+    [177,] 161.63688 181.13652 193.6314
+    [178,] 117.28170 135.12689 145.7649
+    [179,] 171.22214 191.82839 204.3922
+    [180,] 168.18743 185.61797 197.2377
+    [181,] 228.04721 251.22801 266.0661
+    [182,] 180.80903 202.38795 215.6723
+    [183,] 142.81055 160.78661 172.7474
+    [184,] 161.97688 181.88906 193.8311
+    [185,] 124.98315 145.55758 158.4029
+    [186,] 169.74244 189.46057 201.8154
+    [187,] 171.15423 190.89875 202.8891
+    [188,] 211.36014 232.86438 245.7465
+    [189,] 204.94006 226.23848 239.5248
+    [190,] 172.59958 192.45898 205.1703
+    [191,] 160.49327 180.32376 192.8037
+    [192,] 138.02299 157.27640 169.2631
+    [193,] 172.53200 192.07003 204.2538
+    [194,] 151.22358 171.28608 184.6609
+    [195,] 130.61950 148.81454 160.0533
+    [196,] 153.97831 171.68454 183.5531
+    [197,] 130.57913 150.99328 163.6259
+    [198,] 158.72108 176.36842 187.9130
+    [199,] 184.57855 207.19085 220.9494
+    [200,] 121.33262 142.17798 155.4008
+    [201,] 146.92405 168.36081 181.8011
+    [202,] 166.78160 184.46270 196.3239
+    [203,] 162.54715 182.72617 194.6612
+    [204,] 140.65794 159.60116 171.3517
+    [205,] 179.67649 199.18441 211.0261
+    [206,] 135.70660 156.75832 168.7839
+    [207,] 153.53508 172.31420 184.5249
+    [208,] 169.31360 191.36450 205.5887
+    [209,] 156.32043 174.36198 186.5243
+    [210,] 200.43258 222.73303 236.0978
+    [211,] 151.06126 168.84789 180.3790
+    [212,] 164.05398 184.58793 196.9047
+    [213,] 144.94668 162.80294 174.1741
+    [214,] 136.04163 154.00550 165.2776
+    [215,] 148.42502 167.85783 180.7277
+    [216,] 168.01137 187.69110 199.9154
+    [217,] 123.31968 142.52729 154.6722
+    [218,] 150.76499 171.63350 184.3173
+    [219,] 180.09160 198.82644 211.6224
+    [220,] 186.98782 205.96469 218.3052
+    [221,] 189.25464 209.06881 221.2179
+    [222,] 160.11269 178.04617 189.4619
+    [223,] 187.97659 207.12993 219.4063
+    [224,] 166.10767 188.08289 201.1132
+    [225,] 169.82972 189.56189 202.3070
+    [226,] 138.24915 157.09487 169.1969
+    [227,] 139.34148 160.03896 173.0333
+    [228,] 130.30512 148.27224 159.4036
+    [229,] 138.08958 156.32614 168.1739
+    [230,] 153.09502 172.87648 185.8204
+    [231,] 129.51288 148.40278 159.8536
+    [232,] 162.36614 181.57587 194.5677
+    [233,] 147.96934 169.12854 182.5008
+    [234,] 125.73895 144.50625 156.6426
+    [235,] 153.10192 173.91305 185.7192
+    [236,] 138.91609 158.22755 170.4963
+    [237,] 168.33801 187.94203 200.1303
+    [238,] 157.69492 177.16481 189.4493
+    [239,] 187.89323 208.47243 221.8261
+    [240,] 148.70232 166.17015 177.6271
+    [241,] 144.76560 165.47989 178.8422
+    [242,] 177.90674 200.01311 213.2472
+    [243,] 193.13961 215.17475 228.3680
+    [244,] 188.34207 208.03669 220.9139
+    [245,] 153.01990 172.90943 185.7848
+    [246,] 141.69054 162.25867 174.7332
+    [247,] 197.59749 218.09526 230.8988
+    [248,] 158.07750 178.67321 191.5070
+    [249,] 172.30503 191.66432 204.4837
+    [250,] 168.93368 188.53623 201.3870
+    [251,] 133.11160 152.61231 165.4364
+    [252,] 193.15114 213.85439 227.0659
+    [253,] 139.52694 158.86365 171.3523
+    [254,] 139.93573 159.42644 171.6017
+    [255,] 123.40395 141.73349 154.0950
+    [256,] 115.42348 135.15480 147.9335
+    [257,] 146.92785 165.78267 178.3414
+    [258,] 165.85916 184.40008 196.2747
+    [259,] 170.81637 189.35797 201.6413
+    [260,] 181.32914 202.01571 215.2825
+    [261,] 176.80106 196.40122 208.7581
+    [262,] 186.93512 208.00971 221.6174
+    [263,] 155.56338 174.01393 185.5865
+    [264,] 209.38182 230.28248 243.7084
+    [265,] 186.00298 205.80907 218.3323
+    [266,] 136.73654 155.90724 167.5810
+    [267,] 140.31479 158.62251 171.1010
+    [268,] 165.66870 185.59246 197.9296
+    [269,] 157.36585 176.97494 188.8857
+    [270,] 162.34108 181.52458 193.4697
+    [271,] 150.23989 167.87376 179.5330
+    [272,] 147.98495 166.56220 178.6936
+    [273,] 157.74638 175.61565 187.2025
+    [274,] 151.95698 172.23572 184.8843
+    [275,] 133.85632 154.14602 166.1828
+    [276,] 144.96443 163.34899 174.4260
+    [277,] 131.86114 152.50095 164.7486
+    [278,] 181.92979 199.59896 210.2301
+    [279,] 179.88685 198.02104 209.3692
+    [280,] 171.41202 189.94870 202.0631
+    [281,] 176.34510 195.45205 207.4497
+    [282,] 149.18626 171.69551 185.1663
+    [283,] 145.55569 165.54011 178.6556
+    [284,] 191.80192 211.84967 225.2562
+    [285,] 167.29590 188.08210 201.3504
+    [286,] 100.93389 118.74094 129.6547
+    [287,] 180.36408 201.56607 215.1555
+    [288,] 162.08568 180.71016 192.5729
+    [289,] 183.23084 203.54742 216.4020
+    [290,] 139.07526 158.37690 171.2141
+    [291,] 146.19095 163.90519 174.7841
+    [292,] 169.30614 189.76977 203.0494
+    [293,] 169.68917 188.84498 200.7252
+    [294,] 173.25316 194.05824 207.1897
+    [295,] 161.81813 181.37785 193.8573
+    [296,] 116.41693 135.48913 147.4184
+    [297,] 163.35614 182.25972 194.4838
+    [298,] 156.67020 175.32996 187.5308
+    [299,] 149.56852 168.66413 180.5069
+    [300,] 202.29781 225.74825 239.9617
+    [301,] 157.39426 177.81626 190.4963
+    [302,] 167.07151 186.75956 199.5672
+    [303,] 148.60375 167.05963 180.0038
+    [304,] 163.08945 183.31337 195.7218
+    [305,] 192.75847 212.93742 225.8769
+    [306,] 148.19327 167.05762 178.6662
+    [307,] 123.71323 142.37339 154.1861
+    [308,] 177.98580 197.37311 210.2380
+    [309,] 152.47539 173.33049 186.8447
+    [310,] 140.16032 159.83643 171.8869
+    [311,] 190.98709 213.05916 226.3931
+    [312,] 181.69676 200.39404 212.0317
+    [313,] 162.33553 181.72388 193.5795
+    [314,] 140.12655 161.81524 175.2730
+    [315,] 179.09249 197.32611 209.0184
+    [316,] 175.92200 198.12639 212.5948
+    [317,] 175.87277 194.89937 206.8480
+    [318,] 171.67125 191.50470 203.9137
+    [319,] 144.23748 163.76765 176.0761
+    [320,] 145.85423 167.70001 180.8500
+    [321,] 201.44806 222.24272 234.9956
+    [322,] 172.61093 191.43279 203.2096
+    [323,] 154.62198 175.05558 187.7462
+    [324,] 151.67885 168.93425 180.1271
+    [325,] 150.44005 170.10017 182.7907
+    [326,] 181.16164 203.65658 217.8047
+    [327,] 137.38396 155.14493 167.2733
+    [328,] 138.56313 157.83886 169.6716
+    [329,] 162.75138 183.11351 195.5885
+    [330,] 127.15209 146.25763 158.6072
+    [331,] 136.38539 154.34172 165.4838
+    [332,] 152.49776 170.80561 182.9226
+    [333,] 148.95561 169.25273 182.7698
+ [ reached getOption("max.print") -- omitted 3667 rows ]
+
+$beta
+          
+iterations      [,1]         [,2]          [,3]          [,4]          [,5]
+      [1,] 0.3709873  0.124457162  6.076626e-01 -6.819364e-02  1.646193e-02
+      [2,] 0.4014837  0.076016359  2.226344e-01 -3.023353e-02  3.546454e-02
+      [3,] 0.4372428  0.122690098  5.106970e-01 -4.303837e-02 -2.645011e-02
+      [4,] 0.3922921  0.158842631  5.297539e-02 -3.939554e-02  1.585047e-02
+      [5,] 0.4692475  0.084490954  9.895419e-02 -1.208494e-01  1.043707e-02
+      [6,] 0.4318212  0.137527013  3.265142e-02 -2.522254e-02  6.499516e-02
+      [7,] 0.4111347  0.301331461  3.116193e-02 -1.570289e-02  1.875677e-02
+      [8,] 0.4211755  0.170201528  1.500201e-01  2.626329e-03  4.915092e-02
+      [9,] 0.3468368  0.173518274 -6.918295e-02 -6.084108e-02 -3.671600e-02
+     [10,] 0.4520520  0.156546662  2.012913e-01 -7.639446e-02  4.155271e-02
+     [11,] 0.4240382  0.189622750  2.673314e-01 -1.261685e-01 -6.888492e-03
+     [12,] 0.4234224  0.108078753  2.300848e-01 -1.005704e-01 -2.757711e-02
+     [13,] 0.4223040  0.158702386  8.445635e-04 -7.208361e-02 -2.654672e-02
+     [14,] 0.4483008  0.155652371 -2.352495e-01  4.719845e-02  5.464077e-02
+     [15,] 0.4377470  0.142048391  6.833174e-03 -5.106766e-02  7.712880e-03
+     [16,] 0.4115418  0.075270208  3.819789e-01 -7.402096e-02  1.839476e-02
+     [17,] 0.4121531  0.161719622 -2.395768e-01  1.433790e-02 -1.010467e-02
+     [18,] 0.4337664  0.325631308 -1.564635e-01  2.032942e-02  4.783350e-02
+     [19,] 0.4640629  0.208994532  1.172715e-01 -9.636675e-02 -4.458521e-03
+     [20,] 0.5455010  0.291958306  2.070595e-01 -6.458318e-02  2.482392e-03
+     [21,] 0.3927158  0.278670879  1.205173e-02 -2.146107e-02  3.499099e-02
+     [22,] 0.5808415  0.196696682 -2.025913e-01 -1.847482e-03  4.373353e-03
+     [23,] 0.4296500  0.250146361  2.900677e-02  2.859308e-03  8.667849e-03
+     [24,] 0.4535660  0.190311557  2.274518e-01 -7.043900e-02  1.071148e-02
+     [25,] 0.4730381  0.261770798  1.029741e-01 -2.800133e-02  3.421992e-02
+     [26,] 0.3936752  0.096295805  2.989770e-01 -5.155085e-02 -1.910116e-02
+     [27,] 0.4642073  0.224213364  3.014426e-01 -1.485050e-01 -3.339908e-02
+     [28,] 0.3631578  0.172588315  1.650520e-02 -1.093624e-01  2.191071e-02
+     [29,] 0.4729713  0.270975764  4.634475e-01 -6.626977e-02  7.496333e-03
+     [30,] 0.4549765  0.205731919  4.432016e-02 -8.720580e-03 -1.114491e-02
+     [31,] 0.4026796  0.128393255  1.441207e-01 -7.902943e-02 -1.165559e-02
+     [32,] 0.4487355  0.249531128  1.610386e-01 -1.123211e-01  1.613925e-02
+     [33,] 0.4140642  0.279128894  2.343868e-01 -8.066844e-02 -4.614843e-03
+     [34,] 0.4758672  0.218446578  8.727303e-02 -1.111277e-01  3.802346e-03
+     [35,] 0.4773237  0.238935607 -1.400123e-01 -7.935236e-02  1.634623e-02
+     [36,] 0.4871089  0.198476709  5.308005e-02  3.982695e-02  3.851888e-03
+     [37,] 0.4493869  0.189763250  1.741282e-01 -3.132856e-02 -3.057117e-02
+     [38,] 0.5009515  0.307201966  1.309250e-02  5.076354e-03  2.611547e-02
+     [39,] 0.4545036  0.202357408  2.127587e-02 -1.007807e-01  1.286015e-02
+     [40,] 0.4694277  0.309565843  2.125344e-01 -9.353046e-02  2.229570e-02
+     [41,] 0.3887956  0.210130255  4.637062e-01 -7.975472e-02  1.757799e-02
+     [42,] 0.5259997  0.116622351  7.744680e-02 -1.794945e-03  3.204232e-02
+     [43,] 0.3884631  0.182222050  3.179579e-01 -2.397555e-02  4.392992e-02
+     [44,] 0.4801292  0.229962831  1.396614e-03 -3.378140e-02 -1.120409e-02
+     [45,] 0.3756768  0.226445679 -2.451638e-01  4.761341e-02 -1.181838e-02
+     [46,] 0.4490929  0.189310003  3.632799e-01 -1.096076e-01  9.129487e-03
+     [47,] 0.4390137  0.245501949  2.109181e-01 -7.178287e-02  1.473863e-02
+     [48,] 0.4350386  0.097187554  2.325933e-02 -6.842904e-03  2.596776e-03
+     [49,] 0.4614489  0.261377226  1.481756e-01 -9.601971e-02  9.637260e-04
+     [50,] 0.4315103  0.079223206  7.253556e-02  2.158335e-02  6.779466e-03
+     [51,] 0.4444162  0.261120957  2.092172e-01 -7.504860e-02 -2.486755e-02
+     [52,] 0.5047139  0.043592338  2.283448e-01  2.852221e-02 -7.417365e-03
+     [53,] 0.4225338  0.168258445 -2.004747e-01  5.502031e-02  4.615018e-03
+     [54,] 0.3717182  0.152665116  1.575869e-01 -1.879996e-02  2.326724e-02
+     [55,] 0.4674760  0.190828262 -4.443768e-02 -4.300151e-02  1.770638e-02
+     [56,] 0.5019021  0.180258245  2.304134e-01 -5.729718e-02 -8.440612e-03
+     [57,] 0.4686935  0.050891574  2.484950e-01 -2.795000e-02 -5.151860e-03
+     [58,] 0.4669602  0.243163224  2.667236e-01 -9.243143e-02  5.334932e-02
+          
+iterations          [,6]          [,7]      [,8]      [,9]     [,10]     [,11]
+      [1,] -2.940712e-02  1.032635e-01 0.2982789 0.3055863 0.3115068 0.3020565
+      [2,] -2.649935e-02  6.022917e-02 0.2538825 0.2868328 0.2617915 0.2710891
+      [3,]  2.459403e-02  5.371645e-02 0.2869660 0.3601264 0.3034604 0.3183257
+      [4,]  2.169089e-03  3.725172e-02 0.2618731 0.2431737 0.2523538 0.2572223
+      [5,] -2.145575e-03  9.597168e-02 0.2461764 0.3093994 0.2930808 0.3171856
+      [6,] -3.792758e-02  6.492137e-02 0.3309498 0.3432210 0.2718164 0.2834854
+      [7,] -1.844751e-02  6.531914e-02 0.2528870 0.3613931 0.2866755 0.3502676
+      [8,] -4.151479e-02  6.227157e-02 0.3095776 0.3246332 0.3091925 0.3055363
+      [9,]  3.644630e-02  6.845723e-02 0.2926323 0.2662788 0.2142967 0.2631516
+     [10,] -4.113860e-02  5.725832e-02 0.3104628 0.3669050 0.3051992 0.2996201
+     [11,]  1.585759e-02  7.290067e-02 0.2646266 0.3186915 0.3265463 0.2653027
+     [12,]  1.520865e-02  1.211158e-01 0.2272043 0.3174945 0.3646745 0.3440136
+     [13,]  2.741645e-02  6.041637e-02 0.2193690 0.3001938 0.3443269 0.2868386
+     [14,] -5.753013e-02  8.084098e-02 0.2854741 0.3366605 0.3085728 0.3243979
+     [15,]  7.180568e-03  1.480189e-01 0.2680175 0.2784797 0.2904597 0.3520924
+     [16,]  5.321406e-03  1.396049e-01 0.2209141 0.3576833 0.2959639 0.3109623
+     [17,]  2.617556e-02  6.679799e-02 0.2635713 0.3283746 0.3452727 0.3072056
+     [18,] -3.073347e-02  2.687125e-02 0.2109708 0.3262378 0.3983442 0.3613744
+     [19,]  2.891846e-02  1.230486e-01 0.3615209 0.3477247 0.4749866 0.3026464
+     [20,]  2.154138e-02  9.175519e-02 0.3192530 0.3973707 0.3621737 0.3414010
+     [21,] -3.171258e-02  2.263122e-02 0.2675218 0.2879599 0.2966589 0.2978751
+     [22,] -1.189994e-02  1.413248e-01 0.3598052 0.3990492 0.3770008 0.4082847
+     [23,] -1.967812e-02  5.203613e-02 0.2689548 0.3219941 0.2707438 0.2956405
+     [24,] -4.875135e-03  7.951972e-02 0.2975892 0.3387474 0.2979318 0.3020718
+     [25,] -2.094043e-02  6.562239e-02 0.2786484 0.3590590 0.4470493 0.3808056
+     [26,]  1.578833e-02  2.585072e-02 0.2204274 0.3279400 0.3002163 0.2993256
+     [27,]  2.357954e-02  8.959821e-02 0.2166437 0.3585127 0.3094834 0.3356555
+     [28,] -3.058418e-02  1.441541e-01 0.2557950 0.2602626 0.3847654 0.2974680
+     [29,] -1.295139e-02  6.353137e-02 0.2666489 0.3392090 0.3439925 0.3805156
+     [30,]  9.531580e-03 -1.010803e-03 0.2446180 0.3029091 0.3829014 0.3108680
+     [31,]  1.145056e-02  8.002904e-02 0.3631496 0.3066925 0.2780343 0.3280699
+     [32,] -6.035531e-03  6.246448e-02 0.3130749 0.2979026 0.3038433 0.3119466
+     [33,]  1.473905e-02 -1.722948e-02 0.2097112 0.3238541 0.3996201 0.2614231
+     [34,]  1.234345e-02  1.100507e-01 0.3057380 0.3465681 0.3754809 0.3658129
+     [35,]  7.418898e-03  1.389536e-01 0.2418609 0.3560408 0.3736597 0.3504269
+     [36,] -1.441563e-02  3.555691e-02 0.2660669 0.3245065 0.3423085 0.3845640
+     [37,]  2.039907e-02  6.493882e-02 0.3382991 0.3382437 0.3422184 0.2901376
+     [38,] -3.889554e-02  4.043308e-02 0.2814631 0.3357769 0.4289401 0.3703444
+     [39,] -3.950774e-03  1.060982e-01 0.2788321 0.3511458 0.3597936 0.2972647
+     [40,] -2.850702e-02  7.718363e-02 0.2875969 0.3285767 0.3852789 0.3237756
+     [41,] -1.999889e-02  7.001618e-02 0.2996448 0.2919833 0.3214790 0.2727053
+     [42,] -2.029897e-02  4.183117e-02 0.3133473 0.3914933 0.2825525 0.3340369
+     [43,] -2.697262e-02  1.082834e-01 0.2571341 0.3412135 0.2486385 0.2896028
+     [44,] -9.078987e-03  6.570212e-02 0.3531153 0.3192766 0.3653205 0.3548447
+     [45,]  1.946310e-02  3.117320e-02 0.2819895 0.2621347 0.3330607 0.2585736
+     [46,] -1.635292e-03  5.564768e-02 0.3063292 0.3141420 0.4230215 0.3502584
+     [47,] -1.441302e-02  6.934578e-02 0.3556537 0.3382863 0.4256830 0.3307410
+     [48,] -1.042663e-02  8.120347e-02 0.3199703 0.3483719 0.3374755 0.3184632
+     [49,]  8.654649e-03  5.887184e-02 0.2538193 0.3864461 0.4459045 0.3616240
+     [50,] -1.403845e-04  4.858990e-02 0.3157443 0.3105195 0.3664300 0.3198334
+     [51,]  7.145778e-03  8.997155e-02 0.3293489 0.3456442 0.3571135 0.3370867
+     [52,]  1.231074e-02  8.278641e-02 0.2429946 0.3195270 0.4383463 0.2910237
+     [53,] -6.871759e-03  1.754437e-02 0.3384121 0.3253606 0.2877596 0.3301740
+     [54,] -2.901378e-02  3.848494e-02 0.2629009 0.3046119 0.3332460 0.2974572
+     [55,]  2.311069e-03  9.631559e-02 0.2774413 0.3386986 0.4028765 0.3255030
+     [56,] -1.089446e-02  5.759451e-02 0.3086031 0.3597224 0.3730518 0.3674067
+     [57,]  5.762772e-03  7.512418e-02 0.2258583 0.3489266 0.3359389 0.2672283
+     [58,] -4.144322e-02  1.011915e-01 0.2397145 0.3669074 0.3133521 0.3537898
+          
+iterations         [,12]     [,13]      [,14]         [,15]         [,16]
+      [1,] -5.221518e-02 0.2988465 -0.7390440 -4.317282e-03 -0.5433483635
+      [2,] -1.771844e-02 0.2872041 -0.5658377  4.836052e-02 -1.1856722653
+      [3,] -2.812645e-02 0.3002172 -0.7309810  3.152623e-02 -0.9173974833
+      [4,] -3.463925e-02 0.2653118 -0.5937650  2.042023e-03 -0.4464626832
+      [5,] -2.619497e-02 0.3129691 -0.5971139 -1.460498e-02 -2.3254449199
+      [6,] -6.168705e-02 0.3025038 -0.7767890 -4.083599e-02 -1.0377971623
+      [7,] -6.141539e-02 0.3045561 -0.6683720 -1.705687e-02 -1.0240577869
+      [8,] -3.371376e-02 0.3020596 -0.6829870 -4.253401e-02 -0.1733655804
+      [9,] -6.742475e-02 0.2618185 -0.6227978 -2.263339e-03 -1.1804333203
+     [10,] -5.131204e-02 0.3239767 -0.7279216  2.800141e-02 -0.5233447971
+     [11,] -4.722093e-02 0.3040186 -0.6050675 -2.602801e-02 -3.0333075845
+     [12,] -1.544580e-02 0.3155375 -0.6982228 -1.038041e-02 -2.1098247131
+     [13,] -2.485720e-02 0.2992744 -0.5012567  2.854416e-02  0.4458177808
+     [14,] -2.521675e-02 0.2680180 -0.6681932  1.598840e-02 -0.3307470533
+     [15,] -3.555579e-02 0.3391407 -0.6154673  2.485977e-03  0.0023304706
+     [16,] -2.116471e-02 0.3141863 -0.6092937 -2.269591e-02 -3.3024283858
+     [17,] -4.314458e-02 0.2972127 -0.7251517  6.361658e-03 -0.9823466829
+     [18,] -1.842390e-02 0.2707411 -0.4819430  8.133767e-02 -1.3617698307
+     [19,] -5.949061e-02 0.3448641 -0.8048166 -2.404387e-02  1.0274582463
+     [20,] -6.350477e-02 0.3259453 -0.7872608 -4.158524e-02 -2.7359678998
+     [21,] -4.232949e-02 0.3318576 -0.6578238 -2.011148e-02 -1.0268456560
+     [22,] -5.694403e-02 0.3649959 -0.8596797  3.103773e-02  1.0354513886
+     [23,] -3.979549e-02 0.3305844 -0.5667036  4.328548e-02 -0.3521839920
+     [24,] -4.488025e-02 0.3468175 -0.6662846  1.534393e-02 -0.5003360369
+     [25,]  2.019039e-02 0.3139238 -0.7730644  9.195098e-03  0.1527775650
+     [26,] -2.380146e-02 0.2462405 -0.6008833 -4.325737e-02 -1.0259507698
+     [27,] -4.398172e-02 0.3349993 -0.6322387 -5.698308e-02 -2.1214509120
+     [28,]  1.490556e-03 0.2253991 -0.6499727  6.837651e-02  1.2748998984
+     [29,] -4.804551e-02 0.2924791 -0.6654717  6.953013e-03 -0.8879220625
+     [30,] -3.828233e-02 0.2667597 -0.6203895  1.877213e-03 -2.1953900771
+     [31,] -4.502938e-02 0.2925630 -0.6794857  4.892807e-02 -1.5232800149
+     [32,] -7.092474e-02 0.2975882 -0.6775377  2.665627e-02  0.2261684745
+     [33,] -1.795186e-02 0.2820603 -0.6326601 -2.048257e-02 -1.2980823826
+     [34,] -2.277144e-02 0.3221404 -0.8055008 -4.977039e-02 -1.6498741395
+     [35,] -5.838172e-02 0.3723503 -0.6607699  1.414381e-02 -1.4328147798
+     [36,] -4.582072e-02 0.2698829 -0.6270478  6.844559e-02 -1.0719713212
+     [37,] -2.710059e-02 0.3527650 -0.8354165  1.002786e-01  0.1529888643
+     [38,] -7.154923e-02 0.3479203 -0.7241481  1.383044e-02 -1.2992956611
+     [39,] -5.508870e-02 0.3020570 -0.7013328  2.493937e-02 -1.2150988164
+     [40,] -2.219136e-02 0.2983792 -0.7026127 -4.048730e-02 -1.4110836566
+     [41,] -2.420488e-02 0.2603872 -0.6969328 -5.499951e-02 -0.1641250279
+     [42,] -5.765952e-02 0.3229324 -0.7538924  7.532761e-02 -1.7261170837
+     [43,] -7.308913e-02 0.2647942 -0.5270183  3.912402e-02  0.9661580576
+     [44,] -2.401035e-02 0.3051012 -0.7339310  1.815003e-02  0.2316104679
+     [45,] -3.545018e-02 0.3069882 -0.6273821  6.167109e-02  0.3825856418
+     [46,] -8.109889e-02 0.3737008 -0.8074984 -1.835667e-03 -1.9351844188
+     [47,] -4.807792e-02 0.2588341 -0.8364872 -1.398825e-02 -0.4940563333
+     [48,] -4.460747e-02 0.2815161 -0.6339455  2.746974e-03 -1.6344297634
+     [49,] -9.066035e-03 0.2772185 -0.7996868  1.163637e-02 -1.5977070872
+     [50,] -7.544904e-02 0.2434323 -0.6338975 -1.628625e-02 -0.9481903853
+     [51,] -7.210997e-03 0.3404396 -0.7910669  5.360769e-03 -1.4590140262
+     [52,] -2.402237e-02 0.3140803 -0.7036894 -2.060337e-02 -1.8504787470
+     [53,] -9.019752e-02 0.3013412 -0.6872069  3.390949e-02 -0.7831372933
+     [54,] -6.050273e-02 0.2647554 -0.7040024  5.392443e-02 -0.2701381191
+     [55,]  1.321388e-02 0.3215602 -0.7298563 -1.767815e-02 -2.1040687232
+     [56,] -6.932821e-02 0.3426797 -0.7492380  6.823048e-02 -1.7582718448
+     [57,] -3.563433e-03 0.3084536 -0.5716737  4.662886e-02 -1.4920228329
+     [58,] -3.879880e-02 0.2991355 -0.6803243 -3.707833e-02 -1.6155024216
+          
+iterations         [,17]
+      [1,]  1.207261e-02
+      [2,]  4.201757e-02
+      [3,]  9.496012e-03
+      [4,]  1.846149e-02
+      [5,]  2.279192e-02
+      [6,]  6.630103e-03
+      [7,]  1.084558e-02
+      [8,]  1.951476e-03
+      [9,] -1.865198e-02
+     [10,]  9.054429e-03
+     [11,] -3.635141e-03
+     [12,]  8.778632e-03
+     [13,]  2.854811e-04
+     [14,] -2.530293e-03
+     [15,]  4.859041e-03
+     [16,]  1.015940e-02
+     [17,]  8.991971e-03
+     [18,] -1.292628e-02
+     [19,]  6.689373e-03
+     [20,] -1.162575e-02
+     [21,] -8.335069e-03
+     [22,]  8.876269e-03
+     [23,]  6.188776e-03
+     [24,] -2.059985e-02
+     [25,]  8.943368e-03
+     [26,]  1.462085e-02
+     [27,]  3.347533e-02
+     [28,]  3.192077e-03
+     [29,] -1.908470e-02
+     [30,]  3.078652e-02
+     [31,] -8.190360e-03
+     [32,]  2.362827e-03
+     [33,]  1.134321e-02
+     [34,] -2.662909e-02
+     [35,] -1.688815e-02
+     [36,] -2.310732e-03
+     [37,]  1.847124e-02
+     [38,] -6.661893e-04
+     [39,] -1.857755e-02
+     [40,]  2.239744e-02
+     [41,] -5.403277e-04
+     [42,]  1.541931e-02
+     [43,] -4.008616e-03
+     [44,] -9.535582e-03
+     [45,]  1.194059e-02
+     [46,]  4.953388e-03
+     [47,] -5.631111e-03
+     [48,] -1.952485e-02
+     [49,]  3.324131e-02
+     [50,]  4.811472e-03
+     [51,]  5.975068e-03
+     [52,] -1.101903e-02
+     [53,] -9.949927e-03
+     [54,]  1.817049e-02
+     [55,] -1.588284e-02
+     [56,]  5.694431e-03
+     [57,]  8.791290e-03
+     [58,] -2.998402e-03
+ [ reached getOption("max.print") -- omitted 3942 rows ]
+
+$a
+          
+iterations          [,1]          [,2]          [,3]          [,4]          [,5]
+      [1,]  5.919737e-01  8.053431e-02 -4.746806e-02  1.138007e-01 -0.1896945520
+      [2,] -1.960198e+00  2.959626e-01  6.103311e-01  4.115500e-01 -0.2437031223
+      [3,] -5.616524e-02 -5.567585e-02  8.494733e-03 -2.392249e-02 -0.0025036867
+      [4,]  1.502145e-02  3.322570e-01 -1.084451e-01 -7.030343e-02 -0.0864970412
+      [5,] -7.023228e-01  3.728595e-01 -5.976026e-02  1.908038e-01 -0.3918665545
+      [6,] -3.567275e-01  2.288339e-01  4.141186e-01  7.627390e-01 -0.4859171979
+      [7,]  3.772610e-01  2.631065e-01  1.298197e+00  8.479117e-01  0.0245549798
+      [8,] -4.920608e-02 -2.211642e-01  3.284161e-02  8.110920e-01  0.1092051354
+      [9,]  1.646377e-02 -1.082805e-02 -1.946055e-02  2.319181e-02  0.0858541420
+     [10,] -1.875468e-01 -2.370782e-01  8.929817e-02  4.741070e-01 -0.0120359671
+     [11,] -3.367565e-01 -8.696061e-03  2.134747e-01 -2.682092e-02 -0.0990461508
+     [12,]  2.596163e-02  1.763836e-01 -1.095088e-01  1.033896e+00 -0.4033207435
+     [13,]  5.277073e-01  1.393612e-01  5.978149e-01  1.658027e+00 -0.5289679364
+     [14,]  7.060143e-02 -5.154232e-01  1.199614e-02  6.777389e-01 -0.4195823989
+     [15,]  9.430755e-02 -2.159955e-01  1.481532e-01  1.003523e-01  0.2254398106
+     [16,]  2.396289e-01  2.583511e-01  6.838280e-03  1.934979e-01 -0.7654324251
+     [17,] -2.280106e-01 -5.596102e-01  1.212851e-01  6.152800e-01 -0.4223161712
+     [18,]  1.341041e-01  1.429661e-01  9.750136e-01  1.134765e+00  0.3434218859
+     [19,] -4.444131e-01 -4.005466e-02  1.093681e+00  1.205436e+00 -0.5804287994
+     [20,]  8.693568e-03  7.664233e-01 -1.147303e-01  4.754831e-01  0.0597228880
+     [21,] -5.081423e-01 -6.719890e-01  3.340456e-01  5.409535e-01 -0.3585802792
+     [22,]  1.809203e-01  2.085839e-02  5.297293e-02  4.890602e-01 -0.0082477298
+     [23,] -2.586838e-02 -3.594300e-02  3.142799e-04 -1.154591e-02 -0.0066447793
+     [24,] -4.532391e-01 -1.083449e-01  4.095656e-01  7.331813e-01 -0.1543386752
+     [25,]  1.066895e+00 -3.514078e-01  1.674296e-01  9.945424e-01  0.0347914455
+     [26,]  1.257161e-01 -3.716643e-01  3.487288e-01  5.125202e-01 -0.1040321294
+     [27,]  7.875756e-01 -5.241222e-02 -3.371190e-01  3.917041e-01 -0.3653136641
+     [28,]  1.438387e-02 -1.406105e-01  3.607172e-01  3.359988e-01  0.0292960392
+     [29,] -1.745301e-01  3.661898e-01 -5.087407e-01 -1.217751e-03 -0.0849425967
+     [30,]  7.538545e-02  1.480645e-01  5.364473e-02  1.129367e-01 -0.1340256908
+     [31,]  1.941805e-01  2.984560e-01 -4.389234e-01  3.921086e-01 -0.3054811026
+     [32,]  2.558237e-01 -7.907732e-03 -1.285098e-01 -6.561491e-02  0.0067435998
+     [33,]  1.447362e+00  5.598987e-01  7.273401e-01  7.871008e-01  0.0366849528
+     [34,]  5.126502e-01 -3.056851e-01  3.729702e-02  3.245534e-01 -0.4212154381
+     [35,]  2.023574e-02 -4.250166e-02 -5.822772e-02  6.244155e-01  0.0761189712
+     [36,]  3.293401e-01 -7.470963e-01 -4.432456e-02  3.663423e-01  0.2930785244
+     [37,] -2.327215e-01  2.678408e-01  2.667814e-01 -1.303420e-01  0.0608150837
+     [38,]  1.700751e-02  5.545553e-02  7.765739e-01  3.171933e-01 -1.1515326002
+     [39,]  2.283956e-02  2.821817e-01  2.955206e-04  3.866641e-02  0.0787008129
+     [40,] -6.451390e-02  1.841606e-01 -8.161852e-02  3.593608e-01  0.2293376597
+     [41,]  3.410754e-01 -3.852199e-01  1.154507e-02  5.687263e-02  0.3810820912
+     [42,] -2.106242e-01 -6.966333e-03 -1.545719e-01  3.509352e-01 -0.7374860900
+     [43,] -1.700573e-01 -4.077705e-01  9.486074e-02  7.170754e-01  0.4605641868
+     [44,]  3.892677e-01  1.822924e-01 -6.382894e-02  4.146142e-01  0.0639601614
+     [45,] -8.065078e-02  5.247508e-02  1.910638e-01  5.523440e-01  0.0598951517
+     [46,]  7.929140e-01 -3.246638e-01  2.807533e-01  4.135905e-01 -0.3057055090
+     [47,] -4.471524e-01 -2.736938e-01  2.244960e-01  5.860387e-01 -1.1114261729
+     [48,] -1.065160e+00 -8.701541e-01  8.467924e-01  7.745958e-01 -0.3263558619
+     [49,]  2.307741e+00  3.507162e-01  5.374739e-01  3.508266e-01 -0.4947174288
+     [50,]  1.933336e-01  1.484006e-01  6.781429e-02  2.141480e-01 -0.0770458653
+     [51,]  4.004356e-03 -1.088394e-02 -2.694955e-02 -2.202713e-03 -0.0189038199
+     [52,] -4.044882e-01 -5.188909e-01  1.548032e+00  1.245177e+00  0.0829197359
+     [53,] -1.325986e-01 -8.094339e-01  2.828781e-01  3.826893e-01 -0.7920619657
+     [54,] -1.399203e-01 -5.854815e-02  3.115447e-02  1.420801e-01 -0.1174454330
+     [55,] -1.180007e-01  4.426909e-02 -7.183142e-03  6.050402e-01  0.1045585934
+     [56,]  2.981840e-01  2.358621e-01 -3.324315e-01  4.887854e-01  0.4011002102
+     [57,]  7.114533e-01 -2.004540e-01  2.785917e-01  3.878752e-01 -0.8417040649
+     [58,]  1.287396e-01  2.461744e-01  4.237711e-01  4.200035e-01 -0.1635806472
+     [59,] -2.401326e-01 -1.109475e+00  2.967208e-01  1.254164e-01 -0.3531325754
+     [60,]  2.985446e-01  1.788644e-01  2.611915e-01  2.992368e-01 -0.0566540952
+     [61,]  5.008666e-03  3.093033e-01  3.131723e-01  1.785208e-01 -0.1016753394
+     [62,] -8.723098e-02  3.340225e-02 -3.329170e-01  1.725065e-01  0.2066050484
+     [63,]  8.433746e-01 -1.212012e-01  2.144801e-02  1.018542e+00 -1.1028862130
+     [64,]  5.159536e-01 -1.438767e+00  2.338125e-01  3.529071e-01 -0.6311963677
+     [65,] -8.486356e-02 -1.876040e-01  1.623356e-01  2.770053e-01 -0.6227266223
+     [66,] -5.683848e-04  2.229251e-02 -2.474156e-02 -1.433581e-02 -0.0195172214
+     [67,] -1.867133e-01 -3.919599e-01 -2.234616e-01  7.508615e-01 -0.4805780583
+     [68,] -3.681896e-01 -4.228124e-01  2.395169e-01  2.723116e-01 -0.0894523029
+     [69,] -9.645887e-02  3.412653e-02  5.501469e-01  3.140931e-02 -0.4003469486
+     [70,] -5.166679e-01  4.585446e-01  4.269836e-01  9.098639e-01  0.3877673863
+     [71,]  5.385684e-01  6.720800e-01 -1.243743e-01  8.583702e-01 -0.8274044317
+     [72,]  3.270846e-02  1.995437e-03  2.070284e-03  6.364719e-04 -0.0410038106
+     [73,]  8.297139e-01 -9.186655e-01  2.479090e-01  3.147256e-01 -0.4489330891
+     [74,] -2.299447e-02 -1.285645e-01 -1.057798e-01  9.556175e-02 -0.1663766509
+     [75,] -2.848848e-01 -5.894684e-01  4.934818e-01 -1.123009e-02 -0.4835648936
+     [76,] -8.902041e-01 -2.947896e-01 -3.485832e-02  5.802685e-01 -1.0128593874
+     [77,] -2.266019e-01 -7.656000e-03  5.514925e-02  1.871441e-01  0.0884050062
+     [78,]  4.146415e-01  2.186874e-01 -1.173978e-01  5.299882e-01  0.0755863158
+     [79,] -8.668423e-01 -3.388792e-01  9.599764e-02  1.660595e-01 -0.3367791525
+     [80,]  4.700851e-01 -6.686326e-03  1.707576e-01  2.763855e-01 -0.0011537069
+     [81,]  5.804412e-01  1.454561e+00  1.290897e+00  1.865382e+00  1.2358254322
+     [82,] -3.163467e-01 -2.103776e-01 -5.299495e-01  3.456842e-01 -0.0662156033
+     [83,]  3.824413e-01 -2.685725e-01  1.410075e+00  8.639111e-01 -1.1285285742
+     [84,]  1.463588e-01  2.279034e-01  2.794839e-01  4.335363e-01 -0.2019535085
+     [85,] -5.514441e-01  3.286552e-01  1.597890e-01  3.500946e-01  0.1690629844
+     [86,] -3.311598e-02  4.125686e-01  4.384709e-01  9.039962e-01  0.4852790154
+     [87,] -8.006196e-01 -5.436124e-01  5.702078e-01  9.131393e-01 -0.3193871690
+     [88,]  3.518697e-01  2.039361e-01  7.176424e-02  1.090327e-01  0.2454784740
+     [89,]  3.082581e-02 -4.279256e-02  1.403326e-02  5.593477e-01 -0.0043818659
+     [90,] -3.577013e-01 -2.080233e-01  4.363160e-01  7.465115e-01 -0.4374580573
+     [91,]  1.517562e+00 -1.302719e+00  9.043513e-01  1.604656e+00  0.5916981541
+     [92,] -1.171692e-01  1.699256e+00  2.859922e-01  1.091654e+00  0.1210918892
+     [93,] -1.335934e+00  8.129638e-01 -1.724323e-01  3.766596e-01 -0.2579096230
+     [94,]  3.644898e-02 -4.008831e-01  3.111527e-01  7.319513e-01 -0.3433821801
+     [95,]  9.813277e-01 -1.018263e+00 -1.585981e-01  3.606068e-01 -0.0616117942
+     [96,] -3.621800e-01  5.740613e-02  2.167245e-01 -1.771529e-01 -0.0596889253
+     [97,] -3.162254e-02  4.353363e-01  7.124038e-01  9.397924e-01 -0.1349690154
+     [98,] -1.383599e-01 -9.151868e-02 -3.794435e-01  1.017583e-01 -0.1826997318
+     [99,] -1.305789e-01  8.187508e-02  6.878571e-01  5.258675e-01 -0.4563110188
+    [100,]  5.455916e-01  1.469294e-01  4.957898e-01  1.268906e+00 -0.3632422052
+    [101,] -4.536423e-02 -7.133238e-02 -1.651309e-02  5.085910e-02  0.0726449429
+    [102,] -5.275662e-01 -2.899814e-01  2.310286e-01 -1.458021e-01 -0.7163471536
+    [103,] -1.257390e-01  3.458997e-01  1.069619e-01  2.674113e-01 -0.0011334145
+    [104,]  2.767522e-01 -7.040238e-01 -3.817545e-01  2.185782e-01 -0.2763785907
+    [105,]  5.697045e-01 -3.305290e-01  4.094224e-01  3.167429e-01 -0.2297612957
+    [106,] -1.043391e+00  1.168019e+00  6.923712e-01  1.629398e+00  0.4421214859
+    [107,]  2.654316e-01  3.267626e-01 -1.954447e-01  3.301999e-01  0.1004196647
+    [108,]  9.901835e-01  3.730883e-01  1.132092e-01  1.098024e+00 -0.6085926337
+    [109,]  8.061779e-01  1.950528e-01  2.464552e-01 -3.453710e-01 -0.5021701776
+    [110,] -6.672043e-01  2.277914e-01 -7.867404e-02  1.680388e-01 -0.2082290632
+    [111,]  3.502305e-01 -3.998251e-01  2.575522e-01  6.455723e-01 -0.0126958061
+    [112,] -1.385973e-01 -4.834565e-01  4.475475e-01  6.513512e-01  0.6540458741
+    [113,]  1.965196e+00 -5.545659e-01  1.236943e+00  9.859342e-01  0.1250593178
+    [114,] -4.231707e-01 -4.450246e-02  6.512326e-01  9.618740e-01  0.5739845090
+    [115,]  2.236072e-02  4.438622e-01  4.883418e-01  4.309551e-02  0.5264796162
+    [116,] -3.524771e-01 -3.583998e-01  5.778316e-01  2.167824e-01 -0.5087883312
+    [117,] -1.923868e-01  9.663488e-02 -9.897119e-03 -3.799105e-02 -0.3839311669
+    [118,]  6.484969e-02  1.775293e-01 -4.730495e-02 -2.526931e-02  0.0082132955
+    [119,] -8.766809e-01  1.142943e+00  1.683718e+00  7.019329e-01  0.7384513476
+    [120,]  1.068998e-01 -3.295605e-01  4.374779e-01 -4.615513e-02 -0.5260086015
+    [121,]  5.497147e-01 -7.216303e-01 -1.864391e-02  1.866894e-01 -0.3140675553
+    [122,] -1.408578e-01 -2.211275e-01 -3.120879e-01 -2.646749e-01  0.0954643779
+    [123,]  1.491024e-01 -1.983305e+00  3.161287e-01 -1.379949e-01 -0.4554885015
+    [124,]  4.912435e-02 -2.074911e-02 -6.968248e-03 -1.303591e-02  0.0036019978
+    [125,] -2.741097e+00  1.909429e+00  5.440195e-01  1.522607e+00  0.1810137900
+    [126,] -2.709673e-01 -3.287105e-03 -5.669423e-02  2.251859e-01 -0.6007150029
+    [127,]  6.109672e-01 -4.663034e-01 -5.085600e-01  4.041624e-01 -0.9581178468
+    [128,] -5.836111e-01  8.281719e-01  1.790621e+00  7.489807e-01 -0.6636021424
+    [129,] -6.138573e-02 -2.943020e-02 -2.151373e-01  1.772541e-01 -0.0662721557
+    [130,] -2.249958e-01 -1.985198e-01  4.267463e-03  4.229504e-01 -0.0495334901
+    [131,]  2.417263e-01  5.122421e-01 -2.837738e-01  3.173585e-01  0.1638510822
+    [132,]  1.485690e+00  8.205765e-01  4.665428e-01  8.201444e-01 -0.0096888666
+    [133,]  1.098891e-01 -2.363180e-01  2.223413e-01 -1.271528e-01 -0.2103126289
+    [134,]  5.174894e-01 -1.309567e+00  7.628743e-01  2.465964e-01 -0.9386706332
+    [135,]  2.734527e-01 -4.582503e-01  1.486414e-01  5.793924e-01 -0.2086105022
+    [136,] -2.563645e-01  3.436339e-02 -3.604431e-01  4.336836e-01 -0.3107759072
+    [137,]  4.771515e-02  1.554053e-02 -2.049410e-01  6.013604e-03 -0.0975433333
+    [138,]  1.001214e-01  2.641800e-01  1.888288e-02  1.975958e-01 -0.4285289541
+    [139,]  2.825459e-01 -2.259322e-01 -2.662768e-01  1.124629e-01 -0.4117995743
+    [140,]  1.474769e-01 -3.119227e-01 -1.473746e-01  1.571508e-01 -0.0097696117
+    [141,]  9.346713e-02 -1.626685e-01 -6.027208e-02  2.155549e-01  0.2173913405
+    [142,]  8.298462e-03  1.091074e-02  4.481810e-02 -1.490121e-02 -0.0224742714
+          
+iterations          [,6]          [,7]
+      [1,]  2.037318e-01 -6.351254e-01
+      [2,] -6.440956e-01 -7.302553e-01
+      [3,]  7.609326e-03 -5.152706e-02
+      [4,] -8.645925e-02 -1.124673e-01
+      [5,] -7.494484e-01 -5.385402e-01
+      [6,]  4.494738e-01 -1.195019e-02
+      [7,]  9.922470e-02 -3.609694e-02
+      [8,]  4.869501e-01 -6.016125e-01
+      [9,]  4.243961e-02  1.124372e-02
+     [10,]  5.851821e-02  1.423338e-01
+     [11,]  1.937323e-01 -4.827116e-01
+     [12,]  2.910375e-02  1.462612e-01
+     [13,] -5.357350e-01  7.858037e-02
+     [14,] -1.267463e-01 -5.606049e-01
+     [15,]  1.292986e-01  5.508320e-03
+     [16,] -4.469242e-01 -6.930438e-01
+     [17,] -2.866923e-01 -3.905057e-01
+     [18,]  1.364881e+00  3.162258e-01
+     [19,] -2.034707e-01 -2.860384e-01
+     [20,]  9.997175e-03 -4.898942e-01
+     [21,] -8.210133e-01 -9.841517e-01
+     [22,] -2.920982e-01 -4.385988e-02
+     [23,] -4.428152e-02 -2.342811e-02
+     [24,] -7.384709e-01 -6.382372e-01
+     [25,]  8.157010e-02 -6.851015e-01
+     [26,]  4.128027e-02  2.362257e-04
+     [27,] -1.911386e-01 -4.513398e-01
+     [28,] -2.069473e-01 -2.120655e-01
+     [29,] -8.845316e-02 -5.728583e-01
+     [30,]  8.850258e-02  3.436013e-02
+     [31,] -1.476811e-01  1.457766e-01
+     [32,] -1.260158e-03 -1.831441e-01
+     [33,]  1.247082e-02 -4.253299e-01
+     [34,]  6.912195e-02 -7.609180e-01
+     [35,] -2.364361e-01 -2.498546e-02
+     [36,] -7.827845e-02  2.209718e-01
+     [37,]  2.988566e-01 -6.971676e-02
+     [38,]  6.231737e-01 -7.153126e-01
+     [39,]  2.179571e-01 -2.003810e-01
+     [40,]  4.770304e-01 -1.760122e-01
+     [41,] -2.495706e-01 -6.504870e-02
+     [42,]  3.521398e-01 -5.071109e-02
+     [43,]  1.786013e-01  2.202758e-01
+     [44,]  3.880899e-02 -1.812120e-01
+     [45,] -2.848933e-03 -1.307390e-01
+     [46,]  7.590451e-01  1.832477e-01
+     [47,] -8.684911e-01 -4.701649e-01
+     [48,] -5.871706e-01 -1.648249e-01
+     [49,] -7.446899e-01 -3.395075e-01
+     [50,] -5.202339e-02 -2.687393e-02
+     [51,] -9.802604e-03 -1.314622e-02
+     [52,]  5.791952e-02  1.415439e-02
+     [53,] -7.290165e-01 -3.745446e-01
+     [54,]  1.533970e-02  2.469630e-02
+     [55,] -5.150856e-01 -5.053543e-01
+     [56,]  6.153119e-01 -1.224830e-02
+     [57,] -4.741235e-01 -1.009869e+00
+     [58,] -6.703857e-02 -5.985524e-01
+     [59,]  1.761180e-01 -2.009631e-01
+     [60,]  3.286676e-01 -1.040988e-01
+     [61,]  7.141025e-02 -3.227466e-01
+     [62,] -2.251347e-01 -2.504143e-01
+     [63,] -8.090066e-02 -3.630655e-01
+     [64,] -8.359642e-01 -7.241701e-01
+     [65,] -3.760959e-01 -3.635310e-01
+     [66,] -5.837273e-02  9.001419e-02
+     [67,] -1.890198e-02 -4.026271e-01
+     [68,] -1.713268e-01 -2.378837e-02
+     [69,]  1.652843e-01 -4.398116e-01
+     [70,]  6.199936e-01 -1.104043e-02
+     [71,] -2.153259e-01 -2.222538e-01
+     [72,]  5.027763e-02 -9.305635e-02
+     [73,] -1.056303e-01 -2.808107e-01
+     [74,] -3.557753e-01 -1.524314e-01
+     [75,] -4.899924e-01 -2.686996e-01
+     [76,]  6.725516e-02 -6.037025e-01
+     [77,] -2.302797e-02  5.081824e-02
+     [78,] -3.432259e-01 -3.860113e-01
+     [79,] -2.398607e-01 -1.169908e-01
+     [80,] -4.402507e-01  1.595108e-01
+     [81,]  5.239601e-01  1.073984e+00
+     [82,]  9.333274e-01 -2.676227e-01
+     [83,]  6.094320e-02 -7.750065e-01
+     [84,]  5.790631e-01 -5.118060e-02
+     [85,]  9.420766e-02 -3.540903e-01
+     [86,]  1.615011e-03  1.514851e-01
+     [87,]  7.062243e-02  4.453034e-02
+     [88,]  1.001078e-01 -3.600478e-01
+     [89,] -3.366183e-01 -2.285644e-01
+     [90,] -7.869146e-01 -5.252652e-01
+     [91,]  1.148809e-01  5.497923e-03
+     [92,] -1.775504e-01  6.231845e-02
+     [93,]  1.978862e-01  1.995574e-01
+     [94,] -7.029359e-01 -6.143165e-01
+     [95,] -3.402051e-01 -4.592769e-01
+     [96,] -2.606276e-01 -1.937016e-01
+     [97,] -3.755311e-01  4.866938e-01
+     [98,]  3.183031e-02 -4.343806e-01
+     [99,]  7.606328e-01  4.775731e-02
+    [100,]  1.719855e-01 -8.642322e-02
+    [101,] -1.776727e-01 -1.315529e-01
+    [102,] -5.565322e-01 -4.303716e-01
+    [103,]  3.031683e-01 -6.744471e-02
+    [104,]  1.227822e-01 -8.433920e-01
+    [105,]  8.547887e-02 -8.948226e-02
+    [106,] -6.279709e-04  6.422610e-01
+    [107,] -6.161551e-02 -7.224759e-01
+    [108,]  3.241300e-02 -7.463971e-01
+    [109,] -9.781283e-02 -3.162788e-01
+    [110,] -1.027035e+00 -4.257950e-01
+    [111,]  1.162970e-01 -1.408259e-01
+    [112,]  3.480144e-02  9.762379e-02
+    [113,]  1.161752e+00  1.249660e-01
+    [114,]  3.289367e-01  7.811729e-02
+    [115,]  5.714891e-02 -2.308736e-01
+    [116,] -2.683117e-02 -3.818592e-01
+    [117,]  1.012250e-01 -4.889727e-01
+    [118,]  2.852438e-02  1.706103e-02
+    [119,]  4.995380e-01 -1.247925e-01
+    [120,] -4.586215e-01 -9.515044e-01
+    [121,] -1.938324e-01 -9.778166e-01
+    [122,]  3.290215e-02 -7.403776e-03
+    [123,] -6.592579e-01 -7.362720e-01
+    [124,]  2.084266e-02  4.754155e-02
+    [125,] -4.811430e-01 -2.590499e-01
+    [126,]  3.545112e-01 -5.117026e-01
+    [127,]  7.189670e-01 -9.441018e-01
+    [128,]  4.757946e-01 -2.672829e-01
+    [129,] -4.213998e-01 -2.053416e-01
+    [130,] -1.109440e-01 -2.241790e-01
+    [131,] -4.564043e-01 -4.810373e-01
+    [132,] -5.433195e-02  3.910950e-02
+    [133,]  1.664904e-01 -5.334065e-02
+    [134,] -1.660249e-01 -4.514618e-01
+    [135,]  1.601435e-01  1.097075e-01
+    [136,] -3.035811e-01  1.273787e-01
+    [137,]  1.615641e-01 -8.561125e-02
+    [138,]  9.318346e-02 -4.748431e-01
+    [139,] -2.230509e-01 -4.579618e-01
+    [140,] -2.362141e-01 -4.838914e-01
+    [141,] -1.974986e-02  2.137535e-02
+    [142,]  5.751173e-03 -2.043335e-02
+ [ reached getOption("max.print") -- omitted 3858 rows ]
+
+$sigma
+   [1] 0.469656181 0.827243489 0.042966234 0.141586806 0.349868618 0.473546039
+   [7] 0.584849719 0.477054969 0.062223792 0.214644720 0.539712322 0.705377348
+  [13] 0.849306735 0.608749800 0.162881241 0.839283876 0.435459293 0.999884047
+  [19] 1.026814561 0.454186657 0.834018927 0.480403003 0.061722876 0.693536795
+  [25] 0.863702797 1.169525267 0.573884266 0.212312131 0.538210612 0.183619503
+  [31] 0.408634362 0.142638772 1.015438714 0.424831609 0.274704700 0.386789580
+  [37] 0.474463453 0.679921204 0.202942967 0.299743116 0.346915275 0.314132375
+  [43] 0.598936950 0.311422296 0.312149161 0.708735823 1.187505610 0.697808926
+  [49] 1.032959398 0.143289348 0.014123908 0.929308263 0.549346116 0.121031210
+  [55] 0.527537489 0.568558840 0.527472135 0.553577546 0.579641369 0.289143847
+  [61] 0.310747114 0.217004660 1.040499707 1.018886469 0.442630896 0.058616051
+  [67] 0.628947744 0.607920086 0.290546233 0.652161216 0.425132319 0.043917462
+  [73] 0.530613839 0.141084236 0.369008502 0.499424951 0.127464025 0.415042788
+  [79] 0.475801508 0.252056787 1.339267024 0.821209563 0.849367290 0.229421092
+  [85] 0.277665293 0.344156581 0.476794205 0.240421797 0.274617564 1.888286345
+  [91] 0.822646087 0.695579837 0.658372622 1.344009132 0.648918487 0.417106767
+  [97] 0.850919549 0.281729374 0.492365607 0.689936042 0.111122670 0.401189232
+ [103] 0.286777502 0.444339592 0.489493236 1.036079890 0.379302520 0.591395051
+ [109] 0.563461840 0.867798471 0.477178679 0.447124381 0.771777678 0.691211684
+ [115] 0.405361016 0.301933193 0.300409339 0.071309482 1.645778976 0.639528454
+ [121] 0.764300702 0.281506702 1.107620218 0.036937862 1.390409685 0.283529731
+ [127] 0.827794606 0.870589829 0.163229755 0.327061130 0.540489459 0.607205982
+ [133] 0.188340413 0.619168488 0.410217051 0.394916384 0.101352162 0.329298675
+ [139] 0.260813211 0.265418983 0.221245474 0.022654924 1.295731736 0.414017220
+ [145] 0.686798155 0.089331690 0.113699357 0.803778421 0.626100995 0.513941430
+ [151] 0.954000871 0.278456256 0.260547697 0.351104501 1.950143339 0.048020181
+ [157] 0.673336167 0.676311999 0.551624725 0.289228634 1.760262591 0.425614426
+ [163] 0.734738365 0.210218865 0.329637037 0.893814408 0.617971005 0.395661764
+ [169] 0.127840647 0.080021651 0.873806406 0.541879816 0.394408336 0.356616863
+ [175] 0.335180503 0.609080087 0.629049987 0.465682678 0.101683803 0.261993001
+ [181] 0.634647069 0.810667533 0.047386282 0.927352156 0.599310177 0.669840940
+ [187] 1.119094493 0.741262984 0.177531676 1.130082320 0.773595138 0.273666463
+ [193] 1.125937966 0.132529918 0.485412083 0.680387593 0.697454266 0.605891740
+ [199] 1.521483421 0.580585259 1.244510279 0.688392510 0.444843615 0.428410748
+ [205] 0.003189614 0.740627145 0.851177697 0.578996549 0.855839491 1.441737159
+ [211] 0.380409412 0.747088008 0.325361071 0.539070803 0.685558409 0.320206769
+ [217] 0.582142135 1.455842176 0.651621938 1.351146371 0.491509416 0.161303511
+ [223] 0.100219655 0.518253427 0.890174046 0.872757441 0.071432009 0.412052879
+ [229] 0.765277978 0.292658292 0.519799654 0.239142293 0.839133864 0.228187283
+ [235] 0.811707629 0.419361812 0.612734972 0.482879674 1.074937642 0.509616775
+ [241] 0.647546507 0.437330523 1.038277990 0.734795685 0.676691353 0.600062557
+ [247] 0.069217853 0.562687907 0.286328154 0.515698471 0.784731335 0.655652759
+ [253] 0.838018224 0.364997442 0.605985060 0.805401835 0.511696210 1.418938511
+ [259] 0.515415244 0.335986021 0.983479358 1.257950728 1.529670782 0.674616193
+ [265] 0.708664710 0.171967999 0.264652333 0.380352440 1.441130637 0.029422852
+ [271] 0.286904606 0.859429940 0.373684492 0.956186996 0.195344847 0.379345782
+ [277] 0.973790967 0.906612384 0.452632681 0.633930009 1.685465594 0.924655002
+ [283] 0.836004582 0.411020841 1.194313873 0.148169054 0.739420407 0.445026774
+ [289] 0.571471699 0.399099745 0.444333121 0.312011941 0.265664384 1.261718660
+ [295] 0.629996279 0.186667019 0.098958110 0.070450352 0.251113838 0.719615195
+ [301] 0.463824925 0.808225177 0.450794016 0.058147030 0.270867833 0.128580601
+ [307] 0.239939676 0.288990750 0.652408882 0.215723896 0.397287123 0.255607661
+ [313] 1.033334643 0.782321700 0.351618434 0.377732084 0.541807876 0.330009799
+ [319] 0.313154647 0.079530627 0.822061174 0.007055637 0.788089579 0.588038840
+ [325] 0.328369991 0.347420242 0.009253625 1.332257142 0.310058478 0.363207310
+ [331] 0.249510011 0.212933846 1.045784317 0.216625997 0.456194979 0.402697537
+ [337] 0.896222828 0.606928251 0.793566431 0.311878169 1.109523248 1.239549588
+ [343] 0.631372489 0.305050542 0.167336857 0.559220418 0.210691683 1.002155227
+ [349] 0.016287644 0.021556420 0.268900064 0.112134649 1.351867760 0.185088657
+ [355] 0.205303672 0.526030453 1.404919888 0.853097634 0.562534199 0.175178287
+ [361] 0.488951262 0.326615480 0.394476084 0.488175039 0.089101370 0.256521349
+ [367] 1.648206559 0.946200838 0.954229854 0.704731381 0.065727079 0.667251574
+ [373] 0.551798568 0.080089150 1.736074489 1.014209199 0.557666025 0.520869907
+ [379] 0.603416499 0.648950334 1.121674471 1.444184775 0.366190623 0.680553123
+ [385] 0.651817849 0.131988174 0.557192271 0.311361715 0.790089573 0.186526861
+ [391] 0.440271106 0.406332273 0.204675486 0.307258955 0.378474917 0.572803183
+ [397] 0.954024706 0.532059444 1.889402523 0.236674455 0.967144675 0.368022594
+ [403] 0.293809868 0.495195266 0.619594616 0.482052313 0.904600319 0.239443749
+ [409] 1.160347834 0.251472780 1.271582417 0.710599383 0.372267324 1.393799291
+ [415] 0.796202844 0.118923455 0.247815251 0.343344265 0.701048765 0.890429819
+ [421] 0.497426147 0.621549278 0.558574022 0.758047465 0.847975548 0.333775548
+ [427] 0.304346884 0.614006464 2.574853234 0.068385242 0.581591816 0.521680835
+ [433] 0.501487036 1.244946028 0.147426157 0.089205412 0.818221696 0.096426273
+ [439] 0.111327131 0.495028240 0.692838007 0.461199070 0.251105439 0.309630972
+ [445] 0.044322618 0.281250572 0.720268016 0.932198058 0.570556927 0.449648159
+ [451] 0.182328826 0.308857809 0.802398857 0.301565623 1.405150447 1.273576173
+ [457] 1.534399312 0.484106530 0.154311951 0.272082797 0.145125515 0.067866776
+ [463] 0.530511259 0.797139962 0.488273713 0.280300170 0.176321134 0.636230075
+ [469] 0.657675670 0.304553383 1.319409413 0.500886835 0.691001341 1.021230228
+ [475] 0.902453139 0.154344325 0.115190241 0.705469115 0.532708037 0.179161235
+ [481] 0.486893167 0.554541652 0.052374203 0.429035841 0.726379710 0.122247876
+ [487] 0.010182168 0.692790449 1.041911687 0.398698431 1.157660629 0.872404650
+ [493] 0.982810870 0.973237862 0.540390875 0.455698193 0.226479737 0.489522966
+ [499] 0.760494504 1.308975537 0.129788500 0.591223255 0.549677573 0.184314129
+ [505] 0.310266644 0.315239329 0.929939941 0.446100017 0.430019272 0.535606214
+ [511] 0.430760198 0.888478976 0.225117028 0.308348218 0.568097964 0.463812060
+ [517] 1.556651697 0.872751683 0.392862615 0.610547548 0.461591093 0.018898492
+ [523] 0.556227061 0.419154243 0.420456120 0.302483960 0.534258094 0.671178342
+ [529] 0.418071397 0.787965000 0.399569226 1.079461599 0.397424345 0.543077315
+ [535] 0.015810030 0.756724751 0.243133290 0.528148443 0.343518856 0.761600523
+ [541] 0.795587057 0.635758405 0.426565608 0.424004090 0.269414247 0.892462848
+ [547] 0.111796658 0.479967937 0.315416679 0.007958770 0.551494771 0.031979605
+ [553] 0.387812923 0.258238025 0.502580245 0.296904869 1.134912684 0.124626416
+ [559] 0.050582377 0.763470543 1.027586742 0.308933078 0.646715574 0.644906179
+ [565] 0.231895663 0.663748862 0.527038802 0.549244906 0.457310468 0.845712767
+ [571] 0.217597144 0.703449010 0.363992369 0.277113571 0.104327965 1.196638506
+ [577] 1.020115843 0.291713636 0.058586696 0.254182220 0.477878695 0.707498118
+ [583] 0.393191191 0.227461030 0.174761815 0.719796615 0.831095496 0.554685833
+ [589] 0.923243980 0.485878462 0.403554002 0.429555108 0.368882274 0.585960749
+ [595] 0.112340892 0.281268130 0.493373496 0.243023504 0.147302914 0.410958333
+ [601] 0.530621837 0.029774645 0.844450249 0.326647488 0.592696018 0.155143441
+ [607] 0.042140868 0.647483692 1.671827057 0.272945400 0.303744585 0.260508206
+ [613] 0.085144589 0.510084219 0.071328406 0.066457317 0.364075098 0.912686206
+ [619] 0.542908046 0.799136266 0.306191393 1.008807454 0.369674079 0.584058010
+ [625] 0.692796703 0.717229148 0.687034768 0.224986721 0.154723474 0.456682480
+ [631] 0.355421964 0.304823451 0.245786791 0.136041051 0.449704744 0.285066352
+ [637] 0.928361543 0.693020684 0.071918055 0.217123296 0.091227240 1.150074667
+ [643] 1.692973075 0.166513958 1.321848956 0.729186128 0.049951718 0.635383644
+ [649] 0.633168733 0.637915545 0.258587426 1.739048007 0.718203412 0.715543575
+ [655] 0.027006053 1.473450291 0.229421565 0.354943475 0.400662708 0.656503265
+ [661] 0.318329362 1.152670415 0.290195213 0.424130954 0.415625452 0.073917141
+ [667] 0.390236588 0.908512492 0.279834294 0.398764040 0.378351350 0.798890572
+ [673] 0.403696206 0.714881395 0.493414562 0.194085670 0.376802418 0.760736751
+ [679] 0.862218013 0.162193322 0.625174007 0.230326308 0.672724495 0.368446355
+ [685] 0.326460871 0.010589779 0.307251997 0.822606021 0.226410102 0.939194579
+ [691] 0.731564212 0.737570300 0.628640614 0.194632662 0.670341896 0.722117087
+ [697] 0.340104759 0.444038898 0.634211674 1.116355526 0.655439141 0.372914269
+ [703] 1.254473489 0.764488625 0.449049645 0.254847263 0.479984455 0.286573279
+ [709] 0.614262341 0.247229177 0.413110033 2.296877065 0.664169262 0.183034613
+ [715] 0.841081123 0.250556702 0.287175616 0.474560492 0.307705756 0.606350138
+ [721] 0.167394289 0.769836065 0.368351180 0.981495540 0.136251155 1.475376829
+ [727] 0.279748473 0.358777074 0.080080023 0.227804971 0.499721827 0.690130735
+ [733] 0.662116295 0.337212892 0.568946646 0.937363520 0.408489017 0.899884284
+ [739] 0.851766968 0.473840141 0.504129048 0.763443911 0.447500054 0.015970183
+ [745] 0.073135199 0.528639847 0.300662578 0.221149601 0.537550455 0.230220365
+ [751] 0.429118330 0.054690454 0.897048801 0.470272893 0.602467757 0.053623819
+ [757] 0.632929239 0.024773043 1.045196683 0.467923431 0.102470105 1.317533223
+ [763] 0.041044340 0.045790336 0.311156249 0.727359458 0.628570409 0.105869453
+ [769] 0.624730672 1.171668139 0.412977960 0.362903769 0.345800560 1.424268387
+ [775] 0.465376355 0.453054624 0.273402213 0.647080102 0.547038075 0.744127373
+ [781] 0.603418148 0.173504189 0.509187265 1.197172033 0.160192413 0.949368081
+ [787] 1.134106223 0.595684493 0.544159144 0.660211973 0.422233577 0.998312424
+ [793] 0.534258414 0.385530706 0.351741394 0.440191673 0.845763978 0.210569324
+ [799] 0.281135088 0.224775076 0.723856657 0.373897833 0.172944777 0.167263403
+ [805] 0.358514524 0.165700821 0.071847808 1.452783678 0.296652485 0.607811516
+ [811] 0.344955838 0.466526228 0.837219835 0.083736940 0.097895206 0.678313515
+ [817] 0.266269966 0.263965898 0.530977244 0.434146101 0.672466973 0.183492854
+ [823] 0.624767331 0.701617078 0.300767587 0.177788950 0.498032235 0.870633522
+ [829] 0.742133896 0.116513343 0.266476547 1.180308531 0.431973026 0.368004313
+ [835] 0.880602749 1.289014067 0.067197186 0.440301704 1.260861168 0.999419986
+ [841] 0.293737925 0.006897506 0.075103031 0.379833072 0.080689976 0.181147312
+ [847] 1.029728085 0.404853887 1.256666066 0.018051483 0.509769795 0.627635731
+ [853] 0.282140025 0.415249801 0.163278019 0.403586696 0.967259702 1.878075505
+ [859] 0.039931578 0.713014625 0.340323663 0.525706745 0.519728506 0.963798270
+ [865] 1.279606296 0.618069176 0.122960011 0.626631445 0.461233693 0.507112984
+ [871] 0.115218946 0.385337834 0.555447278 0.652824305 0.018176835 0.651050351
+ [877] 0.991466527 1.022794468 0.553152466 0.976518343 1.765359480 0.575790766
+ [883] 0.709202027 0.229649816 0.185202408 0.499701938 0.331894982 1.193702535
+ [889] 2.707103342 0.507742251 0.998109232 0.390418919 0.571022353 0.387877162
+ [895] 0.252236769 0.532238360 0.286758849 0.373316410 0.465230409 1.140198758
+ [901] 1.362425064 1.198372985 0.488956339 0.115674173 0.731463959 0.054560289
+ [907] 0.770317605 0.466653151 0.554394355 0.353208696 0.330602374 0.160561524
+ [913] 0.313757154 0.238337791 0.406849935 0.288285821 0.541292332 0.831517411
+ [919] 0.235135666 1.445086755 0.194666626 0.361867192 1.039903421 0.395263985
+ [925] 1.498200237 0.403706173 0.296152345 0.799535807 0.411098263 1.013452006
+ [931] 1.369091437 0.586039870 0.614473986 0.837013952 1.039258026 0.994910752
+ [937] 0.612325836 0.098206398 1.208276316 0.472117890 0.271912984 0.561828617
+ [943] 0.408798391 0.938302013 0.872219248 0.368000139 0.266431539 0.181299405
+ [949] 0.070942447 1.059244314 0.627282213 0.217494032 0.392700407 0.738036372
+ [955] 0.071708020 0.888137693 0.942391050 0.191468319 1.293174184 0.654218153
+ [961] 0.792917119 0.256363608 0.330451083 0.159428932 0.560542600 0.377564007
+ [967] 0.196901165 0.068065853 0.282260056 1.635351917 0.858172012 0.510097569
+ [973] 0.815606052 0.248075999 2.173029836 0.495245868 0.229206846 0.245222079
+ [979] 0.406280048 0.231685397 0.348269173 0.307044396 0.439521073 0.039104998
+ [985] 0.474386157 0.807776494 1.112688281 0.515006812 0.082932256 0.069581108
+ [991] 1.082220998 0.336416696 0.085379978 0.199255385 0.463381041 0.300534524
+ [997] 0.637565027 0.106221127 0.008610830 0.143181304
+ [ reached getOption("max.print") -- omitted 3000 entries ]
+
+$lp__
+   [1] -218.5618 -226.2094 -205.3434 -215.4778 -225.4206 -222.9911 -221.0046
+   [8] -217.8398 -214.2881 -214.2998 -220.3506 -221.1307 -230.3496 -218.7572
+  [15] -217.5727 -231.5778 -218.2394 -238.7493 -234.1901 -225.5598 -222.5646
+  [22] -227.1743 -206.6299 -221.8832 -226.5138 -222.7985 -225.1144 -225.9953
+  [29] -220.7274 -213.7113 -219.4640 -212.7280 -226.5288 -224.2524 -219.8083
+  [36] -222.2826 -226.2043 -224.5328 -213.1521 -220.0685 -218.9817 -222.6659
+  [43] -225.7080 -214.9110 -218.7885 -226.8916 -228.1155 -222.5454 -230.6952
+  [50] -213.6283 -200.9456 -227.4709 -223.7512 -211.0241 -218.9267 -221.9376
+  [57] -224.1663 -221.7748 -227.7182 -220.4084 -223.0029 -218.0255 -230.0208
+  [64] -224.6067 -219.8950 -206.4979 -222.7628 -226.1701 -218.1306 -221.5673
+  [71] -224.9130 -211.4841 -220.9303 -217.1050 -220.0722 -225.8172 -209.5929
+  [78] -225.1137 -222.5476 -222.8836 -226.5816 -223.8532 -229.2796 -216.6161
+  [85] -226.8496 -219.0808 -218.0471 -221.0011 -216.1393 -226.9014 -237.1685
+  [92] -227.3156 -222.7772 -230.0465 -225.5786 -217.5416 -221.0831 -222.5830
+  [99] -221.2715 -223.0649 -209.9193 -226.5249 -216.4297 -223.3239 -223.3924
+ [106] -227.5710 -215.1141 -220.3794 -221.2442 -223.5297 -218.0773 -222.4567
+ [113] -226.1250 -220.6216 -219.9548 -223.1729 -223.2171 -215.8043 -229.8511
+ [120] -216.2162 -223.8458 -224.3334 -227.2610 -205.8939 -231.9996 -223.7696
+ [127] -225.9526 -224.4660 -217.5169 -218.3778 -218.2315 -226.2285 -224.5339
+ [134] -223.6124 -217.6470 -225.0057 -218.6153 -223.0995 -222.9055 -215.7715
+ [141] -220.8195 -202.4274 -231.2013 -220.9701 -215.2066 -211.2172 -222.9996
+ [148] -225.2753 -222.0122 -218.4519 -224.0526 -221.9944 -216.7258 -219.5861
+ [155] -231.1329 -209.3882 -223.2695 -221.4132 -218.4621 -220.3372 -234.8699
+ [162] -221.0390 -220.5459 -217.6361 -222.1072 -230.0008 -223.2056 -230.6018
+ [169] -211.6422 -209.9141 -230.2908 -221.2860 -219.1696 -218.3534 -219.6723
+ [176] -220.6202 -231.1867 -221.5291 -218.5477 -219.1612 -226.9012 -226.2858
+ [183] -211.4715 -225.2153 -230.0955 -222.6871 -226.9903 -229.6081 -217.3264
+ [190] -225.1790 -233.4910 -218.4572 -224.6954 -216.5293 -221.4585 -223.5876
+ [197] -222.4990 -226.7302 -226.4613 -223.4816 -230.3369 -227.3337 -220.3318
+ [204] -219.8803 -196.5890 -235.9470 -221.8413 -221.3338 -223.7147 -229.0870
+ [211] -225.2392 -224.8255 -217.6933 -220.7919 -228.7338 -219.5638 -225.0621
+ [218] -226.1061 -223.9649 -223.8153 -218.0484 -215.9403 -218.2898 -226.1339
+ [225] -225.8529 -221.6999 -220.0719 -224.1039 -226.4262 -223.8891 -220.5078
+ [232] -214.4302 -221.4666 -218.6878 -227.2559 -223.2127 -220.4143 -222.0466
+ [239] -230.2672 -219.8169 -224.8750 -222.6130 -228.1039 -220.8376 -219.5912
+ [246] -223.8523 -214.4496 -224.0864 -216.6386 -217.0065 -223.5009 -222.3494
+ [253] -223.1927 -216.7220 -230.5893 -220.5332 -222.9164 -224.8584 -220.9997
+ [260] -222.0725 -224.0668 -223.7074 -222.8376 -223.5118 -221.5609 -217.0252
+ [267] -218.3481 -220.1899 -221.0608 -199.2202 -218.3098 -219.2768 -223.6027
+ [274] -228.4456 -222.4674 -224.9266 -226.3260 -231.2326 -216.9908 -223.6003
+ [281] -225.5849 -222.9594 -230.6691 -222.2127 -226.9009 -220.3972 -218.5583
+ [288] -220.9860 -217.7161 -218.0378 -221.0512 -220.1171 -222.8512 -222.3023
+ [295] -218.5696 -217.1875 -207.4172 -213.7067 -217.8775 -231.2195 -221.3241
+ [302] -222.0685 -224.0986 -214.2673 -217.7938 -231.0862 -221.3562 -219.4744
+ [309] -228.5935 -217.9385 -221.2773 -214.5941 -220.2130 -226.4052 -218.4899
+ [316] -224.8481 -221.0811 -213.1282 -221.1116 -224.3294 -226.0588 -197.7148
+ [323] -222.8460 -223.9299 -220.7319 -219.1697 -199.1014 -229.3577 -216.8711
+ [330] -221.4865 -214.7336 -215.9218 -236.5913 -215.6624 -227.2115 -219.8798
+ [337] -227.9421 -221.5808 -223.2988 -223.2793 -224.1453 -231.3335 -233.5455
+ [344] -215.0318 -218.3117 -221.3423 -220.9071 -223.0216 -198.5944 -202.7747
+ [351] -218.1521 -216.4300 -228.1020 -210.6460 -216.8427 -226.8057 -229.9853
+ [358] -227.8278 -222.2030 -216.9092 -225.4507 -220.9605 -224.0893 -220.1552
+ [365] -210.5178 -214.1368 -225.3193 -219.5371 -224.4754 -226.6833 -212.9463
+ [372] -224.1167 -232.9215 -210.3640 -233.0642 -235.1864 -220.9185 -221.0803
+ [379] -222.7177 -226.8400 -226.4856 -227.9768 -219.2002 -222.3582 -224.1873
+ [386] -211.3644 -224.9724 -220.2623 -227.7798 -217.1468 -221.0159 -220.5987
+ [393] -215.3147 -218.5742 -228.8275 -226.1949 -227.1765 -222.1539 -233.0954
+ [400] -216.5661 -225.1999 -227.7187 -221.4336 -231.6122 -229.5815 -222.4111
+ [407] -221.0945 -213.1803 -225.5200 -219.5975 -228.1715 -228.8957 -217.4804
+ [414] -236.1843 -231.9680 -216.5363 -221.8713 -219.5355 -223.7995 -227.4836
+ [421] -225.2985 -218.4268 -219.2922 -230.2504 -222.7021 -222.3435 -222.1918
+ [428] -225.9996 -226.8788 -207.3807 -231.0725 -221.6991 -219.0211 -225.0502
+ [435] -212.7503 -209.6264 -226.8959 -215.2391 -222.9259 -220.3129 -223.5232
+ [442] -226.7764 -214.3576 -217.9386 -207.9145 -220.0795 -223.5905 -228.8425
+ [449] -226.4464 -227.5030 -215.1290 -219.0327 -219.2497 -222.6907 -225.8400
+ [456] -230.8735 -229.3643 -221.3215 -216.4163 -214.8242 -210.4762 -212.0659
+ [463] -221.2414 -224.1758 -223.7510 -225.3154 -222.6550 -221.6161 -227.2737
+ [470] -216.9376 -230.0221 -229.5102 -224.2271 -224.0788 -237.8670 -216.0820
+ [477] -218.1702 -225.9665 -223.6613 -231.1758 -222.2898 -229.3836 -208.9773
+ [484] -223.6455 -228.1709 -218.6028 -195.1090 -221.7095 -221.2670 -221.2421
+ [491] -222.9518 -228.6095 -228.7606 -224.8047 -228.2988 -222.8855 -214.3096
+ [498] -225.5721 -224.0892 -222.5425 -214.9321 -223.6965 -230.2650 -224.2242
+ [505] -222.0140 -228.0848 -229.0481 -222.8742 -226.7208 -222.5023 -232.8272
+ [512] -222.5288 -217.2265 -224.0109 -225.1852 -216.5712 -227.8365 -223.6035
+ [519] -223.0323 -225.0986 -222.4069 -215.6832 -217.1240 -225.9339 -230.0624
+ [526] -219.6657 -224.0349 -225.4665 -223.0168 -222.9619 -218.1899 -226.1981
+ [533] -220.9773 -221.6758 -206.7862 -220.7277 -220.6494 -220.3830 -222.5510
+ [540] -224.6458 -221.5947 -222.8214 -224.2930 -218.4675 -217.0222 -227.1618
+ [547] -218.6102 -222.3422 -216.7424 -197.0760 -220.4738 -207.3946 -220.5525
+ [554] -218.4916 -220.8833 -224.4189 -224.3803 -215.8042 -211.3308 -224.4857
+ [561] -225.3637 -218.7990 -218.6097 -234.1803 -214.7545 -222.7569 -224.8048
+ [568] -223.1105 -224.1444 -228.6648 -212.1282 -222.5655 -218.3466 -225.8744
+ [575] -211.9283 -235.5702 -226.1384 -219.5557 -210.8099 -215.5000 -218.5638
+ [582] -225.1309 -220.2154 -224.1150 -215.9730 -225.4117 -228.0032 -222.3122
+ [589] -231.7164 -235.2952 -218.4188 -225.8029 -218.3868 -229.7477 -212.6652
+ [596] -223.3141 -225.1545 -223.6554 -219.9141 -222.2478 -219.5928 -217.2361
+ [603] -222.1690 -225.2884 -224.9149 -218.5632 -209.2802 -222.5554 -227.1014
+ [610] -215.3176 -227.4096 -224.7877 -213.3981 -234.1376 -209.4367 -215.1858
+ [617] -224.1397 -220.6125 -225.7173 -225.1277 -218.8586 -218.0312 -215.3827
+ [624] -225.5333 -224.3148 -233.2165 -224.1086 -215.7716 -215.9764 -220.7365
+ [631] -220.8556 -225.9394 -218.3950 -212.9510 -221.2067 -219.1957 -223.2400
+ [638] -221.4752 -223.5986 -215.2946 -211.5260 -225.5812 -232.5078 -220.9665
+ [645] -222.8607 -222.4491 -208.4713 -226.6530 -219.6924 -221.4540 -216.4812
+ [652] -229.1860 -222.8573 -225.4280 -211.0934 -227.9135 -226.6735 -221.7631
+ [659] -222.9694 -221.2477 -219.6659 -231.9147 -218.7023 -220.4189 -222.5069
+ [666] -214.9810 -220.1366 -223.5390 -219.5652 -218.7812 -215.8000 -219.6338
+ [673] -220.3849 -226.8781 -225.1296 -215.7238 -223.5708 -227.7461 -221.9080
+ [680] -219.6604 -224.9609 -219.9801 -219.7313 -226.4627 -224.2382 -197.7776
+ [687] -214.6848 -221.3423 -221.8433 -226.4728 -228.3805 -223.9489 -222.4765
+ [694] -222.8837 -217.7148 -222.6745 -225.4077 -221.3478 -221.2911 -235.3851
+ [701] -221.5907 -220.4119 -227.0513 -225.5901 -215.5496 -222.0740 -235.1457
+ [708] -221.0171 -218.7704 -215.7547 -222.7720 -231.8593 -218.7785 -216.5815
+ [715] -233.5332 -219.5847 -216.1473 -228.3322 -222.7469 -219.9520 -213.0247
+ [722] -226.1072 -217.7833 -224.9027 -218.5065 -230.4928 -223.9493 -219.6578
+ [729] -218.9281 -226.7199 -223.0416 -221.7755 -227.1308 -221.5524 -224.2075
+ [736] -221.2967 -213.8640 -228.7924 -220.1850 -225.3483 -225.4948 -226.0198
+ [743] -225.9685 -203.2407 -217.1132 -238.0710 -216.4192 -222.5791 -216.4796
+ [750] -216.8029 -226.8826 -217.5447 -222.7809 -225.2731 -225.6182 -207.4146
+ [757] -228.9336 -207.4421 -226.6964 -221.8191 -214.5625 -231.1345 -214.8469
+ [764] -211.2895 -224.0063 -225.6127 -221.8068 -221.1387 -219.3508 -229.7698
+ [771] -222.9606 -224.4080 -224.1495 -229.7230 -223.3880 -216.8267 -228.6752
+ [778] -224.1953 -221.5512 -223.2688 -229.0430 -228.3903 -220.1733 -230.3381
+ [785] -217.8148 -223.9594 -224.0590 -226.7159 -223.4712 -224.3010 -222.8022
+ [792] -226.3945 -221.1630 -220.8487 -218.9472 -223.9880 -226.3614 -224.1389
+ [799] -218.0464 -223.9511 -223.5411 -227.7511 -216.4132 -222.2668 -223.9576
+ [806] -220.4906 -215.1456 -225.9224 -214.0343 -226.2200 -217.7829 -222.0338
+ [813] -230.4731 -210.9697 -215.7934 -228.0746 -220.4645 -218.4752 -220.9987
+ [820] -217.8590 -226.5587 -220.6349 -224.1691 -221.9131 -221.2455 -225.6404
+ [827] -217.5829 -224.2952 -226.8229 -219.5805 -220.9639 -229.9754 -221.0016
+ [834] -222.1467 -231.4613 -224.5914 -214.9404 -220.2794 -234.6831 -232.4768
+ [841] -222.0756 -192.7455 -223.6920 -218.5064 -218.4082 -225.7201 -222.3269
+ [848] -223.3056 -229.7626 -204.0030 -221.8614 -219.5599 -228.8351 -223.2442
+ [855] -216.3466 -220.6620 -219.8231 -231.5615 -210.7261 -226.7102 -217.3459
+ [862] -221.2722 -225.8373 -223.9292 -225.8634 -227.5608 -214.1110 -231.0321
+ [869] -223.0236 -221.7756 -216.3905 -223.2025 -228.9751 -222.0013 -201.5860
+ [876] -229.3234 -226.0958 -218.4646 -224.8547 -226.9793 -227.8997 -228.4820
+ [883] -223.7078 -219.2464 -211.0309 -222.7231 -229.0737 -225.4153 -232.6531
+ [890] -220.6018 -222.0703 -220.4800 -229.2830 -218.1493 -221.2473 -221.4841
+ [897] -222.1168 -215.9400 -225.8696 -226.3603 -227.4223 -227.0277 -230.3232
+ [904] -214.5628 -223.7022 -209.1075 -223.3571 -222.3053 -226.5771 -222.7159
+ [911] -223.7150 -224.0226 -217.7025 -217.4844 -226.0312 -221.0093 -221.6973
+ [918] -227.8358 -222.7832 -224.5844 -220.9589 -221.0197 -229.3890 -228.0699
+ [925] -230.0201 -230.4234 -221.7957 -228.6622 -219.6327 -227.5278 -236.0685
+ [932] -225.5743 -232.7467 -222.7462 -229.9497 -231.5373 -223.7473 -208.3786
+ [939] -224.6403 -221.5875 -217.0962 -221.1525 -224.2067 -223.3075 -232.1444
+ [946] -219.4431 -217.4578 -217.6372 -214.6259 -226.5933 -222.0490 -221.9808
+ [953] -218.3009 -226.8422 -214.5413 -225.7858 -224.7990 -217.5802 -229.5162
+ [960] -220.0833 -221.6690 -217.4675 -219.8352 -215.2471 -231.6985 -227.2765
+ [967] -215.3306 -213.2464 -220.1931 -225.1641 -221.5828 -223.7884 -230.9032
+ [974] -222.4109 -225.4645 -222.5240 -222.3076 -219.5923 -221.1471 -218.2356
+ [981] -215.8877 -219.6779 -222.2299 -209.1750 -223.1673 -224.0359 -226.8554
+ [988] -224.6444 -214.9887 -208.5470 -234.4642 -216.6268 -213.6809 -218.9339
+ [995] -218.0313 -221.0276 -217.0129 -217.4784 -199.9064 -214.5355
+ [ reached getOption("max.print") -- omitted 3000 entries ]
+
+          
+iterations      [,1]      [,2]     [,3]
+      [1,] 194.06484 212.84732 225.0181
+      [2,] 153.86283 170.94216 181.5925
+      [3,] 195.31264 215.41650 227.8213
+      [4,] 131.30570 148.57469 158.8222
+      [5,] 147.80044 165.58407 177.6856
+      [6,] 146.78085 165.39073 177.8278
+      [7,] 163.32730 183.16853 195.2996
+      [8,] 165.69350 185.37420 197.3145
+      [9,] 111.21124 127.14335 137.9498
+     [10,] 166.96300 186.90291 199.9905
+     [11,] 162.60192 181.55934 193.4279
+     [12,] 165.65402 185.54898 198.3869
+     [13,] 141.23563 158.94964 169.9618
+     [14,] 133.17288 152.73122 164.8577
+     [15,] 153.98090 173.51611 186.0230
+     [16,] 179.10074 198.02871 210.9760
+     [17,] 126.68159 146.68723 158.4665
+     [18,] 158.32789 177.78360 190.1556
+     [19,] 183.60359 207.09625 220.8686
+     [20,] 198.87050 222.17248 235.9762
+     [21,] 147.51416 165.49398 177.4242
+     [22,] 174.04354 199.24378 214.6788
+     [23,] 158.40269 177.41495 189.3297
+     [24,] 171.99478 192.96149 205.1875
+     [25,] 193.27446 215.48076 229.8190
+     [26,] 154.98689 172.54917 183.5739
+     [27,] 179.18983 198.92105 211.8052
+     [28,] 141.37662 158.73255 169.7204
+     [29,] 206.33754 227.32106 240.3469
+     [30,] 155.17501 174.56368 186.8404
+     [31,] 153.80793 172.85876 184.8354
+     [32,] 162.07082 181.74216 194.0136
+     [33,] 167.71805 186.09526 197.8769
+     [34,] 170.21626 191.88372 205.6681
+     [35,] 155.57842 177.67404 191.3903
+     [36,] 168.97501 188.93223 201.5304
+     [37,] 178.20338 198.30960 211.5932
+     [38,] 179.63856 202.39980 215.9428
+     [39,] 153.11800 173.29879 185.6271
+     [40,] 189.34134 209.43474 222.5626
+     [41,] 183.29998 201.99819 213.6574
+     [42,] 166.72864 187.77625 200.6458
+     [43,] 172.91805 191.23486 202.2991
+     [44,] 167.07017 188.37171 201.6755
+     [45,] 125.20858 143.30003 154.9645
+     [46,] 189.32090 211.14323 225.4900
+     [47,] 180.20835 202.13264 215.5354
+     [48,] 149.99990 169.36059 182.2117
+     [49,] 185.44786 206.52618 220.3262
+     [50,] 149.37966 168.82940 181.0419
+     [51,] 187.89039 209.57520 223.4118
+     [52,] 177.51857 197.50677 210.2403
+     [53,] 128.54497 147.36068 159.9813
+     [54,] 149.12351 167.88902 179.3629
+     [55,] 162.50792 183.54275 196.6717
+     [56,] 185.86926 206.81635 220.7654
+     [57,] 167.76597 186.11838 198.4405
+     [58,] 183.38049 204.32674 217.0188
+     [59,] 214.00211 233.42632 246.3642
+     [60,] 167.21769 187.42676 200.1619
+     [61,] 149.71261 169.30765 181.2502
+     [62,] 150.64694 170.56107 183.4455
+     [63,] 173.22284 194.99640 208.9648
+     [64,] 147.25958 168.77827 181.9357
+     [65,] 166.77589 186.60559 199.7014
+     [66,] 180.37781 201.09294 214.2736
+     [67,] 160.38699 180.61433 193.2992
+     [68,] 142.67519 159.31605 171.1733
+     [69,] 155.61213 175.01022 186.8922
+     [70,] 155.05739 176.02631 188.6436
+     [71,] 170.89681 190.44898 203.2593
+     [72,] 169.95134 188.36559 199.6361
+     [73,] 134.15445 151.42262 162.2738
+     [74,] 150.92452 170.09908 182.9548
+     [75,] 151.72285 168.17898 178.3594
+     [76,] 162.20687 182.26708 194.8557
+     [77,] 158.35103 177.66719 189.9321
+     [78,] 158.73492 178.71145 190.7072
+     [79,] 147.36511 164.57717 176.3443
+     [80,] 119.43621 136.91777 148.3219
+     [81,] 145.16702 165.16086 177.8754
+     [82,] 141.24102 158.55869 169.7984
+     [83,] 187.76417 208.93293 222.5645
+     [84,] 154.56563 175.45438 188.8699
+     [85,] 134.23311 151.97690 163.3153
+     [86,] 140.13288 158.89833 171.0911
+     [87,] 164.86280 184.63530 197.1091
+     [88,] 156.92517 176.90383 188.8858
+     [89,] 157.08481 175.75779 187.1560
+     [90,] 203.51804 224.27229 237.6870
+     [91,] 165.43994 184.58406 196.4430
+     [92,] 180.25587 201.92249 216.0687
+     [93,] 153.64048 173.48541 185.6363
+     [94,] 142.86759 163.95076 176.8981
+     [95,] 181.11449 204.78883 219.3850
+     [96,] 154.26433 174.78305 187.7084
+     [97,] 175.10101 194.44330 206.3660
+     [98,] 128.50964 148.00623 160.3701
+     [99,] 185.37922 207.57024 221.4122
+    [100,] 188.29661 209.35046 222.7332
+    [101,] 145.10475 165.67828 178.5948
+    [102,] 155.86950 176.21311 188.5861
+    [103,] 164.11385 184.67872 197.4676
+    [104,] 137.90875 158.15340 171.3846
+    [105,] 141.64934 161.05079 173.3591
+    [106,] 168.60891 188.53274 201.2461
+    [107,] 169.99679 190.00893 202.4244
+    [108,] 153.44772 172.69306 185.4280
+    [109,] 128.87883 145.98649 157.2993
+    [110,] 143.67603 161.55340 173.0373
+    [111,] 180.71216 202.33055 215.7271
+    [112,] 145.96792 166.44812 179.6275
+    [113,] 171.48313 192.50307 205.5177
+    [114,] 147.53566 166.73595 179.0181
+    [115,] 127.32682 146.31996 158.4758
+    [116,] 176.95434 197.71610 211.1068
+    [117,] 198.55307 218.65346 231.1607
+    [118,] 162.02235 181.64961 193.3048
+    [119,] 124.22028 143.92348 157.0202
+    [120,] 156.77010 174.55800 185.8532
+    [121,] 151.79857 173.47601 187.0699
+    [122,] 155.99331 178.63542 193.0539
+    [123,] 145.91782 165.84956 178.4299
+    [124,] 148.78462 169.31825 182.6329
+    [125,] 154.80877 174.89137 187.4197
+    [126,] 166.06436 184.66167 196.7384
+    [127,] 174.07050 195.64811 209.0557
+    [128,] 162.79002 184.39392 197.7025
+    [129,] 152.74919 171.79560 183.4713
+    [130,] 134.30850 153.09233 164.3790
+    [131,] 167.20567 186.92756 199.6578
+    [132,] 191.23071 210.34928 223.0957
+    [133,] 196.67990 218.99954 232.6841
+    [134,] 148.40910 167.06933 179.4624
+    [135,] 133.36405 152.12087 164.6981
+    [136,] 154.66971 173.82518 185.9622
+    [137,] 168.39905 188.09247 201.1637
+    [138,] 189.89168 210.08264 221.7694
+    [139,] 158.11490 177.17423 189.0126
+    [140,] 149.03825 167.56985 178.5637
+    [141,] 159.46482 181.38976 194.0882
+    [142,] 179.99051 200.76692 214.1333
+    [143,] 133.95120 152.25504 163.5654
+    [144,] 186.12333 207.13850 219.9739
+    [145,] 174.20450 194.33417 207.0837
+    [146,] 169.59359 189.29670 201.5481
+    [147,] 147.35360 167.93305 180.6540
+    [148,] 180.13197 200.79354 213.4485
+    [149,] 151.66689 172.53350 186.2344
+    [150,] 154.66372 173.63570 185.3318
+    [151,] 147.08310 164.78926 176.9435
+    [152,] 151.35244 171.84351 184.8145
+    [153,] 148.88509 168.93126 181.9596
+    [154,] 148.38666 167.02157 179.5888
+    [155,] 186.45752 205.87634 218.9508
+    [156,] 124.10724 143.72580 156.4787
+    [157,] 145.16301 165.12550 177.2850
+    [158,] 168.84795 188.48945 201.2732
+    [159,] 192.13307 210.91592 222.5588
+    [160,] 128.44944 148.16041 160.6366
+    [161,] 133.91700 151.73255 162.9753
+    [162,] 182.04483 201.01172 212.9367
+    [163,] 153.88177 173.86488 186.0540
+    [164,] 141.41038 160.37483 172.5280
+    [165,] 184.73003 206.20456 220.1192
+    [166,] 141.49330 160.89915 173.6575
+    [167,] 155.00574 173.04902 184.3584
+    [168,] 201.73300 223.24910 236.3998
+    [169,] 165.83443 185.67677 198.3525
+    [170,] 151.14406 170.51151 182.6268
+    [171,] 151.64014 172.30460 185.9645
+    [172,] 175.99871 197.66406 211.0722
+    [173,] 186.29671 206.78217 219.8636
+    [174,] 177.99450 198.00176 210.7382
+    [175,] 140.57403 161.42153 174.3113
+    [176,] 162.66119 183.27494 196.6417
+    [177,] 161.63688 181.13652 193.6314
+    [178,] 117.28170 135.12689 145.7649
+    [179,] 171.22214 191.82839 204.3922
+    [180,] 168.18743 185.61797 197.2377
+    [181,] 228.04721 251.22801 266.0661
+    [182,] 180.80903 202.38795 215.6723
+    [183,] 142.81055 160.78661 172.7474
+    [184,] 161.97688 181.88906 193.8311
+    [185,] 124.98315 145.55758 158.4029
+    [186,] 169.74244 189.46057 201.8154
+    [187,] 171.15423 190.89875 202.8891
+    [188,] 211.36014 232.86438 245.7465
+    [189,] 204.94006 226.23848 239.5248
+    [190,] 172.59958 192.45898 205.1703
+    [191,] 160.49327 180.32376 192.8037
+    [192,] 138.02299 157.27640 169.2631
+    [193,] 172.53200 192.07003 204.2538
+    [194,] 151.22358 171.28608 184.6609
+    [195,] 130.61950 148.81454 160.0533
+    [196,] 153.97831 171.68454 183.5531
+    [197,] 130.57913 150.99328 163.6259
+    [198,] 158.72108 176.36842 187.9130
+    [199,] 184.57855 207.19085 220.9494
+    [200,] 121.33262 142.17798 155.4008
+    [201,] 146.92405 168.36081 181.8011
+    [202,] 166.78160 184.46270 196.3239
+    [203,] 162.54715 182.72617 194.6612
+    [204,] 140.65794 159.60116 171.3517
+    [205,] 179.67649 199.18441 211.0261
+    [206,] 135.70660 156.75832 168.7839
+    [207,] 153.53508 172.31420 184.5249
+    [208,] 169.31360 191.36450 205.5887
+    [209,] 156.32043 174.36198 186.5243
+    [210,] 200.43258 222.73303 236.0978
+    [211,] 151.06126 168.84789 180.3790
+    [212,] 164.05398 184.58793 196.9047
+    [213,] 144.94668 162.80294 174.1741
+    [214,] 136.04163 154.00550 165.2776
+    [215,] 148.42502 167.85783 180.7277
+    [216,] 168.01137 187.69110 199.9154
+    [217,] 123.31968 142.52729 154.6722
+    [218,] 150.76499 171.63350 184.3173
+    [219,] 180.09160 198.82644 211.6224
+    [220,] 186.98782 205.96469 218.3052
+    [221,] 189.25464 209.06881 221.2179
+    [222,] 160.11269 178.04617 189.4619
+    [223,] 187.97659 207.12993 219.4063
+    [224,] 166.10767 188.08289 201.1132
+    [225,] 169.82972 189.56189 202.3070
+    [226,] 138.24915 157.09487 169.1969
+    [227,] 139.34148 160.03896 173.0333
+    [228,] 130.30512 148.27224 159.4036
+    [229,] 138.08958 156.32614 168.1739
+    [230,] 153.09502 172.87648 185.8204
+    [231,] 129.51288 148.40278 159.8536
+    [232,] 162.36614 181.57587 194.5677
+    [233,] 147.96934 169.12854 182.5008
+    [234,] 125.73895 144.50625 156.6426
+    [235,] 153.10192 173.91305 185.7192
+    [236,] 138.91609 158.22755 170.4963
+    [237,] 168.33801 187.94203 200.1303
+    [238,] 157.69492 177.16481 189.4493
+    [239,] 187.89323 208.47243 221.8261
+    [240,] 148.70232 166.17015 177.6271
+    [241,] 144.76560 165.47989 178.8422
+    [242,] 177.90674 200.01311 213.2472
+    [243,] 193.13961 215.17475 228.3680
+    [244,] 188.34207 208.03669 220.9139
+    [245,] 153.01990 172.90943 185.7848
+    [246,] 141.69054 162.25867 174.7332
+    [247,] 197.59749 218.09526 230.8988
+    [248,] 158.07750 178.67321 191.5070
+    [249,] 172.30503 191.66432 204.4837
+    [250,] 168.93368 188.53623 201.3870
+    [251,] 133.11160 152.61231 165.4364
+    [252,] 193.15114 213.85439 227.0659
+    [253,] 139.52694 158.86365 171.3523
+    [254,] 139.93573 159.42644 171.6017
+    [255,] 123.40395 141.73349 154.0950
+    [256,] 115.42348 135.15480 147.9335
+    [257,] 146.92785 165.78267 178.3414
+    [258,] 165.85916 184.40008 196.2747
+    [259,] 170.81637 189.35797 201.6413
+    [260,] 181.32914 202.01571 215.2825
+    [261,] 176.80106 196.40122 208.7581
+    [262,] 186.93512 208.00971 221.6174
+    [263,] 155.56338 174.01393 185.5865
+    [264,] 209.38182 230.28248 243.7084
+    [265,] 186.00298 205.80907 218.3323
+    [266,] 136.73654 155.90724 167.5810
+    [267,] 140.31479 158.62251 171.1010
+    [268,] 165.66870 185.59246 197.9296
+    [269,] 157.36585 176.97494 188.8857
+    [270,] 162.34108 181.52458 193.4697
+    [271,] 150.23989 167.87376 179.5330
+    [272,] 147.98495 166.56220 178.6936
+    [273,] 157.74638 175.61565 187.2025
+    [274,] 151.95698 172.23572 184.8843
+    [275,] 133.85632 154.14602 166.1828
+    [276,] 144.96443 163.34899 174.4260
+    [277,] 131.86114 152.50095 164.7486
+    [278,] 181.92979 199.59896 210.2301
+    [279,] 179.88685 198.02104 209.3692
+    [280,] 171.41202 189.94870 202.0631
+    [281,] 176.34510 195.45205 207.4497
+    [282,] 149.18626 171.69551 185.1663
+    [283,] 145.55569 165.54011 178.6556
+    [284,] 191.80192 211.84967 225.2562
+    [285,] 167.29590 188.08210 201.3504
+    [286,] 100.93389 118.74094 129.6547
+    [287,] 180.36408 201.56607 215.1555
+    [288,] 162.08568 180.71016 192.5729
+    [289,] 183.23084 203.54742 216.4020
+    [290,] 139.07526 158.37690 171.2141
+    [291,] 146.19095 163.90519 174.7841
+    [292,] 169.30614 189.76977 203.0494
+    [293,] 169.68917 188.84498 200.7252
+    [294,] 173.25316 194.05824 207.1897
+    [295,] 161.81813 181.37785 193.8573
+    [296,] 116.41693 135.48913 147.4184
+    [297,] 163.35614 182.25972 194.4838
+    [298,] 156.67020 175.32996 187.5308
+    [299,] 149.56852 168.66413 180.5069
+    [300,] 202.29781 225.74825 239.9617
+    [301,] 157.39426 177.81626 190.4963
+    [302,] 167.07151 186.75956 199.5672
+    [303,] 148.60375 167.05963 180.0038
+    [304,] 163.08945 183.31337 195.7218
+    [305,] 192.75847 212.93742 225.8769
+    [306,] 148.19327 167.05762 178.6662
+    [307,] 123.71323 142.37339 154.1861
+    [308,] 177.98580 197.37311 210.2380
+    [309,] 152.47539 173.33049 186.8447
+    [310,] 140.16032 159.83643 171.8869
+    [311,] 190.98709 213.05916 226.3931
+    [312,] 181.69676 200.39404 212.0317
+    [313,] 162.33553 181.72388 193.5795
+    [314,] 140.12655 161.81524 175.2730
+    [315,] 179.09249 197.32611 209.0184
+    [316,] 175.92200 198.12639 212.5948
+    [317,] 175.87277 194.89937 206.8480
+    [318,] 171.67125 191.50470 203.9137
+    [319,] 144.23748 163.76765 176.0761
+    [320,] 145.85423 167.70001 180.8500
+    [321,] 201.44806 222.24272 234.9956
+    [322,] 172.61093 191.43279 203.2096
+    [323,] 154.62198 175.05558 187.7462
+    [324,] 151.67885 168.93425 180.1271
+    [325,] 150.44005 170.10017 182.7907
+    [326,] 181.16164 203.65658 217.8047
+    [327,] 137.38396 155.14493 167.2733
+    [328,] 138.56313 157.83886 169.6716
+    [329,] 162.75138 183.11351 195.5885
+    [330,] 127.15209 146.25763 158.6072
+    [331,] 136.38539 154.34172 165.4838
+    [332,] 152.49776 170.80561 182.9226
+    [333,] 148.95561 169.25273 182.7698
+ [ reached getOption("max.print") -- omitted 3667 rows ]
