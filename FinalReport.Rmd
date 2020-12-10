@@ -3,12 +3,12 @@ title: "United States Home Health Care Analysis"
 author: "Yinfeng Zhou"
 date: "2020/11/26"
 output:
-  pdf_document: default
-  word_document: default
   html_document: 
     fig_caption: yes
     fig_height: 3
     fig_width: 5
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -53,20 +53,14 @@ rating$Quality.of.Patient.Care.Star.Rating%<>%factor()
 # Method
 ## Exploratory Data Analysis
 
-In this section, I will apply EDA on the dataset and get a sense of certain characteristics of the data. To simplify the the analysis, I will take ceiling of the `Quality of patient care star rating`. For example, 3.5 will be rounded up to 4. Without rounded up, the model fitting will also take too much time (longer than 48 hours using stan_polr).    
-First, I want to get a sense of the distribution of the quality rating by type of ownership.
-
-```{r,echo=FALSE,warning=FALSE}
-knitr::include_graphics("EDA.png")
-
-```
-
-Since the observations from the first category is much less than the other categories, the rating 1 and 2 are combined as one category, in order for a better model fitting.
+In this section, I will apply EDA on the dataset and get a sense of certain characteristics of the data. To simplify the the analysis and accelerate model fitting, I will take ceiling of the `Quality of patient care star rating`.    
+First, I want to get a sense of the distribution of the quality rating by type of ownership. Since the observations from the first category is much less than the other categories, the rating 1 and 2 are combined as one category and denoted as `2`
 
 ```{r EDA1,echo=FALSE,warning=FALSE}
 knitr::include_graphics("EDA2.png")
 ```
 
+The `Proprietary` occupies the largest proportion in all the four outcome categories, and the other types look quite evenly distributed. The EDA plot is not imformative enough, which leads us to look into modelling in the next section.
 Plot for continuous variables against `Rating` is as follows:
 ```{r, echo=FALSE}
 knitr::include_graphics("EDA3.png")
@@ -77,45 +71,56 @@ An example of  continuous variables versus `Quality of Patient Care Star Rating`
 
 ## Modelling
 
-### Ordinal Categorical Logistic Regression Model
-Since I could not find an appropriate pacakage to fit a multilevel ordinal logistic model on this datset(`clmm()` from package `ordinal` does not work as well), in this section, I will fit an ordinal categorical logistic model on the dataset. The stan_plor() function will be used to build the model. To avoid wasting too much time on model fitting, I will randomly draw 4000 observations for fitting. The 95% confidence intervals of the coefficeint estimates are shown in the following plot:     
-
-```{r Interval,echo=FALSE,warning=FALSE}
-knitr::include_graphics("interval_co.jpg")
-knitr::include_graphics("interval_itc.jpg")
+### Multilevel Ordinal Logistic Regression Model
+In this section, I will fit a multilevel ordinal logistic regression model on the dataset. I will use `Type.of.Ownership` as random effects, in order to looking at the ratings between different types of ownerships, figuring out if there is a difference between them. The `RStan` package will be used. The 95% confidence intervals of the coefficient estimates are shown in the following plot:
+```{r, echo=FALSE, warning=F}
+knitr::include_graphics("interval_co2.jpg")
+knitr::include_graphics("interval_itc2.jpg")
+knitr::include_graphics("interval_random.jpg")
 ```
 
-### Multilevel Ordinal Logistic Regression Mode
+
 ```{r, echo=FALSE}
 rown<-sample(rownames(rating),2000)
 fitset<-rating[rown,]
 colnames(fitset)[10]<-"Rating"
-
-m3<-clmm2(Rating~TimelyManner+DrugsTeaching+RiskofFalling+Depression+FluShot+Vaccine+FootCare+Walking+Bed+Bathing+Breathing+Operation+DrugsTaking+HospitalAdmitted+UnplannedCare+SkinIntegrity+TimelyMedication,random=Type.of.Ownership,data=fitset,Hess=T)
 ```
 
 
 
 ## Validation
+In this section, I will validate the model by using posterior predict from the model. By building a predict model in Stan, I generate a ppc bar plot below. In this ppc bar plot, the darker blue dots and lines indicate the medians of posterior samples `yrep` with their confidence intervals.
 
-```{r,echo=FALSE,warning=FALSE}
-knitr::include_graphics("ppc_bar.png")
+```{r,echo=FALSE,warning=F}
+knitr::include_graphics("ppc_bar_last.png")
+
 ```
-
-In the ppc bar plot, the darker blue dots indicate the medians of `yrep`, and the intervals indicates the uncertainty intervals. From the posterior predictive check, the plot clearly tells us that the model fits quite Ill.
 
 # Result
 
-From the EDA part, there are two points to stress on. First, the barplot shows that counts of rating on both ends are less than the middle ones, which accords with common sense. Second, in the scatter point plot, for variables `RiskofFalling`, `DrugsTeaching`, `RiskofFalling`, `Depression`, `FootCare`, the points concentrate on the right side, indicating these services are usually provided with a large percentage. Variables `FluShot` and `Vaccine`, while also show a tendency on a large percentage of service, they also have a larger dispersion towards left. In addition, the dots also have a tendency of concentrating on the upper-right, indicating that there should be some positive correlation betIen the variables and the ratings.         
-Moreover, `Walking`, `Bed`, `Bathing`, `Breathing`, `Operation`, `DrugsTaking` are showing a more obvious positive correlation. The `HospitalAdmitted` and `SkinIntegrity` show negative correlations, which is consistent with what the variables represent.
+### EDA 
+From the EDA part, there are two points to be stressed on. First, the barplot shows that counts of rating on both ends are less than the middle ones, which accords with common sense. Second, in the scatter point plot, for variables `RiskofFalling`, `DrugsTeaching`, `RiskofFalling`, `Depression`, `FootCare`, the points concentrate on the right side, indicating these services are usually provided with a large percentage. Variables `FluShot` and `Vaccine`, while also show a tendency on a large percentage of service, they also have a larger dispersion towards left. In addition, the dots also have a tendency of concentrating on the upper-right, indicating that there should be some positive correlation betIen the variables and the ratings.         
+Moreover, `Walking`, `Bed`, `Bathing`, `Breathing`, `Operation`, `DrugsTaking` are showing a more obvious positive correlation. The `HospitalAdmitted` and `SkinIntegrity` show negative correlations, which is consistent with what the variables represent.         
 
-From the coefficent plot, some useful information can be extracted. First, the `SkinIntegrity` have a large standard error, indicating that there is a large uncertainty in the estimate. Several coefficients, such as `Depression`, `Flushot`,`Vaccine`,`Operation`,`UnplannedCare`,`SkinIntegrity`,`TimelyMedication`, `RiskofFalling` have 95% confidence interval crossing 0, indicating that we can not safely reject that these coefficients should be 0. The result is also consistent with what I found in the EDA, where under these predictors, the `Rating` doesn't show a noticable positive or negative correlation.    
-On the other hand, `Bathing`, `Bed`, `Breathing`, `DrugsTaking`, `TimelyManner` and `Walking` show significant estimates, and they are relatively high, indicating these variables are showing stronger positive correlation with the outcome variable. The `HospitalAdmitted`, on the opposite, shows a strong negative correlation with the outcome variable.
-From the validation part, I use ppc bar plot to show how Ill the model fits. From the plot, the medians of predictive values `yrep` are basically the same as the counting of observative values `y`, indicating the model fitting good on the datset
+### Model and Coefficient Estimates
+#### (i) 
+The `SkinIntegrity` have a large standard error, indicating that there is a large uncertainty in the estimate.
+
+#### (ii) 
+Several coefficients, such as `Depression`, `Flushot`,`Vaccine`,`Operation`,`UnplannedCare`,`TimelyMedication` and `RiskofFalling`, not only have estimates very close to 0, but also have 95% confidence interval crossing 0. This result indicates that we can not safely reject that these coefficients should be 0. The result is also consistent with what I found in the EDA, where under these predictors, the `Rating` doesn't show a noticable positive or negative correlation. 
+
+#### (iii)
+`Bathing`, `Bed`, `Breathing`, `DrugsTaking`, `TimelyManner` and `Walking` show significant estimates, and their estimates are relatively high, indicating these variables are showing stronger positive correlation with the outcome variable. The `HospitalAdmitted`, on the opposite, shows a strong negative correlation with the outcome variable, which is also consistent with what the variable means: How often home health patients had to be admitted to the hospital.
+
+#### (iv)
+In the random intercept plot, all the coefficient estimates have confidence intervals crossing 0, indicating there might not be a 95% significant difference between `Types of Ownership`. The `Non - Profit Other` group have a relatively high estimate, indicating that they might not have a higher rating when the predictors are controlled as the same comparing with other groups, but with an insignificant result it is not a safe conclusion to draw.       
+
+### Validation
+In the validation part, I use ppc bar plot to show how well the model fits. From the plot, the medians of predictive values `yrep` are basically the same as the counting of observative values `y`, indicating the model fits well on the datset
 
 # Discussion
 
-The results drawn above shows that, for some variables, they might not have siginificant impacts on the `Rating`, such as `Depression` and all those insignificant variables in 5% level shown in the results. For those significant ones, there are two groups of them. First, for those having low estimates, they are showing a positive correlation with `Rating`, but they contribute small to the increase on the `Rating`. Meanwhile, for those having high estimates, the model predicts a larger increase on `Rating` when they are increasing. Therefore, the team should expect a higher `Rating` from the patient, by improving home health care services as follows:   
+The results drawn above shows that, for some variables, they might not have siginificant impacts on the `Rating`, such as `Depression` and all those insignificant variables in 5% level shown in the results. For those significant ones, there are two groups of them. First, for those having low estimates, they are showing a positive correlation with `Rating`, but they contribute small to the increase on the `Rating`. Meanwhile, for those having high estimates, the model predicts a larger increase on `Rating` when they are increasing. Therefore, the team should expect a higher `Rating` from the patient, if they have done well in the following aspects:   
 Help patients get better at bathing (`Bathing`);    
 Help patients get in and out of bed (`Bed`);    
 Help patients get better at breathing (`Breathing`);    
@@ -123,9 +128,13 @@ Help patients get better at taking their drugs correctly by mouth (`DrugsTaking`
 Begin patient's care in a timely manner (`TimelyManner`);    
 Help pateints get better at walking or moving around (`Walking`).    
 Also, if the home health team successfully reduce the number of having the patients admitting to the hospital (`HospitalAdmitted`), they should expect a decent increase on the `Rating` as well.
-Furthermore, I want to stress that 
+Furthermore, I want to stress that the analysis above does not guarantee any causal relationship. For example, if a team tries to improve their rating by purposely avoid admitting patients into the hospital even when they should, they will not be able to see any improvement in the rating. 
 
+# References
+[1] Gelman, A., & Hill, J. (2006). Data analysis using regression and multilevel/hierarchical models. Cambridge university press.       
+[2] Stan Development Team (2020). RStan: the R interface to Stan. R package version 2.21.2. http://mc-stan.org/.
 
+\newpage
 
 ### Appendix A
 
